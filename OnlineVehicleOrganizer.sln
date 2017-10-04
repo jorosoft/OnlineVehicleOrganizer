@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OVO.Data", "OVO.Data", "{E060EA7B-2C53-4AAE-B574-666A2716499C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Data", "OVO.Data\OVO.Data.csproj", "{5E890BA6-BF63-44E3-BE7F-AF674815E31D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Data.Models", "OVO.Data.Models\OVO.Data.Models.csproj", "{55683F4A-98CB-4155-BC84-FAE1C69C3D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Data.Contracts", "OVO.Data.Contracts\OVO.Data.Contracts.csproj", "{6B798406-5385-47A2-8891-95510930112F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Services", "OVO.Services\OVO.Services.csproj", "{3FF5DC77-5979-487B-B689-A8AF04057BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Web", "OVO.Web\OVO.Web.csproj", "{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVO.Tests", "OVO.Tests\OVO.Tests.csproj", "{E54BB915-9583-4687-8762-B15A0822E6B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E890BA6-BF63-44E3-BE7F-AF674815E31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E890BA6-BF63-44E3-BE7F-AF674815E31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E890BA6-BF63-44E3-BE7F-AF674815E31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E890BA6-BF63-44E3-BE7F-AF674815E31D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55683F4A-98CB-4155-BC84-FAE1C69C3D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55683F4A-98CB-4155-BC84-FAE1C69C3D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55683F4A-98CB-4155-BC84-FAE1C69C3D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55683F4A-98CB-4155-BC84-FAE1C69C3D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B798406-5385-47A2-8891-95510930112F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B798406-5385-47A2-8891-95510930112F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B798406-5385-47A2-8891-95510930112F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B798406-5385-47A2-8891-95510930112F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF5DC77-5979-487B-B689-A8AF04057BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF5DC77-5979-487B-B689-A8AF04057BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF5DC77-5979-487B-B689-A8AF04057BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF5DC77-5979-487B-B689-A8AF04057BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54BB915-9583-4687-8762-B15A0822E6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54BB915-9583-4687-8762-B15A0822E6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54BB915-9583-4687-8762-B15A0822E6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54BB915-9583-4687-8762-B15A0822E6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E890BA6-BF63-44E3-BE7F-AF674815E31D} = {E060EA7B-2C53-4AAE-B574-666A2716499C}
+		{55683F4A-98CB-4155-BC84-FAE1C69C3D29} = {E060EA7B-2C53-4AAE-B574-666A2716499C}
+		{6B798406-5385-47A2-8891-95510930112F} = {E060EA7B-2C53-4AAE-B574-666A2716499C}
+	EndGlobalSection
+EndGlobal
