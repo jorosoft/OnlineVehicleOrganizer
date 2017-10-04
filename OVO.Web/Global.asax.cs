@@ -1,5 +1,8 @@
-﻿using System;
+﻿using OVO.Data;
+using OVO.Data.Migrations;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +15,7 @@ namespace OVO.Web
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<OVOMsSqlDbContext, Configuration>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
