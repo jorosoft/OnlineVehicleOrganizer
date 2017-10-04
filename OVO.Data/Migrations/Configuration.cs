@@ -1,32 +1,52 @@
-namespace OVO.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using OVO.Data.Models;
 
+namespace OVO.Data.Migrations
+{     
     public sealed class Configuration : DbMigrationsConfiguration<OVO.Data.OVOMsSqlDbContext>
     {
+        private const string AdministratorUserName = "admin@ovo.com";
+        private const string AdministratorPassword = "Pass060992*";
+
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = false;
             this.AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(OVO.Data.OVOMsSqlDbContext context)
+        protected override void Seed(OVOMsSqlDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            this.SeedAdmin(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedAdmin(OVOMsSqlDbContext context)
+        {
+            if (!context.Roles.Any())
+            {
+                var roleName = "Admin";
+
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = roleName };
+                roleManager.Create(role);
+
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User
+                {
+                    UserName = AdministratorUserName,
+                    Email = AdministratorUserName,
+                    EmailConfirmed = true,
+                    CreatedOn = DateTime.Now
+                };
+
+                userManager.Create(user, AdministratorPassword);
+                userManager.AddToRole(user.Id, roleName);
+            }
         }
     }
 }

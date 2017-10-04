@@ -10,10 +10,12 @@ namespace OVO.Data.Models.Abstractions
         {
             this.Id = Guid.NewGuid();
         }
-
+        
         public Guid Id { get; set; }
 
         [Index]
         public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
     }
 }
