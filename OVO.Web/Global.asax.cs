@@ -1,13 +1,14 @@
-﻿using OVO.Data;
-using OVO.Data.Migrations;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using OVO.Data;
+using OVO.Data.Migrations;
 
 namespace OVO.Web
 {
@@ -20,6 +21,20 @@ namespace OVO.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_BeginRequest(object sender, EventArgs ev)
+        {
+            var cookie = HttpContext.Current.Request.Cookies["Language"];
+            var selectedValue = "en";
+
+            if (cookie != null && cookie.Value != null)
+            {
+                selectedValue = cookie.Value;
+            }
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedValue);
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(selectedValue);
         }
     }
 }

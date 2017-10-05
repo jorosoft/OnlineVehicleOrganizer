@@ -14,6 +14,8 @@ namespace OVO.Web.Areas.Administration
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+            context.Routes.LowercaseUrls = true;
+
             context.MapRoute(
                 "Administration_default",
                 "Administration/{controller}/{action}/{id}",
