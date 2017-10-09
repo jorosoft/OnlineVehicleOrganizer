@@ -1,11 +1,20 @@
 version: 1.0.{build}
 
-install:
-    - nuget restore
-    
+branches:
+  only:
+  - master
+
+nuget:
+  project_feed: true
+
+before_build:
+- ps: nuget restore ./OnlineVehicleOrganizer.sln 
+  
 build:
   project: OnlineVehicleOrganizer.sln
-  verbosity: detailed
+  publish_nuget: true
+  include_nuget_references: true
+  verbosity: minimal
 
 environment:
     COVERALLS_REPO_TOKEN:  
@@ -13,7 +22,7 @@ environment:
  
 after_test: 
 # generate report for NUnit testing framework:
-    - cmd:packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe" -targetargs:"/domain:single OVO.Tests/bin/release/OVO.Tests.dll" -output:coverage.xml
+    - packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe" -targetargs:"/domain:single OVO.Tests/bin/release/OVO.Tests.dll" -output:coverage.xml
 
         
-    - cmd: packages\coveralls.io.1.4.1\tools\coveralls.net.exe --opencover coverage.xml -r %COVERALLS_REPO_TOKEN%
+    - packages\coveralls.io.1.4.1\tools\coveralls.net.exe --opencover coverage.xml -r %COVERALLS_REPO_TOKEN%
