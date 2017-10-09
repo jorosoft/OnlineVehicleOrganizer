@@ -296,10 +296,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OVO.Data.Contracts\OVO.Data.Contracts.csproj">
-      <Project>{6B798406-5385-47A2-8891-95510930112F}</Project>
-      <Name>OVO.Data.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OVO.Data.Models\OVO.Data.Models.csproj">
       <Project>{55683F4A-98CB-4155-BC84-FAE1C69C3D29}</Project>
       <Name>OVO.Data.Models</Name>
@@ -307,6 +303,10 @@
     <ProjectReference Include="..\OVO.Data\OVO.Data.csproj">
       <Project>{5E890BA6-BF63-44E3-BE7F-AF674815E31D}</Project>
       <Name>OVO.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OVO.Services\OVO.Services.csproj">
+      <Project>{3FF5DC77-5979-487B-B689-A8AF04057BDC}</Project>
+      <Name>OVO.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

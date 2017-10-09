@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using OVO.Data.Contracts;
+using OVO.Data.Models.Contracts;
 
 namespace OVO.Data.Models.Abstractions
 {

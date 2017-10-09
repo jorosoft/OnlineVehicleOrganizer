@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using OVO.Data.Contracts;
+using OVO.Data.Models.Contracts;
 
 namespace OVO.Data.Repositories
 {

@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OVO.Data.Models;
-using OVO.Data.Contracts;
+using OVO.Data.Models.Contracts;
 
 namespace OVO.Data
 {

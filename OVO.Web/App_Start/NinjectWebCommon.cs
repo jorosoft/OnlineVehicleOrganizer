@@ -8,6 +8,7 @@ using Ninject.Web.Common;
 using OVO.Data.Contracts;
 using OVO.Data.Repositories;
 using OVO.Data;
+using OVO.Services.Contracts;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(OVO.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(OVO.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -71,8 +72,16 @@ namespace OVO.Web.App_Start
                  .BindDefaultInterface();
             });
 
+            kernel.Bind(x =>
+            {
+                x.FromAssemblyContaining(typeof(IService))
+                 .SelectAllClasses()
+                 .BindDefaultInterface();
+            });
+
             kernel.Bind(typeof(DbContext), typeof(OVOMsSqlDbContext)).To<OVOMsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind<ISaveContext>().To<SaveContext>();
         }
     }
 }
