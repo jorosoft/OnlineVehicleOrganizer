@@ -14,6 +14,16 @@ namespace OVO.Data
         {
         }
 
+        public IDbSet<Vehicle> Vehicles { get; set; }
+
+        public IDbSet<Manufacturer> Manufacturers { get; set; }
+
+        public IDbSet<Model> Models { get; set; }
+
+        public IDbSet<VehicleEvent> VehicleEvents { get; set; }
+
+        public IDbSet<CronJob> CronJobs { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

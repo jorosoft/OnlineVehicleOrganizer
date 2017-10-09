@@ -3,7 +3,7 @@ using OVO.Data.Contracts;
 using OVO.Data.Models;
 using OVO.Services.Contracts;
 
-namespace OVO.Services
+namespace OVO.Services.DataServices
 {
     public class UsersService : IUsersService
     {
