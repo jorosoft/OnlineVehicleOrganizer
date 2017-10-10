@@ -1,6 +1,7 @@
 using System;
 using System.Data.Entity;
 using System.Web;
+using AutoMapper;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Extensions.Conventions;
@@ -9,6 +10,7 @@ using OVO.Data.Contracts;
 using OVO.Data.Repositories;
 using OVO.Data;
 using OVO.Services.Contracts;
+using OVO.Services.DataServices;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(OVO.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(OVO.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -82,6 +84,7 @@ namespace OVO.Web.App_Start
             kernel.Bind(typeof(DbContext), typeof(OVOMsSqlDbContext)).To<OVOMsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<ISaveContext>().To<SaveContext>();
+            kernel.Bind<IMapper>().To<Mapper>();
         }
     }
 }

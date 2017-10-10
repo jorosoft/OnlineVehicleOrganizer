@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Globalization;
-using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using OVO.Data;
 using OVO.Data.Migrations;
+using OVO.Web.App_Start;
 
 namespace OVO.Web
 {
@@ -21,6 +22,9 @@ namespace OVO.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var mapper = new AutoMapperConfig();
+            mapper.Execute(Assembly.GetExecutingAssembly());
         }
 
         protected void Application_BeginRequest(object sender, EventArgs ev)
