@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using OVO.Web.Controllers;
 
-namespace OVO.Tests.WebTests.ControllerTests.Manage
+namespace OVO.Tests.WebTests.ControllersTests.Vehicle
 {
     [TestFixture]
     public class Constructor_Should
@@ -11,7 +11,7 @@ namespace OVO.Tests.WebTests.ControllerTests.Manage
         public void CreateController_WhenCalled()
         {
             // Arrange & Act
-            var sut = new ManageController();
+            var sut = new VehicleController();
 
             // Assert
             Assert.IsNotNull(sut);

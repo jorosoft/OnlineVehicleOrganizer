@@ -85,12 +85,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebTests\ControllerTests\Account\Constructor_Should.cs" />
-    <Compile Include="WebTests\ControllerTests\Home\Index_Should.cs" />
-    <Compile Include="WebTests\ControllerTests\Language\Index_Should.cs" />
-    <Compile Include="WebTests\ControllerTests\Manage\Constructor_Should.cs" />
-    <Compile Include="WebTests\ControllerTests\Vehicle\Constructor_Should.cs" />
-    <Compile Include="WebTests\ControllerTests\Vehicle\Index_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Home\Index_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Manage\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\Index_Should.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginConfirmationViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginListViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\ForgotPasswordViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\ForgotViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\LoginViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\RegisterViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\ResetPasswordViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\SendCodeViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Account\VerifyCodeViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -105,7 +114,11 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WebTests\ViewModelsTests\Language\" />
+    <Folder Include="WebTests\ViewModelsTests\Manage\" />
+    <Folder Include="WebTests\ViewModelsTests\Vehicle\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

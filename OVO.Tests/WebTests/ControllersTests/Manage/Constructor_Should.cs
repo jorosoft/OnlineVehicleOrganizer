@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using OVO.Web.Controllers;
 
-namespace OVO.Tests.WebTests.ControllerTests.Account
+namespace OVO.Tests.WebTests.ControllersTests.Manage
 {
     [TestFixture]
     public class Constructor_Should
@@ -11,8 +11,8 @@ namespace OVO.Tests.WebTests.ControllerTests.Account
         public void CreateController_WhenCalled()
         {
             // Arrange & Act
-            var sut = new AccountController();
-            
+            var sut = new ManageController();
+
             // Assert
             Assert.IsNotNull(sut);
             Assert.IsInstanceOf<Controller>(sut);

@@ -2,7 +2,7 @@
 using OVO.Web.Controllers;
 using System.Web.Mvc;
 
-namespace OVO.Tests.WebTests.ControllerTests.Vehicle
+namespace OVO.Tests.WebTests.ControllersTests.Vehicle
 {
     [TestFixture]
     public class Index_Should
