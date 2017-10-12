@@ -16,7 +16,7 @@ namespace OVO.Data.Models
 
         [Required]
         [Index(IsUnique = true)]
-        [MinLength(3)]
+        [MinLength(2)]
         [MaxLength(15)]
         public string Name { get; set; }
 

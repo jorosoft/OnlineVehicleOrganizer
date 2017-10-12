@@ -1,11 +1,13 @@
 ﻿using System;
-using OVO.Data.Models.Abstractions;
 using System.ComponentModel.DataAnnotations;
+using OVO.Data.Models.Abstractions;
 
 namespace OVO.Data.Models
 {
     public class CronJob : DBEntity
     {
+        public Guid VehicleId { get; set; }
+
         public virtual Vehicle Vehicle { get; set; }
 
         [Required]

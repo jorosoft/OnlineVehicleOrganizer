@@ -71,6 +71,18 @@
     <Compile Include="Migrations\201710091825113_Add Some DB Restrictions.Designer.cs">
       <DependentUpon>201710091825113_Add Some DB Restrictions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710121626002_update DB.cs" />
+    <Compile Include="Migrations\201710121626002_update DB.Designer.cs">
+      <DependentUpon>201710121626002_update DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121858470_Update DB FKs.cs" />
+    <Compile Include="Migrations\201710121858470_Update DB FKs.Designer.cs">
+      <DependentUpon>201710121858470_Update DB FKs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121938216_Update DB restrictions.cs" />
+    <Compile Include="Migrations\201710121938216_Update DB restrictions.Designer.cs">
+      <DependentUpon>201710121938216_Update DB restrictions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OVOMsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +108,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710091825113_Add Some DB Restrictions.resx">
       <DependentUpon>201710091825113_Add Some DB Restrictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121626002_update DB.resx">
+      <DependentUpon>201710121626002_update DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121858470_Update DB FKs.resx">
+      <DependentUpon>201710121858470_Update DB FKs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121938216_Update DB restrictions.resx">
+      <DependentUpon>201710121938216_Update DB restrictions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

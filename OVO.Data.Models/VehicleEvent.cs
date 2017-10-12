@@ -6,6 +6,8 @@ namespace OVO.Data.Models
 {
     public class VehicleEvent : DBEntity
     {
+        public Guid VehicleId { get; set; }
+
         public virtual Vehicle Vehicle { get; set; }
 
         [DataType(DataType.DateTime)]

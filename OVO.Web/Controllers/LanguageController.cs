@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -18,13 +19,13 @@ namespace OVO.Web.Controllers
             {
                 Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(languageAbbreviation);
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languageAbbreviation);
-            }
 
-            var cookie = new HttpCookie("Language");
-            cookie.Value = languageAbbreviation;
-            Response.Cookies.Add(cookie);
+                var cookie = new HttpCookie("Language");
+                cookie.Value = languageAbbreviation;
+                Response.Cookies.Add(cookie);
+            }            
 
-            return this.View("Index");
+            return this.RedirectToAction("Index", "Home");
         }
     }
 }

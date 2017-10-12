@@ -25,6 +25,8 @@ namespace OVO.Data.Models
         [MaxLength(15)]
         public string RegNumber { get; set; }
 
+        public Guid ModelId { get; set; }
+
         public virtual Model Model { get; set; }
 
         [Required]
