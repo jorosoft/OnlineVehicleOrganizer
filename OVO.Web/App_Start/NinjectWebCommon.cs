@@ -84,6 +84,7 @@ namespace OVO.Web.App_Start
 
             kernel.Bind(typeof(DbContext), typeof(OVOMsSqlDbContext)).To<OVOMsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind(typeof(IEfRoleRepository)).To(typeof(EfRoleRepository));
             kernel.Bind<ISaveContext>().To<SaveContext>();
             kernel.Bind<IMapper>().To<Mapper>().WithConstructorArgument(typeof(IConfigurationProvider));
 

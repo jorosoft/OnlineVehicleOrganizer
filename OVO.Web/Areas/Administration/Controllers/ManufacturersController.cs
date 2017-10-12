@@ -45,6 +45,8 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(enableValidation: true)]
         public ActionResult Add(Guid manufacturerId)
         {
             return View();
@@ -56,6 +58,8 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(enableValidation: true)]
         public ActionResult Edit(Manufacturer manufacturer)
         {
             return View();
@@ -67,6 +71,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(Manufacturer manufacturer)
         {
             return View();

@@ -47,6 +47,8 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(enableValidation: true)]
         public ActionResult Add(Guid modelId)
         {
             return View();
@@ -58,6 +60,8 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(enableValidation: true)]
         public ActionResult Edit(Model model)
         {
             return View();
@@ -69,6 +73,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(Model model)
         {
             return View();

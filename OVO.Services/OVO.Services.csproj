@@ -61,6 +61,7 @@
     <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\IManufacturersService.cs" />
     <Compile Include="Contracts\IModelsService.cs" />
+    <Compile Include="Contracts\IRolesService.cs" />
     <Compile Include="Contracts\IService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="Contracts\IVehicleEventsService.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="DataServices\DataService.cs" />
     <Compile Include="DataServices\ManufacturersService.cs" />
     <Compile Include="DataServices\ModelsService.cs" />
+    <Compile Include="DataServices\RolesService.cs" />
     <Compile Include="DataServices\VehicleEventsService.cs" />
     <Compile Include="DataServices\VehiclesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

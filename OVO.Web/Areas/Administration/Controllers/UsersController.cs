@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper.QueryableExtensions;
 using OVO.Services.Contracts;
@@ -9,22 +10,29 @@ namespace OVO.Web.Areas.Administration.Controllers
     public class UsersController : Controller
     {
         private readonly IUsersService usersService;
-        public UsersController(IUsersService usersService)
+        private readonly IRolesService rolesService;
+
+        public UsersController(IUsersService usersService, IRolesService rolesService)
         {
             this.usersService = usersService;
+            this.rolesService = rolesService;
         }
 
-        public ActionResult Index()
+        public ActionResult All()
         {
+            var roles = this.rolesService.GetAll()
+                .ToDictionary(x => x.Id, x => x.Name);
+
             var users = this.usersService
                 .GetAllAndDeleted()
+                .ToList()
                 .Select(x => new UserViewModel
                 {
                     Username = x.UserName,
                     Email = x.Email,
+                    Role = roles[x.Roles.First().RoleId],
                     IsDeleted = x.IsDeleted
-                }
-                )
+                })
                 .ToList();
 
             var viewModel = new UsersListViewModel

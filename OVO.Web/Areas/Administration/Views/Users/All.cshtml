@@ -15,6 +15,7 @@
         {
             columns.Add(x => x.Username).Titled("Username").SetWidth(200);
             columns.Add(x => x.Email).Titled("Email").SetWidth(200);
+            columns.Add(x => x.Role).Titled("Role").SetWidth(200);
             columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
         }).WithPaging(10).EmptyText("No available users!")
 </div>

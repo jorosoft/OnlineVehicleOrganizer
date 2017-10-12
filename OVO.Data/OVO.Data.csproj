@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IEfRepository.cs" />
+    <Compile Include="Contracts\IEfRoleRepository.cs" />
     <Compile Include="Contracts\ISaveContext.cs" />
     <Compile Include="Migrations\201710042108189_Initial.cs" />
     <Compile Include="Migrations\201710042108189_Initial.Designer.cs">
@@ -87,6 +88,7 @@
     <Compile Include="OVOMsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfRepository.cs" />
+    <Compile Include="Repositories\EfRoleRepository.cs" />
     <Compile Include="SaveContext.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ using OVO.Data.Models.Contracts;
 
 namespace OVO.Data.Contracts
 {
-    public interface IEfRepository<T> where T : class, IDeletable
+    public interface IEfRepository<T> where T : class
     {
         IQueryable<T> All { get; }
 

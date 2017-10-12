@@ -263,7 +263,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Administration\Views\web.config" />
-    <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\All.cshtml" />
     <Content Include="Grid.mvc.readme" />
     <Content Include="Areas\Administration\Views\Manufacturers\All.cshtml" />
     <Content Include="Areas\Administration\Views\Manufacturers\Add.cshtml" />
