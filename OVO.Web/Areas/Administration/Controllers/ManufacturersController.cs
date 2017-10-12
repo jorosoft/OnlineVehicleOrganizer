@@ -4,14 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OVO.Data.Models;
+using OVO.Services.Contracts;
+using OVO.Web.Areas.Administration.ViewModels;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
     public class ManufacturersController : Controller
-    {        
+    {
+        private readonly IManufacturersService manufacturersService;
+
+        public ManufacturersController(IManufacturersService manufacturersService)
+        {
+            this.manufacturersService = manufacturersService;
+        }
+
         public ActionResult All()
         {
-            return View();
+            var manufacturers = this.manufacturersService
+                .GetAllAndDeleted()
+                .OrderBy(x => x.Name)
+                .Select(x => new ManufacturerViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    IsDeleted = x.IsDeleted
+                })
+                .ToList();
+
+            var viewModel = new ManufacturersListViewModel
+            {
+                Manufacturers = manufacturers
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult Add()
@@ -45,6 +70,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         public ActionResult Delete(Manufacturer manufacturer)
         {
             return View();
-        }        
+        }
     }
 }

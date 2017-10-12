@@ -21,6 +21,11 @@ namespace OVO.Services.DataServices
             return this.usersRepo.All;
         }
 
+        public IQueryable<User> GetAllAndDeleted()
+        {
+            return this.usersRepo.AllAndDeleted;
+        }
+
         public void Add(User user)
         {
             this.usersRepo.Add(user);

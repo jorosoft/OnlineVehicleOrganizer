@@ -7,6 +7,8 @@ namespace OVO.Services.Contracts
     {
         IQueryable<Model> GetAll();
 
+        IQueryable<Model> GetAllAndDeleted();
+
         void Add(Model model);
 
         void Update(Model model);

@@ -1,9 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace OVO.Web.Areas.Administration.ViewModels
 {
     public class ModelViewModel
     {
-        public IEnumerable<ModelViewModel> Models { get; set; }
+        public Guid Id { get; set; }
+
+        public string ManufacturerName { get; set; }
+
+        public string ModelName { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

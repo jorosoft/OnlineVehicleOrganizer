@@ -21,6 +21,11 @@ namespace OVO.Services.DataServices
             return this.manufacturersRepo.All;
         }
 
+        public IQueryable<Manufacturer> GetAllAndDeleted()
+        {
+            return this.manufacturersRepo.AllAndDeleted;
+        }
+
         public void Add(Manufacturer manufacturer)
         {
             this.manufacturersRepo.Add(manufacturer);

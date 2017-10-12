@@ -17,7 +17,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         public ActionResult Index()
         {
             var users = this.usersService
-                .GetAll()
+                .GetAllAndDeleted()
                 .Select(x => new UserViewModel
                 {
                     Username = x.UserName,

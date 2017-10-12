@@ -1,8 +1,20 @@
-﻿
+﻿@using OVO.Web.Areas.Administration.ViewModels
+@using GridMvc.Html
+@model ModelsListViewModel
+
 @{
     ViewBag.Title = "All";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>All</h2>
+<div>
+    <h2>All</h2>
+
+    @Html.Grid(Model.Models).Columns(columns =>
+        {
+            columns.Add(x => x.ManufacturerName).Titled("Manufacturer").SetWidth(200);
+            columns.Add(x => x.ModelName).Titled("Model").SetWidth(200);
+            columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
+        }).WithPaging(10).EmptyText("No available Models!")
+</div>
 

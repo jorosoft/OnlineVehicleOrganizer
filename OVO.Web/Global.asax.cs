@@ -17,7 +17,7 @@ namespace OVO.Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<OVOMsSqlDbContext, Configuration>());
+            // Database.SetInitializer(new MigrateDatabaseToLatestVersion<OVOMsSqlDbContext, Configuration>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -7,6 +7,8 @@ namespace OVO.Services.Contracts
     {
         IQueryable<Manufacturer> GetAll();
 
+        IQueryable<Manufacturer> GetAllAndDeleted();
+
         void Add(Manufacturer manufacturer);
 
         void Update(Manufacturer manufacturer);

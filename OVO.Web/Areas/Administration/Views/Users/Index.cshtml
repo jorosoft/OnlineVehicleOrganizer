@@ -1,4 +1,5 @@
 ﻿@using OVO.Web.Areas.Administration.ViewModels
+@using GridMvc.Html
 @model UsersListViewModel
 
 
@@ -9,10 +10,12 @@
 
 <div>
     <h1>Users</h1>
-    @foreach (var user in Model.Users)
-    {
-        <p>@user.Username --- @user.Email --- @user.IsDeleted</p>
-    }
-    
-</div> 
+
+    @Html.Grid(Model.Users).Columns(columns =>
+        {
+            columns.Add(x => x.Username).Titled("Username").SetWidth(200);
+            columns.Add(x => x.Email).Titled("Email").SetWidth(200);
+            columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
+        }).WithPaging(10).EmptyText("No available users!")
+</div>
 
