@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using OVO.Data.Models;
 using OVO.Services.Contracts;
 using OVO.Web.Areas.Administration.ViewModels;
+using AutoMapper.QueryableExtensions;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
@@ -36,45 +37,71 @@ namespace OVO.Web.Areas.Administration.Controllers
                 Manufacturers = manufacturers
             };
 
-            return View(viewModel);
+            return this.View(viewModel);
         }
 
         public ActionResult Add()
         {
-            return View();
+            return this.View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(enableValidation: true)]
-        public ActionResult Add(Guid manufacturerId)
+        public ActionResult Add(Manufacturer manufacturer)
         {
-            return View();
+            this.manufacturersService.Add(manufacturer);
+
+            return this.RedirectToAction("All", "Manufacturers");
         }
 
         public ActionResult Edit(Guid manufacturerId)
         {
-            return View();
+            var manufacturer = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturerId);
+
+            var viewModel = new ManufacturerViewModel
+            {
+                Id = manufacturer.Id,
+                Name = manufacturer.Name,
+                IsDeleted = manufacturer.IsDeleted
+            }; 
+
+            return this.View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(enableValidation: true)]
         public ActionResult Edit(Manufacturer manufacturer)
         {
-            return View();
+            this.manufacturersService.Update(manufacturer);
+
+            return this.RedirectToAction("All", "Manufacturers");
         }
 
         public ActionResult Delete(Guid manufacturerId)
         {
-            return View();
+            var manufacturer = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturerId);
+
+            var viewModel = new ManufacturerViewModel
+            {
+                Id = manufacturer.Id,
+                Name = manufacturer.Name,
+                IsDeleted = manufacturer.IsDeleted
+            };
+
+            return this.View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(Manufacturer manufacturer)
         {
-            return View();
+            this.manufacturersService.Delete(manufacturer);
+
+            return this.RedirectToAction("All", "Manufacturers");
         }
     }
 }

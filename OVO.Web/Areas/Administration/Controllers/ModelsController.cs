@@ -48,35 +48,63 @@ namespace OVO.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(enableValidation: true)]
-        public ActionResult Add(Guid modelId)
+        public ActionResult Add(Model model)
         {
-            return View();
+            this.modelsService.Add(model);
+
+            return this.RedirectToAction("All", "Models");
         }
 
         public ActionResult Edit(Guid modelId)
         {
-            return View();
+            var model = this.modelsService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == modelId);
+
+            var viewModel = new ModelViewModel
+            {
+                Id = model.Id,
+                ManufacturerName = model.Manufacturer.Name,
+                ModelName = model.Name,
+                IsDeleted = model.IsDeleted
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [ValidateInput(enableValidation: true)]
         public ActionResult Edit(Model model)
         {
-            return View();
+            this.modelsService.Update(model);
+
+            return this.RedirectToAction("All", "Models");
         }
 
         public ActionResult Delete(Guid modelId)
         {
-            return View();
+            var model = this.modelsService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == modelId);
+
+            var viewModel = new ModelViewModel
+            {
+                Id = model.Id,
+                ManufacturerName = model.Manufacturer.Name,
+                ModelName = model.Name,
+                IsDeleted = model.IsDeleted
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(Model model)
         {
-            return View();
+            this.modelsService.Delete(model);
+
+            return this.RedirectToAction("All", "Models");
         }
     }
 }

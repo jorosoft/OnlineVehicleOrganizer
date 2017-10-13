@@ -1,4 +1,6 @@
-﻿
+﻿@using OVO.Web.Areas.Administration.ViewModels
+@model ModelViewModel
+
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +8,13 @@
 
 <h2>Delete</h2>
 
+<p>Are you sure to delete:</p>
+
+<p>Model: @Model.Name</p>
+
+@using (@Html.BeginForm("Delete", "Models", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Name)
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-danger">Delete</button>
+}

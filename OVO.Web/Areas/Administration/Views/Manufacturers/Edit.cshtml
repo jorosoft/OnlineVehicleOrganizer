@@ -1,4 +1,6 @@
-﻿
+﻿@using OVO.Web.Areas.Administration.ViewModels
+@model ManufacturerViewModel
+
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +8,13 @@
 
 <h2>Edit</h2>
 
+@using (@Html.BeginForm("Edit", "Manufacturers", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Name);
+    @Html.EditorFor(x => x.Name);
+
+
+
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-info">Edit</button>
+}
