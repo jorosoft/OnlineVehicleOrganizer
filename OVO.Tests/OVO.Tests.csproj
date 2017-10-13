@@ -129,6 +129,12 @@
     <Compile Include="WebTests\ViewModelsTests\Account\ResetPasswordViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\SendCodeViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\VerifyCodeViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\ManufacturersListViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\ManufacturerViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\ModelsListViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\ModelViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\UsersListViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\UserViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\AddPhoneNumberViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\ChangePasswordViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\ConfigureTwoFactorViewModelTests.cs" />
@@ -156,6 +162,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="WebTests\ControllersTests\Administration\" />
     <Folder Include="WebTests\ViewModelsTests\Vehicle\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
