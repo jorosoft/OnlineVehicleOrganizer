@@ -150,5 +150,41 @@ namespace OVO.Web.Areas.Administration.Controllers
 
             return this.RedirectToAction("All", "Models");
         }
+
+        public ActionResult Undelete(Guid modelId)
+        {
+            var model = this.modelsService
+                .GetAllAndDeleted()
+                .Select(x => new ModelViewModel
+                {
+                    Id = x.Id,
+                    ManufacturerName = x.Manufacturer.Name,
+                    ModelName = x.Name,
+                    IsDeleted = x.IsDeleted
+                })
+                .SingleOrDefault(x => x.Id == modelId);
+
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Undelete(ModelViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var mod = this.modelsService
+                 .GetAllAndDeleted()
+                 .SingleOrDefault(x => x.Id == model.Id);
+
+            mod.IsDeleted = false;
+
+            this.modelsService.Update(mod);
+
+            return this.RedirectToAction("All", "Models");
+        }
     }
 }

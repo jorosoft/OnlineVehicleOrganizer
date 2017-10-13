@@ -119,7 +119,7 @@
     <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Manage\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\Constructor_Should.cs" />
-    <Compile Include="WebTests\ControllersTests\Vehicle\Index_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\All_Should.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginConfirmationViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ForgotPasswordViewModelTests.cs" />
@@ -143,6 +143,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OVO.Services\OVO.Services.csproj">
+      <Project>{3FF5DC77-5979-487B-B689-A8AF04057BDC}</Project>
+      <Name>OVO.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OVO.Web\OVO.Web.csproj">
       <Project>{485A532C-54C5-49BD-89EF-EE7EE1F9F8C3}</Project>
       <Name>OVO.Web</Name>

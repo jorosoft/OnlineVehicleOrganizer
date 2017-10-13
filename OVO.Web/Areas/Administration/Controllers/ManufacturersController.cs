@@ -129,5 +129,41 @@ namespace OVO.Web.Areas.Administration.Controllers
 
             return this.RedirectToAction("All", "Manufacturers");
         }
+
+        public ActionResult Undelete(Guid manufacturerId)
+        {
+            var manufacturer = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturerId);
+
+            var viewModel = new ManufacturerViewModel
+            {
+                Id = manufacturer.Id,
+                Name = manufacturer.Name,
+                IsDeleted = manufacturer.IsDeleted
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Undelete(ManufacturerViewModel manufacturer)
+        {
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var mf = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturer.Id);
+
+            mf.IsDeleted = false;
+
+            this.manufacturersService.Update(mf);
+
+            return this.RedirectToAction("All", "Manufacturers");
+        }
     }
 }

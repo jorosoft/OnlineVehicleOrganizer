@@ -7,20 +7,22 @@ using OVO.Web.Controllers;
 namespace OVO.Tests.WebTests.ControllersTests.Vehicle
 {
     [TestFixture]
-    public class Constructor_Should
+    public class All_Should
     {
         [Test]
-        public void CreateController_WhenCalled()
+        public void ReturnNotNull_WhenCalled()
         {
-            // Arrange & Act
+            // Arrange
             var manufacturersServiceStub = new Mock<IManufacturersService>().Object;
             var modelsServiceStub = new Mock<IModelsService>().Object;
             var vehiclesServiceStub = new Mock<IVehiclesService>().Object;
             var sut = new VehicleController(vehiclesServiceStub, manufacturersServiceStub, modelsServiceStub);
 
+            // Act
+            var result = sut.All() as ActionResult;
+
             // Assert
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<Controller>(sut);
+            Assert.IsNotNull(result);
         }
     }
 }

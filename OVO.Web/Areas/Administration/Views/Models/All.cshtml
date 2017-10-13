@@ -26,8 +26,16 @@
              .Encoded(false)
              .Sanitized(false)
              .SetWidth(50)
-             .RenderValueAs(x => @<div id="delete-btn">@Html.ActionLink("Delete", "Delete", new { modelId = x.Id }, new { @class = "gridbutton" })</div>);
-        }).WithPaging(10).EmptyText("No available Manufacturers!")
+             .RenderValueAs(x => @<div id="delete-btn">
+                @if (!x.IsDeleted)
+                {
+                    @Html.ActionLink("Delete", "Delete", new { modelId = x.Id }, new { @class = "gridbutton" })
+                }
+                else
+                {
+                    @Html.ActionLink("Undelete", "Undelete", new { modelId = x.Id }, new { @class = "gridbutton" })
+                }
+
+            </div>);        
     }).WithPaging(10).EmptyText("No available Models!")
 </div>
-

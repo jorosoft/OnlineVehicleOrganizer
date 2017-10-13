@@ -277,6 +277,10 @@
     <Content Include="Areas\Administration\Views\Models\Add.cshtml" />
     <Content Include="Areas\Administration\Views\Models\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Models\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Undelete.cshtml" />
+    <Content Include="Areas\Administration\Views\Models\Undelete.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Undelete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\gridmvc.js" />

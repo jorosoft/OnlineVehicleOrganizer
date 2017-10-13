@@ -45,5 +45,73 @@ namespace OVO.Web.Areas.Administration.Controllers
 
             return this.View(viewModel);
         }
+
+        public ActionResult Delete(string userEmail)
+        {
+            var user = this.usersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == userEmail);
+
+            var viewModel = new UserViewModel
+            {
+                Email = user.Email,
+                IsDeleted = user.IsDeleted
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(UserViewModel user)
+        {
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var usr = this.usersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == user.Email);
+
+            this.usersService.Delete(usr);
+
+            return this.RedirectToAction("All", "Users");
+        }
+
+        public ActionResult Undelete(string userEmail)
+        {
+            var user = this.usersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == userEmail);
+
+            var viewModel = new UserViewModel
+            {
+                Email = user.Email,
+                IsDeleted = user.IsDeleted
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Undelete(UserViewModel user)
+        {
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var usr = this.usersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == user.Email);
+
+            usr.IsDeleted = false;
+
+            this.usersService.Update(usr);
+
+            return this.RedirectToAction("All", "Users");
+        }
     }
 }

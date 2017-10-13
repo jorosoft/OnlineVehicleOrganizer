@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
+using Moq;
 using NUnit.Framework;
+using OVO.Services.Contracts;
 using OVO.Web.Controllers;
 
 namespace OVO.Tests.WebTests.ControllersTests.Account
@@ -11,7 +13,8 @@ namespace OVO.Tests.WebTests.ControllersTests.Account
         public void CreateController_WhenCalled()
         {
             // Arrange & Act
-            var sut = new AccountController();
+            var usersServiceStub = new Mock<IUsersService>().Object;
+            var sut = new AccountController(usersServiceStub);
             
             // Assert
             Assert.IsNotNull(sut);

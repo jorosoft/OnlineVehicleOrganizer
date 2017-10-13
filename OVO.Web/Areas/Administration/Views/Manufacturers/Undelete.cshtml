@@ -1,0 +1,20 @@
+﻿@using OVO.Web.Areas.Administration.ViewModels
+@model ManufacturerViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Restore</h2>
+
+<p>Are you sure to restore:</p>
+
+<p>Manufacturer: @Model.Name</p>
+
+@using (@Html.BeginForm("Undelete", "Manufacturers", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-success">Restore</button>
+}
