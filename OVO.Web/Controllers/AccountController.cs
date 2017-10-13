@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using OVO.Data.Models;
+using OVO.Services.Contracts;
 using OVO.Web.ViewModels.Account;
 
 namespace OVO.Web.Controllers
@@ -15,9 +17,11 @@ namespace OVO.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly IUsersService usersService;
 
-        public AccountController()
+        public AccountController(IUsersService usersService)
         {
+            this.usersService = usersService;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -73,9 +77,23 @@ namespace OVO.Web.Controllers
                 return this.View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await this.SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var userStatus = this.usersService
+                .GetAll()
+                .SingleOrDefault(x => x.Email == model.Email);
+
+            SignInStatus result;
+
+            if (userStatus == null || userStatus.IsDeleted)
+            {
+                result = SignInStatus.Failure;
+            }
+            else
+            {
+                // This doesn't count login failures towards account lockout
+                // To enable password failures to trigger account lockout, change to shouldLockout: true
+                result = await this.SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            }
+            
             switch (result)
             {
                 case SignInStatus.Success:
@@ -152,10 +170,18 @@ namespace OVO.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    EmailConfirmed = true,
+                    CreatedOn = DateTime.Now
+                };
+
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    this.UserManager.AddToRole(user.Id, "User");
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

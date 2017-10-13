@@ -31,7 +31,10 @@ namespace OVO.Web.Areas.Administration.Controllers
                     Username = x.UserName,
                     Email = x.Email,
                     Role = roles[x.Roles.First().RoleId],
-                    IsDeleted = x.IsDeleted
+                    IsDeleted = x.IsDeleted,
+                    DeletedOn = x.DeletedOn,
+                    CreatedOn = x.CreatedOn,
+                    ModifiedOn = x.ModifiedOn
                 })
                 .ToList();
 
