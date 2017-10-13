@@ -1,0 +1,22 @@
+﻿@using OVO.Web.Areas.Administration.ViewModels
+@model UserViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (@Html.BeginForm("Edit", "Users", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(x => x.Role)
+        @Html.DropDownListFor(x => x.Role, new SelectList(Model.Roles, "Name", "Name", Model.Role), new { @class = "form-control" })
+    </p>  
+
+    @Html.HiddenFor(x => x.Email)
+
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-warning">Edit</button>
+}

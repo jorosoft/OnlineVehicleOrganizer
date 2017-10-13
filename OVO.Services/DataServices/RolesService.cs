@@ -1,7 +1,9 @@
 ﻿using System.Linq;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OVO.Data.Contracts;
 using OVO.Services.Contracts;
+using OVO.Data.Models;
 
 namespace OVO.Services.DataServices
 {
@@ -15,6 +17,8 @@ namespace OVO.Services.DataServices
             this.rolesRepo = rolesRepo;
             this.context = context;
         }
+
+        public UserManager<User> UserManager => this.rolesRepo.UserManager;
 
         public IQueryable<IdentityRole> GetAll()
         {

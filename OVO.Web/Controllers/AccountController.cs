@@ -524,6 +524,6 @@ namespace OVO.Web.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, this.LoginProvider);
             }
         }
-        #endregion
+        #endregion        
     }
 }

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using AutoMapper.QueryableExtensions;
-using OVO.Services.Contracts;
 using OVO.Web.Areas.Administration.ViewModels;
+using OVO.Services.Contracts;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
@@ -17,7 +20,7 @@ namespace OVO.Web.Areas.Administration.Controllers
             this.usersService = usersService;
             this.rolesService = rolesService;
         }
-
+        
         public ActionResult All()
         {
             var roles = this.rolesService.GetAll()
@@ -46,6 +49,57 @@ namespace OVO.Web.Areas.Administration.Controllers
             return this.View(viewModel);
         }
 
+        public ActionResult Edit(string userEmail)
+        {
+            var roles = this.rolesService.GetAll()
+                .ToDictionary(x => x.Id, x => x.Name);
+
+            var user = this.usersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == userEmail);
+
+            var viewModel = new UserViewModel
+            {
+                Email = user.Email,
+                Role = roles[user.Roles.First().RoleId],
+                Roles = roles
+                    .Select(x => new RoleViewModel
+                    {
+                        Id = x.Key,
+                        Name = x.Value
+                    })
+                    .ToList()
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(UserViewModel user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(user);
+            }
+
+            var usr = this.usersService.GetAllAndDeleted()
+                .SingleOrDefault(x => x.Email == user.Email);
+
+            var oldRoleId = usr.Roles.First().RoleId;
+
+            var oldRole = this.rolesService.GetAll()
+                .First(x => x.Id == oldRoleId).Name;
+
+            if (oldRole != user.Role)
+            {                
+                this.rolesService.UserManager.RemoveFromRole(usr.Id, oldRole);
+                this.rolesService.UserManager.AddToRole(usr.Id, user.Role);
+            }            
+
+            return this.RedirectToAction("All", "Users");
+        }
+
         public ActionResult Delete(string userEmail)
         {
             var user = this.usersService
@@ -67,7 +121,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(user);
             }
 
             var usr = this.usersService
@@ -100,7 +154,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(user);
             }
 
             var usr = this.usersService

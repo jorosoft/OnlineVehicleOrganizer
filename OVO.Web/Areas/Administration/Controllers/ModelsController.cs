@@ -65,8 +65,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
-
+                return this.View(model);
             }
 
             var mf = this.manufacturersService.GetAllAndDeleted()
@@ -103,7 +102,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(model);
             }
 
             var mod = this.modelsService
@@ -139,7 +138,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(model);
             }
 
             var mod = this.modelsService
@@ -173,7 +172,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(model);
             }
 
             var mod = this.modelsService

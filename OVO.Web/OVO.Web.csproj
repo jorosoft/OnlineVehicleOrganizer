@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\ModelsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\RoleViewModel.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManufacturersController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ManufacturersListViewModel.cs" />
@@ -281,6 +282,7 @@
     <Content Include="Areas\Administration\Views\Models\Undelete.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Undelete.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\gridmvc.js" />

@@ -48,7 +48,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(manufacturer);
             }
 
             var mf = this.manufacturersService.GetDbModel();
@@ -82,7 +82,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(manufacturer);
             }
 
             var mf = this.manufacturersService
@@ -118,7 +118,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(manufacturer);
             }
 
             var mf = this.manufacturersService
@@ -152,7 +152,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // TODO
+                return this.View(manufacturer);
             }
 
             var mf = this.manufacturersService

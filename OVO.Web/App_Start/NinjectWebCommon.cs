@@ -10,8 +10,6 @@ using OVO.Data.Contracts;
 using OVO.Data.Repositories;
 using OVO.Data;
 using OVO.Services.Contracts;
-using OVO.Services.DataServices;
-using System.Reflection;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(OVO.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(OVO.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -87,7 +85,7 @@ namespace OVO.Web.App_Start
             kernel.Bind(typeof(IEfRoleRepository)).To(typeof(EfRoleRepository));
             kernel.Bind<ISaveContext>().To<SaveContext>();
             kernel.Bind<IMapper>().To<Mapper>().WithConstructorArgument(typeof(IConfigurationProvider));
-
+            
         }
     }
 }

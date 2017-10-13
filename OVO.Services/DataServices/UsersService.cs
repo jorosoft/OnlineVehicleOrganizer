@@ -42,6 +42,6 @@ namespace OVO.Services.DataServices
         {
             this.usersRepo.Delete(user);
             this.context.Commit();
-        }
+        }        
     }
 }

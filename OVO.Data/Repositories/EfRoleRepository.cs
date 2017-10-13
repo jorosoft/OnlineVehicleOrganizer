@@ -3,6 +3,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OVO.Data.Contracts;
+using Microsoft.AspNet.Identity;
+using OVO.Data.Models;
 
 namespace OVO.Data.Repositories
 {
@@ -15,6 +17,8 @@ namespace OVO.Data.Repositories
             this.context = context;
         }
 
+        public UserManager<User> UserManager => new UserManager<User>(new UserStore<User>(this.context));
+        
         public IQueryable<IdentityRole> All
         {
             get

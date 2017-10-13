@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using OVO.Web.Areas.Administration.Controllers;
 
 namespace OVO.Web.Areas.Administration.ViewModels
 {
@@ -23,5 +25,7 @@ namespace OVO.Web.Areas.Administration.ViewModels
 
         [DataType(dataType: DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
+
+        public IEnumerable<RoleViewModel> Roles { get; set; }
     }
 }
