@@ -10,8 +10,13 @@
 
 @using (@Html.BeginForm("Add", "Models", FormMethod.Post))
 {
-    @Html.LabelFor(x => x.Name);
-    @Html.EditorFor(x => x.Name);
+    <p>
+        @Html.LabelFor(x => x.ManufacturerName)
+        @Html.DropDownListFor(x => x.ManufacturerName, new SelectList(Model.Manufacturers, "Name", "Name"))
+    </p>
+   
+    @Html.LabelFor(x => x.ModelName);
+    @Html.EditorFor(x => x.ModelName);
 
 
 

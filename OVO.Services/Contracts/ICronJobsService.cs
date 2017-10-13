@@ -12,5 +12,7 @@ namespace OVO.Services.Contracts
         void Update(CronJob cronJob);
 
         void Delete(CronJob cronJob);
+
+        CronJob GetDbModel();
     }
 }

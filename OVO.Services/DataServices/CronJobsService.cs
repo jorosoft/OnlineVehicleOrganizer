@@ -38,5 +38,10 @@ namespace OVO.Services.DataServices
             this.cronJobRepo.Delete(cronJob);
             this.context.Commit();
         }
+
+        public CronJob GetDbModel()
+        {
+            return new CronJob();
+        }
     }
 }

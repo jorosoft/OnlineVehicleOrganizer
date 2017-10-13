@@ -38,5 +38,10 @@ namespace OVO.Services.DataServices
             this.vehicleEventsRepo.Delete(vehicleEvent);
             this.context.Commit();
         }
+
+        public VehicleEvent GetDbModel()
+        {
+            return new VehicleEvent();
+        }
     }
 }

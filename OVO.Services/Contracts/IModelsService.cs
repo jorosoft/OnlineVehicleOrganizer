@@ -14,5 +14,7 @@ namespace OVO.Services.Contracts
         void Update(Model model);
 
         void Delete(Model model);
+
+        Model GetDbModel();
     }
 }

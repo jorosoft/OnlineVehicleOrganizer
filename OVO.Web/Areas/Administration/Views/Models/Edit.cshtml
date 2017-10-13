@@ -10,11 +10,11 @@
 
 @using (@Html.BeginForm("Edit", "Models", FormMethod.Post))
 {
-    @Html.LabelFor(x => x.Name);
-    @Html.EditorFor(x => x.Name);
+    @Html.HiddenFor(x => x.Id)
 
-
-
+    @Html.LabelFor(x => x.ModelName);
+    @Html.EditorFor(x => x.ModelName);
+    
     @Html.AntiForgeryToken();
     <button type="submit" class="btn btn-info">Edit</button>
 }

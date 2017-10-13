@@ -10,11 +10,11 @@
 
 <p>Are you sure to delete:</p>
 
-<p>Model: @Model.Name</p>
+<p>Model: @Model.ModelName</p>
 
 @using (@Html.BeginForm("Delete", "Models", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.Name)
+    @Html.HiddenFor(x => x.Id)
     @Html.AntiForgeryToken();
     <button type="submit" class="btn btn-danger">Delete</button>
 }

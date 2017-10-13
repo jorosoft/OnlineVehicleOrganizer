@@ -14,5 +14,7 @@ namespace OVO.Services.Contracts
         void Update(Manufacturer manufacturer);
 
         void Delete(Manufacturer manufacturer);
+
+        Manufacturer GetDbModel();
     }
 }

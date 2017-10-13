@@ -10,6 +10,8 @@
 
 @using (@Html.BeginForm("Edit", "Manufacturers", FormMethod.Post))
 {
+    @Html.HiddenFor(x => x.Id)
+    
     @Html.LabelFor(x => x.Name);
     @Html.EditorFor(x => x.Name);
 

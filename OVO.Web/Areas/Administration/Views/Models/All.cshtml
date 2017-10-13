@@ -10,11 +10,24 @@
 <div>
     <h2>All</h2>
 
+    @Html.ActionLink("Add New Model", "Add", null, new { @class = "btn btn-large btn-success" })
+
     @Html.Grid(Model.Models).Columns(columns =>
         {
             columns.Add(x => x.ManufacturerName).Titled("Manufacturer").SetWidth(200);
             columns.Add(x => x.ModelName).Titled("Model").SetWidth(200);
             columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
-        }).WithPaging(10).EmptyText("No available Models!")
+            columns.Add()
+       .Encoded(false)
+       .Sanitized(false)
+       .SetWidth(50)
+       .RenderValueAs(x => @<div id="edit-btn">@Html.ActionLink("Edit", "Edit", new { modelId = x.Id }, new { @class = "gridbutton" })</div>);
+        columns.Add()
+             .Encoded(false)
+             .Sanitized(false)
+             .SetWidth(50)
+             .RenderValueAs(x => @<div id="delete-btn">@Html.ActionLink("Delete", "Delete", new { modelId = x.Id }, new { @class = "gridbutton" })</div>);
+        }).WithPaging(10).EmptyText("No available Manufacturers!")
+    }).WithPaging(10).EmptyText("No available Models!")
 </div>
 

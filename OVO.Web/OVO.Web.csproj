@@ -246,6 +246,10 @@
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Vehicle\AddVehicleViewModel.cs" />
+    <Compile Include="ViewModels\Vehicle\ManufacturerViewModel.cs" />
+    <Compile Include="ViewModels\Vehicle\ModelViewModel.cs" />
+    <Compile Include="ViewModels\Vehicle\VehiclesListViewModel.cs" />
     <Compile Include="ViewModels\Vehicle\VehicleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -327,7 +331,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Vehicle\Index.cshtml" />
+    <Content Include="Views\Vehicle\All.cshtml" />
     <Content Include="Views\Vehicle\Add.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using OVO.Data.Models;
 using OVO.Services.Contracts;
 using OVO.Web.Areas.Administration.ViewModels;
 using AutoMapper.QueryableExtensions;
@@ -47,9 +44,18 @@ namespace OVO.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(Manufacturer manufacturer)
+        public ActionResult Add(ManufacturerViewModel manufacturer)
         {
-            this.manufacturersService.Add(manufacturer);
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var mf = this.manufacturersService.GetDbModel();
+
+            mf.Name = manufacturer.Name;
+
+            this.manufacturersService.Add(mf);
 
             return this.RedirectToAction("All", "Manufacturers");
         }
@@ -72,9 +78,20 @@ namespace OVO.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Manufacturer manufacturer)
+        public ActionResult Edit(ManufacturerViewModel manufacturer)
         {
-            this.manufacturersService.Update(manufacturer);
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var mf = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturer.Id);
+
+            mf.Name = manufacturer.Name;
+
+            this.manufacturersService.Update(mf);
 
             return this.RedirectToAction("All", "Manufacturers");
         }
@@ -97,9 +114,18 @@ namespace OVO.Web.Areas.Administration.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Manufacturer manufacturer)
+        public ActionResult Delete(ManufacturerViewModel manufacturer)
         {
-            this.manufacturersService.Delete(manufacturer);
+            if (!ModelState.IsValid)
+            {
+                // TODO
+            }
+
+            var mf = this.manufacturersService
+                .GetAllAndDeleted()
+                .SingleOrDefault(x => x.Id == manufacturer.Id);
+
+            this.manufacturersService.Delete(mf);
 
             return this.RedirectToAction("All", "Manufacturers");
         }

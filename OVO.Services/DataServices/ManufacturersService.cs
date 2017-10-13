@@ -43,5 +43,10 @@ namespace OVO.Services.DataServices
             this.manufacturersRepo.Delete(manufacturer);
             this.context.Commit();
         }
+
+        public Manufacturer GetDbModel()
+        {
+            return new Manufacturer();
+        }
     }
 }

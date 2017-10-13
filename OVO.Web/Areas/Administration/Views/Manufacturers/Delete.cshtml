@@ -14,7 +14,7 @@
 
 @using (@Html.BeginForm("Delete", "Manufacturers", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.Name)
+    @Html.HiddenFor(x => x.Id)
     @Html.AntiForgeryToken();
     <button type="submit" class="btn btn-danger">Delete</button>
 }

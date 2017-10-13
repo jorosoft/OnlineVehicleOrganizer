@@ -1,0 +1,21 @@
+﻿@using OVO.Web.ViewModels.Vehicle
+@using GridMvc.Html
+@model VehiclesListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Vehicles</h2>
+
+@Html.ActionLink("Add New Vehicle", "Add", null, new { @class = "btn btn-large btn-success" })
+
+<div>
+    @Html.Grid(Model.Vehicles).Columns(columns =>
+        {
+            columns.Add(x => x.Manufacturer).Titled("Manufacturer").SetWidth(50);
+            columns.Add(x => x.Model).Titled("Model").SetWidth(50);
+            columns.Add(x => x.RegNumber).Titled("Reg Number").SetWidth(50);
+        }).WithPaging(10).EmptyText("No available Vehicles!")
+</div>

@@ -43,5 +43,10 @@ namespace OVO.Services.DataServices
             this.modelsRepo.Delete(model);
             this.context.Commit();
         }
+
+        public Model GetDbModel()
+        {
+            return new Model();
+        }
     }
 }

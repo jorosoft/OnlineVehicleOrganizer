@@ -1,4 +1,6 @@
-﻿
+﻿@using OVO.Web.ViewModels.Vehicle
+@model AddVehicleViewModel
+
 @{
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +8,19 @@
 
 <h2>Add</h2>
 
+@using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(x => x.Vehicle.Manufacturer)
+        @Html.DropDownListFor(x => x.Vehicle.Manufacturer, new SelectList(Model.Manufacturers, "Id", "Name"))
+    </p>
+
+    <p>
+        @Html.LabelFor(x => x.Vehicle.Model)
+        @Html.DropDownListFor(x => x.Vehicle.Model, new SelectList(Model.Models, "Id", "Name"))
+    </p>
+
+
+        @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-success">Add</button>
+}

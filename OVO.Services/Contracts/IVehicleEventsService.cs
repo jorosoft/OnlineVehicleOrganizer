@@ -12,5 +12,7 @@ namespace OVO.Services.Contracts
         void Update(VehicleEvent vehicleEvent);
 
         void Delete(VehicleEvent vehicleEvent);
+
+        VehicleEvent GetDbModel();
     }
 }
