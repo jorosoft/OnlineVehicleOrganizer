@@ -115,8 +115,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebTests\ControllersTests\Account\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\Add_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Administration\Models\Add_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Administration\Models\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Models\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Administration\Users\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Users\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Home\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
