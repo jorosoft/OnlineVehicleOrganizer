@@ -10,9 +10,11 @@
 </head>
 <body>
     <header>
-        <nav div class="navbar navbar-default navbar-static-top" role="navigation">
-            <div class="container">
-                @Html.Partial("_LoginPartial")
+        <nav>
+            <div class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container">
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </nav>
 
@@ -20,16 +22,17 @@
             <div class="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        <a href="/" class="navbar-brand"><img src="~/logo.png" width="100" /></a>
+                        <div id="app-name">@OVO.Web.Resources.Lang.AppName</div>
                     </div>
 
-                    <div class="navbar-collapse collapse">
+                    <div id="navbar" class="navbar-collapse collapse">
                         <div class="menu">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li>@Html.ActionLink(OVO.Web.Resources.Lang.Home, "Index", "Home")</li>
@@ -55,21 +58,26 @@
         </nav>
     </header>
 
-
-
-
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer>            
+            <div >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 f-contact copyright">
+                            <p>&copy; @DateTime.Now.Year - @OVO.Web.Resources.Lang.AppName</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/custom-theme")
-   
-    @RenderSection("scripts", required: false)    
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

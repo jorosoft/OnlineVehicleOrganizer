@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>За продукта</value>
   </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Онлайн МПС Организатор</value>
+  </data>
   <data name="Bulgarian" xml:space="preserve">
     <value>Български</value>
   </data>

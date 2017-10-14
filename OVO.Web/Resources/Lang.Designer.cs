@@ -70,6 +70,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Online Vehicle Organizer.
+        /// </summary>
+        public static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bulgarian.
         /// </summary>
         public static string Bulgarian {
