@@ -84,8 +84,7 @@ namespace OVO.Web.App_Start
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind(typeof(IEfRoleRepository)).To(typeof(EfRoleRepository));
             kernel.Bind<ISaveContext>().To<SaveContext>();
-            kernel.Bind<IMapper>().To<Mapper>().WithConstructorArgument(typeof(IConfigurationProvider));
-            
+            kernel.Bind<IMapper>().To<Mapper>().WithConstructorArgument(typeof(IConfigurationProvider));            
         }
     }
 }

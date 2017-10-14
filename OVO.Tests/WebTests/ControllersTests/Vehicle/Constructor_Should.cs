@@ -1,8 +1,7 @@
-﻿using System.Web.Mvc;
-using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OVO.Services.Contracts;
 using OVO.Web.Controllers;
+using Telerik.JustMock;
 
 namespace OVO.Tests.WebTests.ControllersTests.Vehicle
 {
@@ -13,14 +12,13 @@ namespace OVO.Tests.WebTests.ControllersTests.Vehicle
         public void CreateController_WhenCalled()
         {
             // Arrange & Act
-            var manufacturersServiceStub = new Mock<IManufacturersService>().Object;
-            var modelsServiceStub = new Mock<IModelsService>().Object;
-            var vehiclesServiceStub = new Mock<IVehiclesService>().Object;
+            var manufacturersServiceStub = Mock.Create<IManufacturersService>();
+            var modelsServiceStub = Mock.Create<IModelsService>();
+            var vehiclesServiceStub = Mock.Create<IVehiclesService>();
             var sut = new VehicleController(vehiclesServiceStub, manufacturersServiceStub, modelsServiceStub);
 
             // Assert
             Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<Controller>(sut);
         }
     }
 }

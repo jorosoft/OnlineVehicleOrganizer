@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using Moq;
 using NUnit.Framework;
 using OVO.Services.Contracts;
 using OVO.Web.Controllers;
+using Telerik.JustMock;
 
 namespace OVO.Tests.WebTests.ControllersTests.Account
 {
@@ -13,9 +13,9 @@ namespace OVO.Tests.WebTests.ControllersTests.Account
         public void CreateController_WhenCalled()
         {
             // Arrange & Act
-            var usersServiceStub = new Mock<IUsersService>().Object;
+            var usersServiceStub = Mock.Create<IUsersService>();
             var sut = new AccountController(usersServiceStub);
-            
+
             // Assert
             Assert.IsNotNull(sut);
             Assert.IsInstanceOf<Controller>(sut);

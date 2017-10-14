@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Web.Mvc;
+using NUnit.Framework;
 using OVO.Web.Controllers;
-using System.Web.Mvc;
 
 namespace OVO.Tests.WebTests.ControllersTests.Home
 {
