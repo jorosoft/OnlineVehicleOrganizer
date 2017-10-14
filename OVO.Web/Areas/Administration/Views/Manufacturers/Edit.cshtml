@@ -6,17 +6,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Edit</h3>
+            </div>
+            <div class="panel-body">
 
-@using (@Html.BeginForm("Edit", "Manufacturers", FormMethod.Post))
-{
-    @Html.HiddenFor(x => x.Id)
-    
-    @Html.LabelFor(x => x.Name);
-    @Html.EditorFor(x => x.Name);
+                @using (@Html.BeginForm("Edit", "Manufacturers", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+
+                    @Html.LabelFor(x => x.Name);
+                    @Html.EditorFor(x => x.Name);
 
 
 
-    @Html.AntiForgeryToken();
-    <button type="submit" class="btn btn-info">Edit</button>
-}
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

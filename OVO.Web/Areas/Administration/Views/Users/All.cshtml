@@ -8,10 +8,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <h1>Users</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">All</h3>
+            </div>
+            <div class="panel-body">
 
-    @Html.Grid(Model.Users).Columns(columns =>
+                @Html.Grid(Model.Users).Columns(columns =>
         {
             columns.Add(x => x.Email).Titled("Email").SetWidth(100);
             columns.Add(x => x.Role).Titled("Role").SetWidth(50);
@@ -42,5 +47,7 @@
 
             </div>);
         }).WithPaging(10).EmptyText("No available users!")
+            </div>
+        </div>
+    </div>
 </div>
-

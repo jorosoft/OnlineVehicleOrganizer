@@ -6,15 +6,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Restore</h2>
+<div class="row">
+    <div class="col-md-6 margin-left-2">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Restore</h3>
+            </div>
+            <div class="panel-body">
 
-<p>Are you sure to restore:</p>
+                <p>Are you sure to restore:</p>
 
-<p>Manufacturer: @Model.Name</p>
+                <p>Manufacturer: @Model.Name</p>
 
-@using (@Html.BeginForm("Undelete", "Manufacturers", FormMethod.Post))
-{
-    @Html.HiddenFor(x => x.Id)
-    @Html.AntiForgeryToken();
-    <button type="submit" class="btn btn-success">Restore</button>
-}
+                @using (@Html.BeginForm("Undelete", "Manufacturers", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-success">Restore</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

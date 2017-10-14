@@ -6,15 +6,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Delete</h3>
+            </div>
+            <div class="panel-body">
 
-<p>Are you sure to delete:</p>
+                <p>Are you sure to delete:</p>
 
-<p>Manufacturer: @Model.Name</p>
+                <h4>Manufacturer: @Model.Name</h4>
 
-@using (@Html.BeginForm("Delete", "Manufacturers", FormMethod.Post))
-{
-    @Html.HiddenFor(x => x.Id)
-    @Html.AntiForgeryToken();
-    <button type="submit" class="btn btn-danger">Delete</button>
-}
+                @using (@Html.BeginForm("Delete", "Manufacturers", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

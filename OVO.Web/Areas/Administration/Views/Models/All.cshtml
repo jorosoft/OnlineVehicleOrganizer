@@ -7,12 +7,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <h2>All</h2>
+<div class="row">
+    <div class="col-md-8 margin-left-1">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">All</h3>
+            </div>
+            <div class="panel-body">
 
-    @Html.ActionLink("Add New Model", "Add", null, new { @class = "btn btn-large btn-success" })
+                @Html.ActionLink("Add New Model", "Add", null, new { @class = "btn btn-large btn-info" })
 
-    @Html.Grid(Model.Models).Columns(columns =>
+                @Html.Grid(Model.Models).Columns(columns =>
         {
             columns.Add(x => x.ManufacturerName).Titled("Manufacturer").SetWidth(200);
             columns.Add(x => x.ModelName).Titled("Model").SetWidth(200);
@@ -36,6 +41,9 @@
                     @Html.ActionLink("Undelete", "Undelete", new { modelId = x.Id }, new { @class = "gridbutton" })
                 }
 
-            </div>);        
-    }).WithPaging(10).EmptyText("No available Models!")
+            </div>);
+        }).WithPaging(10).EmptyText("No available Models!")
+            </div>
+        </div>
+    </div>
 </div>

@@ -6,16 +6,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add</h2>
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add</h3>
+            </div>
+            <div class="panel-body">
 
-@using (@Html.BeginForm("Add", "Manufacturers", FormMethod.Post))
-{
-    @Html.LabelFor(x => x.Name);
-    @Html.EditorFor(x => x.Name);
+                @using (@Html.BeginForm("Add", "Manufacturers", FormMethod.Post))
+                {
+                    @Html.LabelFor(x => x.Name);
+                    @Html.EditorFor(x => x.Name);
 
 
 
-    @Html.AntiForgeryToken();
-    <button type="submit" class="btn btn-success">Add</button>
-}
-
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-success">Add</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,33 +7,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <h2>All</h2>
+<div class="row">
+    <div class="col-md-8 margin-left-1">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">All</h3>
+            </div>
+            <div class="panel-body">
 
-    @Html.ActionLink("Add New Manufacturer", "Add", null, new { @class = "btn btn-large btn-success" })
+                @Html.ActionLink("Add New Manufacturer", "Add", null, new { @class = "btn btn-large btn-info" })
 
-    @Html.Grid(Model.Manufacturers).Columns(columns =>
-{
-columns.Add(x => x.Name).Titled("Manufacturer").SetWidth(200);
-columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
-columns.Add()
-       .Encoded(false)
-       .Sanitized(false)
-       .SetWidth(50)
-       .RenderValueAs(x => @<div id="edit-btn">@Html.ActionLink("Edit", "Edit", new { manufacturerId = x.Id }, new { @class = "gridbutton" })</div>);
-columns.Add()
-     .Encoded(false)
-     .Sanitized(false)
-     .SetWidth(50)
-     .RenderValueAs(x => @<div id="delete-btn">
-        @if (!x.IsDeleted) {
-            @Html.ActionLink("Delete", "Delete", new { manufacturerId = x.Id }, new { @class = "gridbutton" })
-        }
-        else
-        {
-            @Html.ActionLink("Undelete", "Undelete", new { manufacturerId = x.Id }, new { @class = "gridbutton" })
-        }
-    </div>);
-}).WithPaging(10).EmptyText("No available Manufacturers!")
+                @Html.Grid(Model.Manufacturers).Columns(columns =>
+           {
+           columns.Add(x => x.Name).Titled("Manufacturer").SetWidth(200);
+           columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
+           columns.Add()
+                  .Encoded(false)
+                  .Sanitized(false)
+                  .SetWidth(50)
+                  .RenderValueAs(x => @<div id="edit-btn">@Html.ActionLink("Edit", "Edit", new { manufacturerId = x.Id }, new { @class = "gridbutton" })</div>);
+           columns.Add()
+                .Encoded(false)
+                .Sanitized(false)
+                .SetWidth(50)
+                .RenderValueAs(x => @<div id="delete-btn">
+                    @if (!x.IsDeleted)
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { manufacturerId = x.Id }, new { @class = "gridbutton" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Undelete", "Undelete", new { manufacturerId = x.Id }, new { @class = "gridbutton" })
+                    }
+                </div>);
+           }).WithPaging(10).EmptyText("No available Manufacturers!")
+            </div>
+        </div>
+    </div>
 </div>
-
