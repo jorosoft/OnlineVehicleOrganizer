@@ -7,19 +7,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="panel panel-success">
+<div class="panel panel-info">
     <div class="panel-heading">
         <h3 class="panel-title">All</h3>
     </div>
     <div class="panel-body">
 
-        @Html.ActionLink("Add New Vehicle", "Add", null, new { @class = "btn btn-large btn-success" })
+        @Html.ActionLink("Add New Vehicle", "Add", null, new { @class = "btn btn-large btn-info" })
 
         <div>
             @Html.Grid(Model.Vehicles).Columns(columns =>
         {
-            columns.Add(x => x.Manufacturer).Titled("Manufacturer").SetWidth(50);
-            columns.Add(x => x.Model).Titled("Model").SetWidth(50);
+            columns.Add(x => x.ManufacturerName).Titled("Manufacturer").SetWidth(50);
+            columns.Add(x => x.ModelName).Titled("Model").SetWidth(50);
             columns.Add(x => x.RegNumber).Titled("Reg Number").SetWidth(50);
         }).WithPaging(10).EmptyText("No available Vehicles!")
         </div>

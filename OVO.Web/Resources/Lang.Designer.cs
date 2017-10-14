@@ -70,6 +70,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Admin Menu.
+        /// </summary>
+        public static string AdminMenu {
+            get {
+                return ResourceManager.GetString("AdminMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Online Vehicle Organizer.
         /// </summary>
         public static string AppName {
@@ -151,11 +160,47 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manufacturers.
+        /// </summary>
+        public static string Manufacturers {
+            get {
+                return ResourceManager.GetString("Manufacturers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Models.
+        /// </summary>
+        public static string Models {
+            get {
+                return ResourceManager.GetString("Models", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Vehicles.
+        /// </summary>
+        public static string MyVehicles {
+            get {
+                return ResourceManager.GetString("MyVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
             }
         }
     }

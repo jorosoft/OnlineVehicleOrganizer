@@ -6,6 +6,7 @@ using OVO.Web.Areas.Administration.ViewModels;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ModelsController : Controller
     {
         private readonly IModelsService modelsService;

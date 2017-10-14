@@ -169,7 +169,6 @@
     <Compile Include="WebTests\ControllersTests\Home\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Manage\Constructor_Should.cs" />
-    <Compile Include="WebTests\ControllersTests\Vehicle\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\Constructor_Should.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginConfirmationViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginListViewModelTests.cs" />

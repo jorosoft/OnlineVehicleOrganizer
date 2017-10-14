@@ -35,8 +35,29 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <div class="menu">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Home, "Index", "Home")</li>
-                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Contact, "Contact", "Home")</li>
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("User"))
+                                {
+                                    <li>@Html.ActionLink(OVO.Web.Resources.Lang.MyVehicles, "All", "Vehicle")</li>
+                                }
+                                else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                @OVO.Web.Resources.Lang.MyVehicles
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Manufacturers, "All", "Manufacturers", new { area = "Administration" }, null)</li>
+                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Models, "All", "Models", new { area = "Administration" }, null)</li>
+                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Users, "All", "Users", new { area = "Administration" }, null)</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                }
+
+                                <li><a href="~/">@OVO.Web.Resources.Lang.Home</a></li>
+                                <li><a href="~/home/contact">@OVO.Web.Resources.Lang.Contact</a></li>
                                 <li>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary">@OVO.Web.Resources.Lang.Language</button>
@@ -44,8 +65,8 @@
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li>@Html.ActionLink(OVO.Web.Resources.Lang.English, "Change", "Language", new { languageAbbreviation = "en" }, null)</li>
-                                            <li>@Html.ActionLink(OVO.Web.Resources.Lang.Bulgarian, "Change", "Language", new { languageAbbreviation = "bg" }, null)</li>
+                                            <li><a href="~/language/change?languageAbbreviation=en">@OVO.Web.Resources.Lang.English</a></li>
+                                            <li><a href="~/language/change?languageAbbreviation=bg">@OVO.Web.Resources.Lang.Bulgarian</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -60,8 +81,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>            
-            <div >
+        <footer>
+            <div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 f-contact copyright">

@@ -6,27 +6,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">Add</h3>
-    </div>
-    <div class="panel-body">
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add</h3>
+            </div>
+            <div class="panel-body">
 
-        @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
-        {
-            <p>
-                @Html.LabelFor(x => x.Vehicle.Manufacturer)
-                @Html.DropDownListFor(x => x.Vehicle.Manufacturer, new SelectList(Model.Manufacturers, "Id", "Name"))
-            </p>
+                @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+                {
+                    <p>
+                        @Html.LabelFor(x => x.Vehicle.Model.Manufacturer.Name)
+                        @Html.DropDownListFor(x => x.Vehicle.Model.Manufacturer.Id, new SelectList(Model.Manufacturers, "Id", "Name"))
+                    </p>
 
-            <p>
-                @Html.LabelFor(x => x.Vehicle.Model)
-                @Html.DropDownListFor(x => x.Vehicle.Model, new SelectList(Model.Models, "Id", "Name"))
-            </p>
+                    <p>
+                        @Html.LabelFor(x => x.Vehicle.Model.Name)
+                        @Html.DropDownListFor(x => x.Vehicle.Model.Id, new SelectList(Model.Models, "Id", "Name"))
+                    </p>
 
+                    <p>
+                        @Html.LabelFor(x => x.Vehicle.RegNumber)
+                        @Html.EditorFor(x => x.Vehicle.RegNumber)
+                    </p>
 
-            @Html.AntiForgeryToken();
-            <button type="submit" class="btn btn-success">Add</button>
-        }
+                    <p>
+                        @Html.LabelFor(x => x.Vehicle.InsuranceDate)
+                        @Html.EditorFor(x => x.Vehicle.InsuranceDate)
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(x => x.Vehicle.ServiceDate)
+                        @Html.EditorFor(x => x.Vehicle.ServiceDate)
+                    </p>
+
+                        @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-success">Add</button>
+                }
+            </div>
+        </div>
     </div>
 </div>

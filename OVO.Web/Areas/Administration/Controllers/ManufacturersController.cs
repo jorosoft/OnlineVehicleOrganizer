@@ -7,6 +7,7 @@ using AutoMapper.QueryableExtensions;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ManufacturersController : Controller
     {
         private readonly IManufacturersService manufacturersService;

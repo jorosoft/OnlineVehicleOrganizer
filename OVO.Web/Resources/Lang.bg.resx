@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>За продукта</value>
   </data>
+  <data name="AdminMenu" xml:space="preserve">
+    <value>Админ Меню</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>Онлайн МПС Организатор</value>
   </data>
@@ -147,7 +150,19 @@
   <data name="Logout" xml:space="preserve">
     <value>Изход</value>
   </data>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>Производители</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Модели</value>
+  </data>
+  <data name="MyVehicles" xml:space="preserve">
+    <value>Моите МПС</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Регистрация</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Потребители</value>
   </data>
 </root>

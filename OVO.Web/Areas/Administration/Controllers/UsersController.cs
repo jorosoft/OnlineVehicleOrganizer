@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         private readonly IUsersService usersService;

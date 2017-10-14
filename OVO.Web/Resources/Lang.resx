@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="AdminMenu" xml:space="preserve">
+    <value>Admin Menu</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>Online Vehicle Organizer</value>
   </data>
@@ -147,7 +150,19 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>Manufacturers</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="MyVehicles" xml:space="preserve">
+    <value>My Vehicles</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
   </data>
 </root>
