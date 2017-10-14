@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ICronJobsService.cs" />
-    <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\IManufacturersService.cs" />
     <Compile Include="Contracts\IModelsService.cs" />
     <Compile Include="Contracts\IRolesService.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="Contracts\IVehicleEventsService.cs" />
     <Compile Include="Contracts\IVehiclesService.cs" />
     <Compile Include="DataServices\CronJobsService.cs" />
-    <Compile Include="DataServices\DataService.cs" />
     <Compile Include="DataServices\ManufacturersService.cs" />
     <Compile Include="DataServices\ModelsService.cs" />
     <Compile Include="DataServices\RolesService.cs" />

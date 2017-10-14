@@ -114,6 +114,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\GetDbModel_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\GetAllAndDeleted_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\GetDbModel_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ManufacturersServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\GetAllAndDeleted_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\GetDbModel_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\ModelsServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\RolesServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\RolesServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\RolesServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\RolesServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\RolesServiceTests\UserManager_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\GetAllAndDeleted_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\UsersServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\GetDbModel_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehicleEventsServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Add_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Delete_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetAll_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetDbModel_Should.cs" />
+    <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Update_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Account\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\Add_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\All_Should.cs" />
@@ -141,6 +184,7 @@
     <Compile Include="WebTests\ViewModelsTests\Administration\ManufacturerViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Administration\ModelsListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Administration\ModelViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Administration\RoleViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Administration\UsersListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Administration\UserViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\AddPhoneNumberViewModelTests.cs" />
@@ -160,6 +204,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OVO.Data.Models\OVO.Data.Models.csproj">
+      <Project>{55683F4A-98CB-4155-BC84-FAE1C69C3D29}</Project>
+      <Name>OVO.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OVO.Data\OVO.Data.csproj">
+      <Project>{5E890BA6-BF63-44E3-BE7F-AF674815E31D}</Project>
+      <Name>OVO.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OVO.Services\OVO.Services.csproj">
       <Project>{3FF5DC77-5979-487B-B689-A8AF04057BDC}</Project>
       <Name>OVO.Services</Name>
