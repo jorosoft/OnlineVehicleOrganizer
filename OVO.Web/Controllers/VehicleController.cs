@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using OVO.Services.Contracts;
 using OVO.Web.ViewModels.Vehicle;
+
 
 namespace OVO.Web.Controllers
 {
@@ -12,17 +14,23 @@ namespace OVO.Web.Controllers
         private readonly IManufacturersService manufacturersService;
         private readonly IModelsService modelsService;
         private readonly IUsersService usersService;
+        private readonly IVehicleEventsService vehicleEventsService;
+        private readonly ICronJobsService cronJobsService;
 
         public VehicleController(
             IVehiclesService vehiclesService,
             IManufacturersService manufacturersService,
             IModelsService modelsService,
-            IUsersService usersService)
+            IUsersService usersService,
+            IVehicleEventsService vehicleEventsService,
+            ICronJobsService cronJobsService)
         {
             this.vehiclesService = vehiclesService;
             this.manufacturersService = manufacturersService;
             this.modelsService = modelsService;
             this.usersService = usersService;
+            this.vehicleEventsService = vehicleEventsService;
+            this.cronJobsService = cronJobsService;
         }
 
         public ActionResult All()
@@ -51,14 +59,6 @@ namespace OVO.Web.Controllers
 
         public ActionResult Add()
         {
-            var manufacturers = this.manufacturersService.GetAll()
-                .Select(x => new ManufacturerViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                })
-                .ToList();
-
             var models = this.modelsService.GetAll()
                 .Select(x => new ModelViewModel
                 {
@@ -69,6 +69,14 @@ namespace OVO.Web.Controllers
                         Id = x.Manufacturer.Id,
                         Name = x.Manufacturer.Name
                     }
+                })
+                .ToList();
+
+            var manufacturers = this.manufacturersService.GetAll()
+                .Select(x => new ManufacturerViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name
                 })
                 .ToList();
 
@@ -106,6 +114,42 @@ namespace OVO.Web.Controllers
 
             this.vehiclesService.Add(entity);
 
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult Details(Guid vehicleId)
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Details(VehicleViewModel vehicle)
+        {
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult AddVehicleEvent(Guid vehicleEventId)
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddVehicleEvent(VehicleEventViewModel vehicleEvent)
+        {
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult AddCronJob(Guid cronJobId)
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddCronJob(CronJobViewModel cronJob)
+        {
             return this.RedirectToAction("All", "Vehicle");
         }
     }

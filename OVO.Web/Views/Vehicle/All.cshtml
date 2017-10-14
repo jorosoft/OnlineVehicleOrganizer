@@ -21,6 +21,11 @@
             columns.Add(x => x.ManufacturerName).Titled("Manufacturer").SetWidth(50);
             columns.Add(x => x.ModelName).Titled("Model").SetWidth(50);
             columns.Add(x => x.RegNumber).Titled("Reg Number").SetWidth(50);
+            columns.Add()
+       .Encoded(false)
+       .Sanitized(false)
+       .SetWidth(50)
+       .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Details", "Details", new { vehicleId = x.Id }, new { @class = "gridbutton" })</div>);
         }).WithPaging(10).EmptyText("No available Vehicles!")
         </div>
     </div>

@@ -16,11 +16,15 @@ namespace OVO.Tests.WebTests.ControllersTests.Vehicle
             var modelsServiceStub = Mock.Create<IModelsService>();
             var vehiclesServiceStub = Mock.Create<IVehiclesService>();
             var usersServiceStub = Mock.Create<IUsersService>();
+            var vehicleEventsServiceStub = Mock.Create<IVehicleEventsService>();
+            var cronJobsServiceStub = Mock.Create<ICronJobsService>();
             var sut = new VehicleController(
-                vehiclesServiceStub, 
-                manufacturersServiceStub, 
+                vehiclesServiceStub,
+                manufacturersServiceStub,
                 modelsServiceStub,
-                usersServiceStub);
+                usersServiceStub,
+                vehicleEventsServiceStub,
+                cronJobsServiceStub);
 
             // Assert
             Assert.IsNotNull(sut);

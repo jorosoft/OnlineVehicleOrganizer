@@ -13,6 +13,7 @@ namespace OVO.Web.ViewModels.Vehicle
 
         public string ManufacturerName { get; set; }
 
+        [Required]
         public string RegNumber { get; set; }
 
         [DataType(DataType.Date)]

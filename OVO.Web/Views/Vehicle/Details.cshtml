@@ -1,24 +1,24 @@
 ﻿@using OVO.Web.ViewModels.Vehicle
-@model AddVehicleViewModel
+@model VehicleViewModel
 
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
     <div class="col-md-4 margin-left-3">
-        <div class="panel panel-success">
+        <div class="panel panel-warning">
             <div class="panel-heading">
-                <h3 class="panel-title">Add</h3>
+                <h3 class="panel-title">Details</h3>
             </div>
             <div class="panel-body">
 
-                @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+                @*@using (@Html.BeginForm("Detils", "Vehicle", FormMethod.Post))
                 {
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.Model.Manufacturer.Name)
-                        @Html.DropDownListFor(x => x.Vehicle.Model.Manufacturer.Id, new SelectList(Model.Manufacturers, "Id", "Name"), new { id = "manufacturer-select" })
+                        @Html.LabelFor(x => x.Model.Manufacturer.Name)
+                        @Html.DropDownListFor(x => x.Model.Manufacturer.Id, new SelectList(Model.Manufacturers, "Id", "Name"), new { id = "manufacturer-select" })
                     </p>
 
                     <p>
@@ -42,13 +42,10 @@
                     </p>
 
                     @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-success">Add</button>
-                }
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                }*@
             </div>
         </div>
     </div>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

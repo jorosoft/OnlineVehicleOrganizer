@@ -28,7 +28,9 @@ namespace OVO.Web
                         "~/Scripts/highlight-selected-menu.js",
                         "~/Scripts/functions.js",
                         "~/Scripts/jquery.easing.1.3.js",
-                        "~/Scripts/jquery.isotope.min.js"));
+                        "~/Scripts/jquery.isotope.min.js",
+                        "~/Scripts/Custom/add-vehicle-link-dropdowns.js"
+                        ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

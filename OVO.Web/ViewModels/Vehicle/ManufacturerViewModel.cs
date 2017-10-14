@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OVO.Web.ViewModels.Vehicle
 {
@@ -7,5 +8,7 @@ namespace OVO.Web.ViewModels.Vehicle
         public Guid Id { get; set; }
 
         public string Name { get; set; }
+
+        public IEnumerable<ModelViewModel> Models { get; set; }
     }
 }
