@@ -26,6 +26,7 @@ namespace OVO.Data.Models
             {
                 return this.models;
             }
+
             set
             {
                 this.models = value;

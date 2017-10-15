@@ -41,6 +41,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.RolesServiceTests
             // Act & Assert
             Mock.Assert(() => saveContextMock.Commit(), Occurs.Once());
         }
-
     }
 }

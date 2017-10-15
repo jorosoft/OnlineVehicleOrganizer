@@ -43,6 +43,7 @@ namespace OVO.Data.Models
             {
                 return this.users;
             }
+
             set
             {
                 this.users = value;
@@ -55,6 +56,7 @@ namespace OVO.Data.Models
             {
                 return this.vehicleEvents;
             }
+
             set
             {
                 this.vehicleEvents = value;
@@ -67,6 +69,7 @@ namespace OVO.Data.Models
             {
                 return this.cronJobs;
             }
+
             set
             {
                 this.cronJobs = value;

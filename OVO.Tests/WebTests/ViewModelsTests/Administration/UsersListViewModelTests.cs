@@ -12,7 +12,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Administration
         {
             // Arrange
             var sut = new UsersListViewModel();
-            var expected = new List<UserViewModel> ();
+            var expected = new List<UserViewModel>();
 
             // Act
             sut.Users = expected;

@@ -9,7 +9,6 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using OVO.Data;
 using OVO.Data.Migrations;
-using OVO.Web.App_Start;
 
 namespace OVO.Web
 {

@@ -172,8 +172,7 @@ namespace OVO.Data.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.User_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Vehicles", t => t.Vehicle_Id, cascadeDelete: true)
                 .Index(t => t.User_Id)
-                .Index(t => t.Vehicle_Id);
-            
+                .Index(t => t.Vehicle_Id);            
         }
         
         public override void Down()

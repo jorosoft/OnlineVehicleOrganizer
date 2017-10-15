@@ -22,7 +22,6 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.CronJobsServiceTests
 
             // Act & Assert
             Mock.Assert(() => repoMock.All, Occurs.Once());
-        }
-    
+        }    
     }
 }

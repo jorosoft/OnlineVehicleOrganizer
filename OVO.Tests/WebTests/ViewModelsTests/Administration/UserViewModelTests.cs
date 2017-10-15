@@ -84,7 +84,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Administration
         {
             // Arrange
             var sut = new UserViewModel();
-            var expected = new DateTime(2017, 05, 02, 12, 0 ,0);
+            var expected = new DateTime(2017, 05, 02, 12, 0 , 0);
 
             // Act
             sut.DeletedOn = expected;

@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using Telerik.JustMock;
 using OVO.Data.Contracts;
 using OVO.Data.Models;
 using OVO.Services.DataServices;
+using Telerik.JustMock;
 
 namespace OVO.Tests.ServicesTests.DataServicesTests.CronJobsServiceTests
 {
@@ -40,6 +40,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.CronJobsServiceTests
             // Act & Assert
             Mock.Assert(() => saveContextMock.Commit(), Occurs.Once());
         }
-
     }
 }

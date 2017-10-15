@@ -23,6 +23,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.VehicleEventsServiceTests
             // Act & Assert
             Mock.Assert(() => repoMock.All, Occurs.Once());
         }
-
     }
 }

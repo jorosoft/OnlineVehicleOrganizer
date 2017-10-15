@@ -4,10 +4,9 @@ using System.Web.Mvc;
 using OVO.Services.Contracts;
 using OVO.Web.ViewModels.Vehicle;
 
-
 namespace OVO.Web.Controllers
 {
-    [Authorize(Roles="User")]
+    [Authorize(Roles = "User")]
     public class VehicleController : Controller
     {
         private readonly IVehiclesService vehiclesService;
@@ -39,7 +38,7 @@ namespace OVO.Web.Controllers
                 .First(x => x.Email == User.Identity.Name);
 
             var vehicles = this.vehiclesService.GetAll()
-                .Where(r => r.Users.All(t => t.Email==currentUser.Email))
+                .Where(r => r.Users.All(t => t.Email == currentUser.Email))
                 .OrderBy(x => x.Model.Manufacturer.Name)
                 .Select(x => new VehicleViewModel
                 {
@@ -162,7 +161,7 @@ namespace OVO.Web.Controllers
             model.Manufacturer = manufacturer;
 
             var currentUser = this.usersService.GetAll()
-                .First(x => x.Email== User.Identity.Name);
+                .First(x => x.Email == User.Identity.Name);
 
             var entity = this.vehiclesService.GetDbModel();
 

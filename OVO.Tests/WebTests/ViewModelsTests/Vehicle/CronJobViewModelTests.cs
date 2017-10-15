@@ -26,7 +26,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Vehicle
         {
             // Arrange
             var sut = new CronJobViewModel();
-            var expected = new DateTime(2017,05, 05, 00, 00, 00);
+            var expected = new DateTime(2017, 05, 05, 00, 00, 00);
 
             // Act
             sut.StartDate = expected;

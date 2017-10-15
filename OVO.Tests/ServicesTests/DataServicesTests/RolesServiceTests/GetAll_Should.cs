@@ -22,6 +22,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.RolesServiceTests
             // Act & Assert
             Mock.Assert(() => repoMock.All, Occurs.Once());
         }
-
     }
 }

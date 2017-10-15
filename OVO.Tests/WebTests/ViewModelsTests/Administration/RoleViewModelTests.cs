@@ -4,7 +4,7 @@ using OVO.Web.Areas.Administration.ViewModels;
 namespace OVO.Tests.WebTests.ViewModelsTests.Administration
 {
     [TestFixture]
-    class RoleViewModelTests
+    public class RoleViewModelTests
     {
         [Test]
         public void IdProperty_ShouldSetCorrectValue_WithCorrectData()

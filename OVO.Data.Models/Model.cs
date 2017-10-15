@@ -5,7 +5,7 @@ using OVO.Data.Models.Abstractions;
 
 namespace OVO.Data.Models
 {
-    public class Model :DBEntity
+    public class Model : DBEntity
     {
         [Required]
         [MinLength(2)]

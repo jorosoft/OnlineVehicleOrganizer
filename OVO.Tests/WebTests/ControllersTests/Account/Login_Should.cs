@@ -17,7 +17,7 @@ namespace OVO.Tests.WebTests.ControllersTests.Account
             var sut = new AccountController(usersServiceStub);
 
             // Act
-            var result = sut.Login("") as ActionResult;
+            var result = sut.Login(string.Empty) as ActionResult;
 
             // Assert
             Assert.IsNotNull(result);

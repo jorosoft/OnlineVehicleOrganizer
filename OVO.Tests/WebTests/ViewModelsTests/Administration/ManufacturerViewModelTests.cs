@@ -7,7 +7,6 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Administration
     [TestFixture]
     public class ManufacturerViewModelTests
     {
-
         [Test]
         public void IdProperty_ShouldSetCorrectValue_WithCorrectData()
         {

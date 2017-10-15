@@ -17,7 +17,7 @@ namespace OVO.Tests.WebTests.ControllersTests.Account
             var sut = new AccountController(usersServiceStub);
 
             // Act
-            var result = sut.ResetPassword("") as ActionResult;
+            var result = sut.ResetPassword(string.Empty) as ActionResult;
 
             // Assert
             Assert.IsNotNull(result);

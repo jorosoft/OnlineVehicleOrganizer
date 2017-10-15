@@ -23,6 +23,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.ManufacturersServiceTests
             // Act & Assert
             Mock.Assert(() => repoMock.AllAndDeleted, Occurs.Once());
         }
-
     }
 }

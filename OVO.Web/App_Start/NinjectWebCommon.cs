@@ -5,9 +5,9 @@ using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Web.Common;
+using OVO.Data;
 using OVO.Data.Contracts;
 using OVO.Data.Repositories;
-using OVO.Data;
 using OVO.Services.Contracts;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(OVO.Web.App_Start.NinjectWebCommon), "Start")]

@@ -317,7 +317,6 @@ namespace OVO.Data.Migrations
                 };
 
             context.Models.AddOrUpdate(models);
-
         }
     }
 }

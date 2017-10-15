@@ -2,8 +2,8 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OVO.Data.Contracts;
-using OVO.Services.Contracts;
 using OVO.Data.Models;
+using OVO.Services.Contracts;
 
 namespace OVO.Services.DataServices
 {

@@ -37,6 +37,7 @@ namespace OVO.Data.Models
             {
                 return this.vehicles;
             }
+
             set
             {
                 this.vehicles = value;

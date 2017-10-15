@@ -40,6 +40,5 @@ namespace OVO.Tests.ServicesTests.DataServicesTests.VehicleEventsServiceTests
             // Act & Assert
             Mock.Assert(() => saveContextMock.Commit(), Occurs.Once());
         }
-
     }
 }

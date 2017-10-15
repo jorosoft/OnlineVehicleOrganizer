@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OVO.Data.Contracts;
-using Microsoft.AspNet.Identity;
 using OVO.Data.Models;
 
 namespace OVO.Data.Repositories
@@ -31,7 +31,7 @@ namespace OVO.Data.Repositories
         {
             get
             {
-                return context;
+                return this.context;
             }
         }
 

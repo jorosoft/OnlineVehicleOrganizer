@@ -34,6 +34,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Vehicle
             // Assert
             Assert.AreEqual(expected, sut.Date);
         }
+
         [Test]
         public void NameProperty_ShouldSetCorrectValue_WithCorrectData()
         {
@@ -47,6 +48,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Vehicle
             // Assert
             Assert.AreEqual(expected, sut.Name);
         }
+
         [Test]
         public void DescriptionProperty_ShouldSetCorrectValue_WithCorrectData()
         {
@@ -60,6 +62,7 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Vehicle
             // Assert
             Assert.AreEqual(expected, sut.Description);
         }
+
         [Test]
         public void VehicleIdProperty_ShouldSetCorrectValue_WithCorrectData()
         {
