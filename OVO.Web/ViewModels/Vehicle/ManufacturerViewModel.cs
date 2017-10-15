@@ -8,7 +8,5 @@ namespace OVO.Web.ViewModels.Vehicle
         public Guid Id { get; set; }
 
         public string Name { get; set; }
-
-        public IEnumerable<ModelViewModel> Models { get; set; }
     }
 }

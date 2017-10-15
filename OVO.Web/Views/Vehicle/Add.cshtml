@@ -23,7 +23,13 @@
 
                     <p>
                         @Html.LabelFor(x => x.Vehicle.Model.Name)
-                        @Html.DropDownListFor(x => x.Vehicle.Model.Id, new SelectList(Model.Models, "Id", "Name"), new { id = "model-select" })
+                        <select id="model-select" name="Vehicle.Model.Id">
+                            <option disabled selected>Select model</option>
+                            @foreach (var mod in Model.Models)
+                            {
+                                <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
+                            }
+                        </select>
                     </p>
 
                     <p>

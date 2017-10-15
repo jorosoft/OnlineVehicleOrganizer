@@ -24,11 +24,7 @@ namespace OVO.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/custom-theme").Include(
-                        "~/Scripts/highlight-selected-menu.js",
-                        "~/Scripts/functions.js",
-                        "~/Scripts/jquery.easing.1.3.js",
-                        "~/Scripts/jquery.isotope.min.js",
+            bundles.Add(new ScriptBundle("~/bundles/custom-theme").Include(                        
                         "~/Scripts/Custom/add-vehicle-link-dropdowns.js"
                         ));
 
