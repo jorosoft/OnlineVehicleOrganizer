@@ -8,7 +8,7 @@ using OVO.Services.Contracts;
 namespace OVO.Tests.ServicesTests.DataServicesTests.VehicleEventsServiceTests
 {
     [TestFixture]
-    class GetDbModel_Should
+    public class GetDbModel_Should
     {
         [Test]
         public void CreateDbModelInstance_WhenCalled()

@@ -157,7 +157,14 @@
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetAll_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetDbModel_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Update_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\ExternalLoginFailure_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\ForgotPasswordConfirmation_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\ForgotPassword_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Account\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\Login_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\Register_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\ResetPasswordConfirmation_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Account\ResetPassword_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\Add_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Manufacturers\Constructor_Should.cs" />
@@ -166,10 +173,16 @@
     <Compile Include="WebTests\ControllersTests\Administration\Models\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Users\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Users\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Home\Contact_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Home\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Manage\ChangePassword_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Manage\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Manage\SetPassword_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\AddCronJob_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\Add_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Vehicle\AddVehicleEvent_Should.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginConfirmationViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ForgotPasswordViewModelTests.cs" />
@@ -194,10 +207,15 @@
     <Compile Include="WebTests\ViewModelsTests\Manage\ManageLoginsViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\SetPasswordViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Manage\VerifyPhoneNumberViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\CronJobViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\ManufacturerViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\ModelViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleEventViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleExtendedViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\VehiclesListViewModelTests.cs" />
+    <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleViewModelTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebTests\ViewModelsTests\Vehicle\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
