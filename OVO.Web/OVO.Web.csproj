@@ -279,6 +279,9 @@
     <Content Include="Areas\Administration\Views\Users\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Undelete.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\ovoapp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ovoapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Custom\add-vehicle-link-dropdowns.js" />
     <Content Include="Scripts\gridmvc.js" />

@@ -13,7 +13,7 @@ namespace OVO.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710042108189_Initial"; }
+            get { return "201710152234585_Initial"; }
         }
         
         string IMigrationMetadata.Source

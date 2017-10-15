@@ -61,29 +61,9 @@
     <Compile Include="Contracts\IEfRepository.cs" />
     <Compile Include="Contracts\IEfRoleRepository.cs" />
     <Compile Include="Contracts\ISaveContext.cs" />
-    <Compile Include="Migrations\201710042108189_Initial.cs" />
-    <Compile Include="Migrations\201710042108189_Initial.Designer.cs">
-      <DependentUpon>201710042108189_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710091807014_Add Db Tables.cs" />
-    <Compile Include="Migrations\201710091807014_Add Db Tables.Designer.cs">
-      <DependentUpon>201710091807014_Add Db Tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710091825113_Add Some DB Restrictions.cs" />
-    <Compile Include="Migrations\201710091825113_Add Some DB Restrictions.Designer.cs">
-      <DependentUpon>201710091825113_Add Some DB Restrictions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710121626002_update DB.cs" />
-    <Compile Include="Migrations\201710121626002_update DB.Designer.cs">
-      <DependentUpon>201710121626002_update DB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710121858470_Update DB FKs.cs" />
-    <Compile Include="Migrations\201710121858470_Update DB FKs.Designer.cs">
-      <DependentUpon>201710121858470_Update DB FKs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710121938216_Update DB restrictions.cs" />
-    <Compile Include="Migrations\201710121938216_Update DB restrictions.Designer.cs">
-      <DependentUpon>201710121938216_Update DB restrictions.cs</DependentUpon>
+    <Compile Include="Migrations\201710152234585_Initial.cs" />
+    <Compile Include="Migrations\201710152234585_Initial.Designer.cs">
+      <DependentUpon>201710152234585_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OVOMsSqlDbContext.cs" />
@@ -103,26 +83,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710042108189_Initial.resx">
-      <DependentUpon>201710042108189_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710091807014_Add Db Tables.resx">
-      <DependentUpon>201710091807014_Add Db Tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710091825113_Add Some DB Restrictions.resx">
-      <DependentUpon>201710091825113_Add Some DB Restrictions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710121626002_update DB.resx">
-      <DependentUpon>201710121626002_update DB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710121858470_Update DB FKs.resx">
-      <DependentUpon>201710121858470_Update DB FKs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710121938216_Update DB restrictions.resx">
-      <DependentUpon>201710121938216_Update DB restrictions.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710152234585_Initial.resx">
+      <DependentUpon>201710152234585_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
