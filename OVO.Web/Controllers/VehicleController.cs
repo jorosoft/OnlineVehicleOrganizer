@@ -324,5 +324,84 @@ namespace OVO.Web.Controllers
                         
             return this.RedirectToAction("All", "Vehicle");
         }
+
+        public ActionResult EditVehicleEvent(Guid vehicleEventId)
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditVehicleEvent(VehicleEventViewModel vehicleEvent)
+        {
+            
+
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult EditCronJob(Guid cronJobId)
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCronJob(CronJobViewModel cronJob)
+        {
+            
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult DeleteVehicleEvent(Guid vehicleEventId)
+        {
+            var viewModel = this.vehicleEventsService.GetAll()
+                .Select(x => new VehicleEventViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Description = x.Description
+                })
+                .First(x => x.Id == vehicleEventId);
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteVehicleEvent(VehicleEventViewModel vehicleEvent)
+        {
+            var entity = this.vehicleEventsService.GetAll()
+                .First(x => x.Id == vehicleEvent.Id);
+
+            this.vehicleEventsService.Delete(entity);
+
+            return this.RedirectToAction("All", "Vehicle");
+        }
+
+        public ActionResult DeleteCronJob(Guid cronJobId)
+        {
+            var viewModel = this.cronJobsService.GetAll()
+                .Select(x => new CronJobViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Description = x.Description
+                })
+                .First(x => x.Id == cronJobId);
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCronJob(CronJobViewModel cronJob)
+        {
+            var entity = this.cronJobsService.GetAll()
+                .First(x => x.Id == cronJob.Id);
+
+            this.cronJobsService.Delete(entity);
+
+            return this.RedirectToAction("All", "Vehicle");
+        }
     }
 }

@@ -340,6 +340,10 @@
     <Content Include="Views\Vehicle\Edit.cshtml" />
     <Content Include="Views\Vehicle\Delete.cshtml" />
     <Content Include="Views\Vehicle\Details.cshtml" />
+    <Content Include="Views\Vehicle\EditVehicleEvent.cshtml" />
+    <Content Include="Views\Vehicle\EditCronJob.cshtml" />
+    <Content Include="Views\Vehicle\DeleteVehicleEvent.cshtml" />
+    <Content Include="Views\Vehicle\DeleteCronJob.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
