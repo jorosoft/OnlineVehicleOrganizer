@@ -6,5 +6,40 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditVehicleEvent</h2>
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Edit</h3>
+            </div>
+            <div class="panel-body">
+
+                @using (@Html.BeginForm("EditVehicleEvent", "Vehicle", FormMethod.Post))
+                {
+                    <p>
+                        @Html.LabelFor(x => x.Name)
+                        @Html.EditorFor(x => x.Name)
+                    </p>
+
+                        <p>
+                            @Html.LabelFor(x => x.Date)
+                            @Html.EditorFor(x => x.Date)
+                        </p>
+
+                        <p>
+                            @Html.LabelFor(x => x.Description)
+                            @Html.TextAreaFor(x => x.Description)
+                        </p>
+
+                        @Html.HiddenFor(x => x.Id);
+                        @Html.HiddenFor(x => x.VehicleId);
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
