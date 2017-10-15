@@ -148,6 +148,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(VehicleViewModel vehicle)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicle);
+            }
+
             var manufacturer = this.manufacturersService.GetAll()
                 .First(x => x.Id == vehicle.Model.Manufacturer.Id);
 
@@ -221,6 +226,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(VehicleViewModel vehicle)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicle);
+            }
+
             var manufacturer = this.manufacturersService.GetAll()
                 .First(x => x.Id == vehicle.Model.Manufacturer.Id);
 
@@ -261,6 +271,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(VehicleViewModel vehicle)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicle);
+            }
+
             var vehicleToDelete = this.vehiclesService.GetAll()
                 .First(x => x.Id == vehicle.Id);
 
@@ -283,6 +298,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddVehicleEvent(VehicleEventViewModel vehicleEvent)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicleEvent);
+            }
+
             var vehicle = this.vehiclesService.GetAll()
                 .First(x => x.Id == vehicleEvent.VehicleId);
 
@@ -310,6 +330,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddCronJob(CronJobViewModel cronJob)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(cronJob);
+            }
+
             var vehicle = this.vehiclesService.GetAll()
                 .First(x => x.Id == cronJob.VehicleId);
 
@@ -345,6 +370,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditVehicleEvent(VehicleEventViewModel vehicleEvent)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicleEvent);
+            }
+
             var entity = this.vehicleEventsService.GetAll()
                 .First(x => x.Id == vehicleEvent.Id);
             entity.Name = vehicleEvent.Name;
@@ -377,6 +407,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditCronJob(CronJobViewModel cronJob)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(cronJob);
+            }
+
             var entity = this.cronJobsService.GetAll()
                 .First(x => x.Id == cronJob.Id);
             entity.Name = cronJob.Name;
@@ -407,6 +442,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteVehicleEvent(VehicleEventViewModel vehicleEvent)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(vehicleEvent);
+            }
+
             var entity = this.vehicleEventsService.GetAll()
                 .First(x => x.Id == vehicleEvent.Id);
 
@@ -433,6 +473,11 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteCronJob(CronJobViewModel cronJob)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.View(cronJob);
+            }
+
             var entity = this.cronJobsService.GetAll()
                 .First(x => x.Id == cronJob.Id);
 

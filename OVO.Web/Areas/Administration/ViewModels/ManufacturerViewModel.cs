@@ -7,6 +7,7 @@ namespace OVO.Web.Areas.Administration.ViewModels
     {
         public Guid Id { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         [Display(Name="Name")]
         public string Name { get; set; }
 

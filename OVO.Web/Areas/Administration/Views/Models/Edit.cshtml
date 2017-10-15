@@ -20,6 +20,7 @@
 
                     @Html.LabelFor(x => x.ModelName);
                     @Html.EditorFor(x => x.ModelName);
+                    @Html.ValidationMessageFor(x => x.ModelName, "", new { @class = "text-danger" })
 
                     @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-warning">Edit</button>
@@ -28,3 +29,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

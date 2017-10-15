@@ -19,16 +19,19 @@
                     <p>
                         @Html.LabelFor(x => x.Name)
                         @Html.EditorFor(x => x.Name)
+                        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
                         @Html.LabelFor(x => x.StartDate)
                         @Html.EditorFor(x => x.StartDate)
+                        @Html.ValidationMessageFor(x => x.StartDate, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
                         @Html.LabelFor(x => x.PeriodInMonths)
                         @Html.EditorFor(x => x.PeriodInMonths)
+                        @Html.ValidationMessageFor(x => x.PeriodInMonths, "", new { @class = "text-danger" })
                     </p>
 
                     <p>

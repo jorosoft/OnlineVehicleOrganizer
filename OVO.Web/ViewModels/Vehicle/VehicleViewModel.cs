@@ -10,17 +10,21 @@ namespace OVO.Web.ViewModels.Vehicle
         
         public ModelViewModel Model { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string ModelName { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string ManufacturerName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Required")]
         public string RegNumber { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime InsuranceDate { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ServiceDate { get; set; }

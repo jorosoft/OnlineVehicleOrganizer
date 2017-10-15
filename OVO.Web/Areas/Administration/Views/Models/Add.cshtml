@@ -19,12 +19,12 @@
                     <p>
                         @Html.LabelFor(x => x.ManufacturerName)
                         @Html.DropDownListFor(x => x.ManufacturerName, new SelectList(Model.Manufacturers, "Name", "Name"))
+                        @Html.ValidationMessageFor(x => x.ManufacturerName, "", new { @class = "text-danger" })
                     </p>
 
                     @Html.LabelFor(x => x.ModelName);
                     @Html.EditorFor(x => x.ModelName);
-
-
+                    @Html.ValidationMessageFor(x => x.ModelName, "", new { @class = "text-danger" })
 
                     @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-success">Add</button>
@@ -33,3 +33,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

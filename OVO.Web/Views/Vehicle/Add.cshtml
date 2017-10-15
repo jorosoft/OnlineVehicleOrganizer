@@ -25,6 +25,7 @@
                                 <option value="@man.Id">@man.Name</option>
                             }
                         </select>
+                        @Html.ValidationMessageFor(x => x.Vehicle.Model.Manufacturer.Name, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
@@ -36,24 +37,30 @@
                                 <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
                             }
                         </select>
+                        @Html.ValidationMessageFor(x => x.Vehicle.Model.Name, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
+
                         @Html.LabelFor(x => x.Vehicle.RegNumber)
                         @Html.EditorFor(x => x.Vehicle.RegNumber)
+                        @Html.ValidationMessageFor(x => x.Vehicle.RegNumber, "", new { @class = "text-danger" })
+
                     </p>
 
                     <p>
                         @Html.LabelFor(x => x.Vehicle.InsuranceDate)
                         @Html.EditorFor(x => x.Vehicle.InsuranceDate)
+                        @Html.ValidationMessageFor(x => x.Vehicle.InsuranceDate, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
                         @Html.LabelFor(x => x.Vehicle.ServiceDate)
                         @Html.EditorFor(x => x.Vehicle.ServiceDate)
+                        @Html.ValidationMessageFor(x => x.Vehicle.ServiceDate, "", new { @class = "text-danger" })
                     </p>
 
-                    @Html.AntiForgeryToken();
+                            @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-success">Add</button>
                 }
             </div>

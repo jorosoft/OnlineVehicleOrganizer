@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using OVO.Web.Areas.Administration.Controllers;
 
 namespace OVO.Web.Areas.Administration.ViewModels
 {
@@ -9,10 +8,13 @@ namespace OVO.Web.Areas.Administration.ViewModels
     {
         public string Id { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string Username { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string Role { get; set; }
 
         public bool IsDeleted { get; set; }

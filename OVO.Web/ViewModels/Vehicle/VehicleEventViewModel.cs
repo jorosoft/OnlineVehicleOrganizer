@@ -7,10 +7,12 @@ namespace OVO.Web.ViewModels.Vehicle
     {
         public Guid Id { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         public string Name { get; set; }
 
         public string Description { get; set; }

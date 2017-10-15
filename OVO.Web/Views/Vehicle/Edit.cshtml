@@ -22,16 +22,14 @@
                             <option value="default" selected>Select model</option>
                             @foreach (var man in Model.Manufacturers)
                             {
-                                <option value="@man.Id" 
-                                        @if (man.Name == Model.Vehicle.ManufacturerName)
-                                        { 
-                                            @: selected="selected"
-                                        }>
+                                <option value="@man.Id"
+                                        @if (man.Name == Model.Vehicle.ManufacturerName) { @: selected="selected"
+                                                                                }>
                                     @man.Name
                                 </option>
-                                }
-                            </select>
-                        </p>
+                            }
+                        </select>
+                    </p>
 
                         <p>
                             @Html.LabelFor(x => x.Vehicle.Model.Name)
@@ -41,7 +39,7 @@
                                 {
                                     <option value="@mod.Id" man="@mod.Manufacturer.Id"
                                             @if (mod.Name == Model.Vehicle.ModelName) { @: selected="selected"
-                                                                                    }>
+                                                                                                                                }>
                                         @mod.Name
                                     </option>
                                 }
@@ -51,30 +49,33 @@
                         <p>
                             @Html.LabelFor(x => x.Vehicle.RegNumber)
                             @Html.EditorFor(x => x.Vehicle.RegNumber)
+                            @Html.ValidationMessageFor(x => x.Vehicle.RegNumber, "", new { @class = "text-danger" })
                         </p>
 
                         <p>
                             @Html.LabelFor(x => x.Vehicle.InsuranceDate)
                             @Html.EditorFor(x => x.Vehicle.InsuranceDate)
+                            @Html.ValidationMessageFor(x => x.Vehicle.InsuranceDate, "", new { @class = "text-danger" })
                         </p>
 
                         <p>
                             @Html.LabelFor(x => x.Vehicle.ServiceDate)
                             @Html.EditorFor(x => x.Vehicle.ServiceDate)
+                            @Html.ValidationMessageFor(x => x.Vehicle.ServiceDate, "", new { @class = "text-danger" })
                         </p>
 
                         @Html.HiddenFor(x => x.Vehicle.Id);
-                        @Html.AntiForgeryToken();
-                        <button type="submit" class="btn btn-warning">Edit</button>
-                        }
-                    </div>
-                </div>
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                }
             </div>
         </div>
+    </div>
+</div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
 
 

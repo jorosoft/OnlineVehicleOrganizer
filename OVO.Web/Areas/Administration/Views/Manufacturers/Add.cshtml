@@ -18,8 +18,7 @@
                 {
                     @Html.LabelFor(x => x.Name);
                     @Html.EditorFor(x => x.Name);
-
-
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
 
                     @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-success">Add</button>
@@ -28,3 +27,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
