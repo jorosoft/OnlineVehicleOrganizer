@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AutoMapper.QueryableExtensions;
 using OVO.Web.Areas.Administration.ViewModels;
 using OVO.Services.Contracts;
 using System.Web.Security;

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.Mvc;
 using OVO.Services.Contracts;
 using OVO.Web.Areas.Administration.ViewModels;
-using AutoMapper.QueryableExtensions;
 
 namespace OVO.Web.Areas.Administration.Controllers
 {

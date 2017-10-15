@@ -25,9 +25,6 @@ namespace OVO.Web
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
-
-            var mapper = new AutoMapperConfig();
-            mapper.Execute(Assembly.GetExecutingAssembly());
         }
 
         protected void Application_BeginRequest(object sender, EventArgs ev)
