@@ -6,5 +6,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AddCronJob</h2>
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add CronJob</h3>
+            </div>
+            <div class="panel-body">
+
+                @using (@Html.BeginForm("AddCronJob", "Vehicle", FormMethod.Post))
+                {
+                    <p>
+                        @Html.LabelFor(x => x.Name)
+                        @Html.EditorFor(x => x.Name)
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(x => x.StartDate)
+                        @Html.EditorFor(x => x.StartDate)
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(x => x.PeriodInMonths)
+                        @Html.EditorFor(x => x.PeriodInMonths)
+                    </p>
+
+                    <p>
+                        @Html.LabelFor(x => x.Description)
+                        @Html.TextAreaFor(x => x.Description)
+                    </p>
+
+                    @Html.HiddenFor(x => x.VehicleId)
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-success">Add CronJob</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
 

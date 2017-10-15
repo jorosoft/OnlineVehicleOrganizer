@@ -29,6 +29,7 @@ namespace OVO.Web.Areas.Administration.Controllers
             var users = this.usersService
                 .GetAllAndDeleted()
                 .ToList()
+                .OrderBy(x => x.Email)
                 .Select(x => new UserViewModel
                 {
                     Username = x.UserName,

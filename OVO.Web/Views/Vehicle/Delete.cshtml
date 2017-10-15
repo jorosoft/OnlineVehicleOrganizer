@@ -1,0 +1,31 @@
+﻿@using OVO.Web.ViewModels.Vehicle
+@model VehicleViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 margin-left-3">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Delete</h3>
+            </div>
+            <div class="panel-body">
+
+                <p>Are you sure to delete:</p>
+
+                <h4>Vehicle: @Model.RegNumber - @Model.ManufacturerName @Model.ModelName</h4>
+
+                @using (@Html.BeginForm("Delete", "Vehicle", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.AntiForgeryToken();
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

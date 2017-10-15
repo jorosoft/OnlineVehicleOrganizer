@@ -1,4 +1,5 @@
 ﻿@using OVO.Web.ViewModels.Vehicle
+@using GridMvc.Html
 @model VehicleViewModel
 
 @{
@@ -7,45 +8,69 @@
 }
 
 <div class="row">
-    <div class="col-md-4 margin-left-3">
-        <div class="panel panel-warning">
+    <div class="col-md-12">
+        <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Details</h3>
+                <span class="panel-title">Details for: @Model.RegNumber --- @Model.ManufacturerName --- @Model.ModelName</span>
             </div>
             <div class="panel-body">
 
-                @*@using (@Html.BeginForm("Detils", "Vehicle", FormMethod.Post))
-                {
-                    <p>
-                        @Html.LabelFor(x => x.Model.Manufacturer.Name)
-                        @Html.DropDownListFor(x => x.Model.Manufacturer.Id, new SelectList(Model.Manufacturers, "Id", "Name"), new { id = "manufacturer-select" })
-                    </p>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <span class="panel-title">Vehicle Events</span>
+                    </div>
+                    <div class="panel-body">
+                        @Html.ActionLink("Add New Event", "AddVehicleEvent", new { vehicleId = Model.Id}, new { @class = "btn btn-large btn-info" })
+                        <div>
+                            @Html.Grid(Model.VehicleEvents).Columns(columns =>
+                                 {
+                                     columns.Add(x => x.Date).Titled("Date").SetWidth(50);
+                                     columns.Add(x => x.Name).Titled("Name").SetWidth(50);
+                                     columns.Add(x => x.Description).Titled("Description").SetWidth(200);
+                                     columns.Add()
+                                .Encoded(false)
+                                .Sanitized(false)
+                                .SetWidth(50)
+                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Edit", "EditVehicleEvent", new { vehicleEventId = x.Id }, new { @class = "gridbutton" })</div>);
+                                     columns.Add()
+                                .Encoded(false)
+                                .Sanitized(false)
+                                .SetWidth(50)
+                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Delete", "DeleteVehicleEvent", new { vehicleEventId = x.Id }, new { @class = "gridbutton" })</div>);
+                                 }).WithPaging(5).Sortable().EmptyText("No available Vehicle Events!")
+                        </div>
+                    </div>
+                </div>
 
-                    <p>
-                        @Html.LabelFor(x => x.Vehicle.Model.Name)
-                        @Html.DropDownListFor(x => x.Vehicle.Model.Id, new SelectList(Model.Models, "Id", "Name"), new { id = "model-select" })
-                    </p>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <span class="panel-title">Vehicle CronJobs</span>
+                    </div>
+                    <div class="panel-body">
+                        @Html.ActionLink("Add New CronJob", "AddCronJob", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
+                        <div>
+                            @Html.Grid(Model.CronJobs).Columns(columns =>
+                       {
+                       columns.Add(x => x.Name).Titled("Name").SetWidth(50);
+                       columns.Add(x => x.StartDate).Titled("Start Date").SetWidth(50);
+                       columns.Add(x => x.PeriodInMonths).Titled("Period (months)").SetWidth(50);
+                       columns.Add(x => x.Description).Titled("Description").SetWidth(200);
+                       columns.Add()
+                  .Encoded(false)
+                  .Sanitized(false)
+                  .SetWidth(50)
+                  .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Edit", "EditCronJob", new { cronJobId = x.Id }, new { @class = "gridbutton" })</div>);
+                       columns.Add()
+                  .Encoded(false)
+                  .Sanitized(false)
+                  .SetWidth(50)
+                  .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Delete", "DeleteCronJob", new { cronJobId = x.Id }, new { @class = "gridbutton" })</div>);
+                       }).WithPaging(5).Sortable().EmptyText("No available CronJobs!")
+                        </div>
+                    </div>
+                </div>
 
-                    <p>
-                        @Html.LabelFor(x => x.Vehicle.RegNumber)
-                        @Html.EditorFor(x => x.Vehicle.RegNumber)
-                    </p>
-
-                    <p>
-                        @Html.LabelFor(x => x.Vehicle.InsuranceDate)
-                        @Html.EditorFor(x => x.Vehicle.InsuranceDate)
-                    </p>
-
-                    <p>
-                        @Html.LabelFor(x => x.Vehicle.ServiceDate)
-                        @Html.EditorFor(x => x.Vehicle.ServiceDate)
-                    </p>
-
-                    @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-warning">Edit</button>
-                }*@
             </div>
         </div>
     </div>
 </div>
-

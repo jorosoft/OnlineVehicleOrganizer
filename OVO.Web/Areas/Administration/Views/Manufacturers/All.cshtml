@@ -40,7 +40,7 @@
                         @Html.ActionLink("Undelete", "Undelete", new { manufacturerId = x.Id }, new { @class = "gridbutton" })
                     }
                 </div>);
-           }).WithPaging(10).EmptyText("No available Manufacturers!")
+           }).WithPaging(10).Sortable().EmptyText("No available Manufacturers!")
             </div>
         </div>
     </div>

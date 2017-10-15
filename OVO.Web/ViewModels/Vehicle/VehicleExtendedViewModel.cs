@@ -2,7 +2,7 @@
 
 namespace OVO.Web.ViewModels.Vehicle
 {
-    public class AddVehicleViewModel
+    public class VehicleExtendedViewModel
     {
         public IEnumerable<ManufacturerViewModel> Manufacturers { get; set; }
 
