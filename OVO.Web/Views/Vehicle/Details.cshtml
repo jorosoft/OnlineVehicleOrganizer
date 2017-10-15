@@ -14,7 +14,12 @@
                 <span class="panel-title">Details for: @Model.RegNumber --- @Model.ManufacturerName --- @Model.ModelName</span>
             </div>
             <div class="panel-body">
-
+                <div>
+                    <h4>
+                        <span>Insurance Date: </span> <span class="label label-default">@Model.InsuranceDate.ToShortDateString()</span>
+                        <span>Service Date: </span> <span class="label label-default">@Model.ServiceDate.ToShortDateString()</span>
+                    </h4>              
+                <div>
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <span class="panel-title">Vehicle Events</span>

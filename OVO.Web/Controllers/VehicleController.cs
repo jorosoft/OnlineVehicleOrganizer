@@ -58,6 +58,60 @@ namespace OVO.Web.Controllers
             return this.View(viewModel);
         }
 
+        public ActionResult Details(Guid vehicleId)
+        {
+            var vehicleEvents = this.vehicleEventsService.GetAll()
+                .Where(x => x.Vehicle.Id == vehicleId)
+                .OrderByDescending(x => x.Date)
+                .ToList();
+
+            var cronJobs = this.cronJobsService.GetAll()
+                .Where(x => x.Vehicle.Id == vehicleId)
+                .OrderBy(x => x.Name)
+                .ToList();
+
+            var vehicle = this.vehiclesService.GetAll()
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    ModelName = x.Model.Name,
+                    ManufacturerName = x.Model.Manufacturer.Name,
+                    RegNumber = x.RegNumber,
+                    InsuranceDate = x.InsuranceDate,
+                    ServiceDate = x.ServiceDate
+                })
+                .First(x => x.Id == vehicleId);
+
+            var viewModel = new VehicleViewModel
+            {
+                Id = vehicle.Id,
+                ModelName = vehicle.ModelName,
+                ManufacturerName = vehicle.ManufacturerName,
+                RegNumber = vehicle.RegNumber,
+                InsuranceDate = vehicle.InsuranceDate,
+                ServiceDate = vehicle.ServiceDate,
+                VehicleEvents = vehicleEvents.Select(v => new VehicleEventViewModel
+                {
+                    Id = v.Id,
+                    Name = v.Name,
+                    Date = v.Date,
+                    Description = v.Description,
+                    VehicleId = vehicleId
+                }),
+                CronJobs = cronJobs.Select(c => new CronJobViewModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    StartDate = c.StartDate,
+                    Description = c.Description,
+                    PeriodInMonths = c.PeriodInMonths,
+                    VehicleId = vehicleId
+                })
+            };
+
+            return this.View(viewModel);
+        }
+
         public ActionResult Add()
         {
             var models = this.modelsService.GetAll()
@@ -116,61 +170,7 @@ namespace OVO.Web.Controllers
             this.vehiclesService.Add(entity);
 
             return this.RedirectToAction("All", "Vehicle");
-        }
-
-        public ActionResult Details(Guid vehicleId)
-        {
-            var vehicleEvents = this.vehicleEventsService.GetAll()
-                .Where(x => x.Vehicle.Id == vehicleId) 
-                .OrderByDescending(x => x.Date)               
-                .ToList();
-
-            var cronJobs = this.cronJobsService.GetAll()
-                .Where(x => x.Vehicle.Id == vehicleId) 
-                .OrderBy(x => x.Name)               
-                .ToList();
-
-            var vehicle = this.vehiclesService.GetAll()
-                .Select(x => new
-                {
-                    Id = x.Id,
-                    ModelName = x.Model.Name,
-                    ManufacturerName = x.Model.Manufacturer.Name,
-                    RegNumber = x.RegNumber,
-                    InsuranceDate = x.InsuranceDate,
-                    ServiceDate = x.ServiceDate
-                })                
-                .First(x => x.Id == vehicleId);
-
-            var viewModel = new VehicleViewModel
-            {
-                Id = vehicle.Id,
-                ModelName = vehicle.ModelName,
-                ManufacturerName = vehicle.ManufacturerName,
-                RegNumber = vehicle.RegNumber,
-                InsuranceDate = vehicle.InsuranceDate,
-                ServiceDate = vehicle.ServiceDate,
-                VehicleEvents = vehicleEvents.Select(v => new VehicleEventViewModel
-                {
-                    Id = v.Id,
-                    Name = v.Name,
-                    Date = v.Date,
-                    Description = v.Description,
-                    VehicleId = vehicleId
-                }),
-                CronJobs = cronJobs.Select(c => new CronJobViewModel
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    StartDate = c.StartDate,
-                    Description = c.Description,
-                    PeriodInMonths = c.PeriodInMonths,
-                    VehicleId = vehicleId
-                })
-                };
-
-            return this.View(viewModel);
-        }                
+        }                        
 
         public ActionResult Edit(Guid vehicleId)
         {
@@ -221,6 +221,24 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(VehicleViewModel vehicle)
         {
+            var manufacturer = this.manufacturersService.GetAll()
+                .First(x => x.Id == vehicle.Model.Manufacturer.Id);
+
+            var model = this.modelsService.GetAll()
+                .First(x => x.Id == vehicle.Model.Id);
+
+            model.Manufacturer = manufacturer;
+
+            var entity = this.vehiclesService.GetAll()
+                .First(x => x.Id == vehicle.Id);
+
+            entity.RegNumber = vehicle.RegNumber;
+            entity.InsuranceDate = vehicle.InsuranceDate;
+            entity.ServiceDate = vehicle.ServiceDate;
+            entity.Model = model;
+
+            this.vehiclesService.Update(entity);
+
             return this.RedirectToAction("All", "Vehicle");
         }
 

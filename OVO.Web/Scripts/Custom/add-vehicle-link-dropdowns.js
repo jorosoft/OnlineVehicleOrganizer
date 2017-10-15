@@ -6,6 +6,19 @@ if ($manufacturer.html() && $model.html()) {
         const selectedManId = $(ev.target).val();
         filterByManufacturer(selectedManId);
     }, null);
+
+    init();
+}
+
+function init() {
+    if ($manufacturer.val()) {
+        const selectedManId = $manufacturer.val();
+        filterByManufacturer(selectedManId);
+    } else {
+        $model.children().toArray().forEach(x => {
+            $(x).hide();
+        });
+    }
 }
 
 function filterByManufacturer(manufacturerId) {
