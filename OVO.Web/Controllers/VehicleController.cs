@@ -134,7 +134,7 @@ namespace OVO.Web.Controllers
                 })
                 .ToList();
 
-            var viewModel = new VehicleExtendedViewModel
+            var viewModel = new VehicleViewModel
             {
                 Manufacturers = manufacturers,
                 Models = models
@@ -145,7 +145,7 @@ namespace OVO.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(VehicleViewModel vehicle)
+        public ActionResult Add(VehicleViewModel vehicle, Guid manufacturerId, Guid modelId)
         {
             if (!ModelState.IsValid)
             {
@@ -153,10 +153,10 @@ namespace OVO.Web.Controllers
             }
 
             var manufacturer = this.manufacturersService.GetAll()
-                .First(x => x.Id == vehicle.Model.Manufacturer.Id);
+                .First(x => x.Id == manufacturerId);
 
             var model = this.modelsService.GetAll()
-                .First(x => x.Id == vehicle.Model.Id);
+                .First(x => x.Id == modelId);
 
             model.Manufacturer = manufacturer;
 

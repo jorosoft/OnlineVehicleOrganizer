@@ -120,11 +120,44 @@
   <data name="About" xml:space="preserve">
     <value>За продукта</value>
   </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="AddManufacturer" xml:space="preserve">
+    <value>Добави производител</value>
+  </data>
+  <data name="AddModel" xml:space="preserve">
+    <value>Добави модел</value>
+  </data>
+  <data name="AddVehicle" xml:space="preserve">
+    <value>Добави МПС</value>
+  </data>
   <data name="AdminMenu" xml:space="preserve">
     <value>Админ Меню</value>
   </data>
+  <data name="AllManufacturers" xml:space="preserve">
+    <value>Всички производители</value>
+  </data>
+  <data name="AllModels" xml:space="preserve">
+    <value>Всички модели</value>
+  </data>
+  <data name="AllUsers" xml:space="preserve">
+    <value>Всички потребители</value>
+  </data>
+  <data name="AllVehicles" xml:space="preserve">
+    <value>Всички МПС</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Приложение за организиране на данни за превозни средства. Можете да поддържате детайлни профили на всичките си МПС и да въвеждате събития, свързани с тях.</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>Онлайн МПС Организатор</value>
+  </data>
+  <data name="AreSure" xml:space="preserve">
+    <value>Сигурни ли сте, че изтривате</value>
+  </data>
+  <data name="AreSureRes" xml:space="preserve">
+    <value>Сигурни ли сте, че възстановявате</value>
   </data>
   <data name="Bulgarian" xml:space="preserve">
     <value>Български</value>
@@ -132,14 +165,41 @@
   <data name="Contact" xml:space="preserve">
     <value>Контакт</value>
   </data>
+  <data name="ContactDesc" xml:space="preserve">
+    <value>Приложението е създадено от</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Изтрий</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Oписание</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Детайли</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактирай</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Е-поща</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>Английски</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Не</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Здравей</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Начало</value>
+  </data>
+  <data name="IsDeleted" xml:space="preserve">
+    <value>Изтрит?</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Език</value>
@@ -150,8 +210,14 @@
   <data name="Logout" xml:space="preserve">
     <value>Изход</value>
   </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Производител</value>
+  </data>
   <data name="Manufacturers" xml:space="preserve">
     <value>Производители</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Модел</value>
   </data>
   <data name="Models" xml:space="preserve">
     <value>Модели</value>
@@ -159,10 +225,58 @@
   <data name="MyVehicles" xml:space="preserve">
     <value>Моите МПС</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="NoMan" xml:space="preserve">
+    <value>Няма налични производители!</value>
+  </data>
+  <data name="NoMod" xml:space="preserve">
+    <value>Няма налични модели!</value>
+  </data>
+  <data name="NoUsers" xml:space="preserve">
+    <value>Няма налични потребители!</value>
+  </data>
+  <data name="NoVeh" xml:space="preserve">
+    <value>Няма налични МПС!</value>
+  </data>
+  <data name="PassConfirm" xml:space="preserve">
+    <value>Потвърди</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="PerMonths" xml:space="preserve">
+    <value>Период (месеци)</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Регистрация</value>
   </data>
+  <data name="RegNumber" xml:space="preserve">
+    <value>Рег. номер</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запомни ме?</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Възстанови</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Роля</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Начална дата</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Потребител</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Потребители</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>МПС</value>
   </data>
 </root>

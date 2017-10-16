@@ -2,7 +2,7 @@
 @model VehicleViewModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @OVO.Web.Resources.Lang.Delete;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,19 +10,19 @@
     <div class="col-md-4 margin-left-3">
         <div class="panel panel-danger">
             <div class="panel-heading">
-                <h3 class="panel-title">Delete</h3>
+                <h3 class="panel-title">@OVO.Web.Resources.Lang.Delete</h3>
             </div>
             <div class="panel-body">
 
-                <p>Are you sure to delete:</p>
+                <p>@OVO.Web.Resources.Lang.AreSure:</p>
 
-                <h4>Vehicle: @Model.RegNumber - @Model.ManufacturerName @Model.ModelName</h4>
+                <h4>@OVO.Web.Resources.Lang.Vehicle: @Model.RegNumber - @Model.ManufacturerName @Model.ModelName</h4>
 
                 @using (@Html.BeginForm("Delete", "Vehicle", FormMethod.Post))
                 {
                     @Html.HiddenFor(x => x.Id)
                     @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">@OVO.Web.Resources.Lang.Delete</button>
                 }
             </div>
         </div>

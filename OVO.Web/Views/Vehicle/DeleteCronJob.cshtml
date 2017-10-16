@@ -2,7 +2,7 @@
 @model CronJobViewModel
 
 @{
-    ViewBag.Title = "DeleteCronJob";
+    ViewBag.Title = @OVO.Web.Resources.Lang.Delete;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,11 +10,11 @@
     <div class="col-md-4 margin-left-3">
         <div class="panel panel-danger">
             <div class="panel-heading">
-                <h3 class="panel-title">Delete</h3>
+                <h3 class="panel-title">@OVO.Web.Resources.Lang.Delete</h3>
             </div>
             <div class="panel-body">
 
-                <p>Are you sure to delete:</p>
+                <p>@OVO.Web.Resources.Lang.AreSure:</p>
 
                 <h4>CronJob: @Model.Name</h4>
                 <h4>Description: </h4>
@@ -24,7 +24,7 @@
                 {
                     @Html.HiddenFor(x => x.Id)
                     @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">@OVO.Web.Resources.Lang.Delete</button>
                 }
             </div>
         </div>

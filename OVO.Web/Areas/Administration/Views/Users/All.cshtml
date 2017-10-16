@@ -4,7 +4,7 @@
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @OVO.Web.Resources.Lang.AllUsers;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,15 +12,15 @@
     <div class="col-md-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">All</h3>
+                <h3 class="panel-title">@OVO.Web.Resources.Lang.AllUsers</h3>
             </div>
             <div class="panel-body">
 
                 @Html.Grid(Model.Users).Columns(columns =>
         {
-            columns.Add(x => x.Email).Titled("Email").SetWidth(100);
-            columns.Add(x => x.Role).Titled("Role").SetWidth(50);
-            columns.Add(x => x.IsDeleted).Titled("IsDeleted").SetWidth(20);
+            columns.Add(x => x.Email).Titled(@OVO.Web.Resources.Lang.Email).SetWidth(100);
+            columns.Add(x => x.Role).Titled(@OVO.Web.Resources.Lang.Role).SetWidth(50);
+            columns.Add(x => x.IsDeleted).Titled(@OVO.Web.Resources.Lang.IsDeleted).SetWidth(20);
             columns.Add(x => x.DeletedOn).Titled("Deletion Date").SetWidth(50);
             columns.Add(x => x.CreatedOn).Titled("Creation Date").SetWidth(50);
             columns.Add(x => x.ModifiedOn).Titled("Modified Date").SetWidth(50);
@@ -29,7 +29,7 @@
              .Encoded(false)
              .Sanitized(false)
              .SetWidth(50)
-             .RenderValueAs(x => @<div id="delete-btn">@Html.ActionLink("Edit", "Edit", new { userEmail = x.Email }, new { @class = "gridbutton" })</div>);
+             .RenderValueAs(x => @<div id="delete-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Edit, "Edit", new { userEmail = x.Email }, new { @class = "gridbutton" })</div>);
 
             columns.Add()
              .Encoded(false)
@@ -38,15 +38,15 @@
              .RenderValueAs(x => @<div id="delete-btn">
                 @if (!x.IsDeleted)
                 {
-                    @Html.ActionLink("Delete", "Delete", new { userEmail = x.Email }, new { @class = "gridbutton" })
+                    @Html.ActionLink(@OVO.Web.Resources.Lang.Delete, "Delete", new { userEmail = x.Email }, new { @class = "gridbutton" })
                 }
                 else
                 {
-                    @Html.ActionLink("Undelete", "Undelete", new { userEmail = x.Email }, new { @class = "gridbutton" })
+                    @Html.ActionLink(@OVO.Web.Resources.Lang.Restore, "Undelete", new { userEmail = x.Email }, new { @class = "gridbutton" })
                 }
 
             </div>);
-        }).WithPaging(10).Sortable().EmptyText("No available users!")
+        }).WithPaging(10).Sortable().EmptyText(@OVO.Web.Resources.Lang.NoUsers)
             </div>
         </div>
     </div>

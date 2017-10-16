@@ -42,8 +42,8 @@
                                 else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                 {
                                     <li>
-                                        <div class="dropdown">
-                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <div class="dropdown" id="special-menu">
+                                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                                 @OVO.Web.Resources.Lang.AdminMenu
                                                 <span class="caret"></span>
                                             </button>
@@ -59,9 +59,9 @@
                                 <li><a href="~/">@OVO.Web.Resources.Lang.Home</a></li>
                                 <li><a href="~/home/contact">@OVO.Web.Resources.Lang.Contact</a></li>
                                 <li>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">@OVO.Web.Resources.Lang.Language</button>
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <div class="btn-group" id="lang-selector">
+                                        <button type="button" class="btn btn-default btn-sm">@OVO.Web.Resources.Lang.Language</button>
+                                        <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">

@@ -31,6 +31,7 @@ textarea {
 @import url('animate.css');
 
 
+
 .margin-left-1 {
     margin-left: 18%;
 }
@@ -323,11 +324,28 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
 	text-align:center;	
 }
 .services p {
+    display: inline-block;
 	margin-bottom:30px;
 	margin-top:30px;
 	color:#090909;
 }
-.icons i {
+
+#special-menu {
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+#lang-selector {
+    margin-top: 7px;
+}
+
+#wrapper {
+    position: relative;
+    left: 22%;
+}
+
+.icons img {
+    
 	padding:50px;
 	border-radius:50%;
 	color:#ED502E;
@@ -340,7 +358,9 @@ box-shadow: 1px 2px 2px 4px rgba(204,204,204,1);
 	-moz-transition: background 0.2s, color 0.2s;
 	transition: background 0.2s, color 0.2s;
 }
-.icons i:hover {
+
+
+.icons img:hover {
 	background-color:#ED502E;
 	color: #fff;
 }

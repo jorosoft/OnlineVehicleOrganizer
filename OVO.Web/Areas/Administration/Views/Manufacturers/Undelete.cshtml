@@ -2,7 +2,7 @@
 @model ManufacturerViewModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @OVO.Web.Resources.Lang.Restore;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,7 +10,7 @@
     <div class="col-md-6 margin-left-2">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Restore</h3>
+                <h3 class="panel-title">@OVO.Web.Resources.Lang.Restore</h3>
             </div>
             <div class="panel-body">
 
@@ -22,7 +22,7 @@
                 {
                     @Html.HiddenFor(x => x.Id)
                     @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-success">Restore</button>
+                    <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Restore</button>
                 }
             </div>
         </div>

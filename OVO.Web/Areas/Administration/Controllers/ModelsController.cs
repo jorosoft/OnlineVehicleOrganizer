@@ -101,11 +101,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ModelViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
             var mod = this.modelsService
                 .GetAllAndDeleted()
                 .SingleOrDefault(x => x.Id == model.Id);
@@ -136,12 +131,7 @@ namespace OVO.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(ModelViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
+        {        
             var mod = this.modelsService
                  .GetAllAndDeleted()
                  .SingleOrDefault(x => x.Id == model.Id);
@@ -171,11 +161,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Undelete(ModelViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
             var mod = this.modelsService
                  .GetAllAndDeleted()
                  .SingleOrDefault(x => x.Id == model.Id);

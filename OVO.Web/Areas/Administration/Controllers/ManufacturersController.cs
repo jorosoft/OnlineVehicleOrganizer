@@ -116,11 +116,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(ManufacturerViewModel manufacturer)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(manufacturer);
-            }
-
             var mf = this.manufacturersService
                 .GetAllAndDeleted()
                 .SingleOrDefault(x => x.Id == manufacturer.Id);
@@ -150,11 +145,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Undelete(ManufacturerViewModel manufacturer)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(manufacturer);
-            }
-
             var mf = this.manufacturersService
                 .GetAllAndDeleted()
                 .SingleOrDefault(x => x.Id == manufacturer.Id);

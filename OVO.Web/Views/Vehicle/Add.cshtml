@@ -1,8 +1,8 @@
 ﻿@using OVO.Web.ViewModels.Vehicle
-@model VehicleExtendedViewModel
+@model VehicleViewModel
 
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = @OVO.Web.Resources.Lang.Add;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,58 +10,58 @@
     <div class="col-md-4 margin-left-3">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Add</h3>
+                <h3 class="panel-title">@OVO.Web.Resources.Lang.Add</h3>
             </div>
             <div class="panel-body">
 
                 @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
                 {
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.Model.Manufacturer.Name)
-                        <select id="manufacturer-select" name="Vehicle.Model.Manufacturer.Id">
+                        @Html.LabelFor(x => x.Model.Manufacturer.Name)
+                        <select id="manufacturer-select" name="manufacturerId">
                             <option value="default" selected>Select model</option>
                             @foreach (var man in Model.Manufacturers)
                             {
                                 <option value="@man.Id">@man.Name</option>
                             }
                         </select>
-                        @Html.ValidationMessageFor(x => x.Vehicle.Model.Manufacturer.Name, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(x => x.Model.Manufacturer.Name, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.Model.Name)
-                        <select id="model-select" name="Vehicle.Model.Id">
+                        @Html.LabelFor(x => x.Model.Name)
+                        <select id="model-select" name="modelId">
                             <option value="default" disabled selected>Select model</option>
                             @foreach (var mod in Model.Models)
                             {
                                 <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
                             }
                         </select>
-                        @Html.ValidationMessageFor(x => x.Vehicle.Model.Name, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(x => x.Model.Name, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
 
-                        @Html.LabelFor(x => x.Vehicle.RegNumber)
-                        @Html.EditorFor(x => x.Vehicle.RegNumber)
-                        @Html.ValidationMessageFor(x => x.Vehicle.RegNumber, "", new { @class = "text-danger" })
+                        @Html.LabelFor(x => x.RegNumber)
+                        @Html.EditorFor(x => x.RegNumber)
+                        @Html.ValidationMessageFor(x => x.RegNumber, "", new { @class = "text-danger" })
 
                     </p>
 
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.InsuranceDate)
-                        @Html.EditorFor(x => x.Vehicle.InsuranceDate)
-                        @Html.ValidationMessageFor(x => x.Vehicle.InsuranceDate, "", new { @class = "text-danger" })
+                        @Html.LabelFor(x => x.InsuranceDate)
+                        @Html.EditorFor(x => x.InsuranceDate)
+                        @Html.ValidationMessageFor(x => x.InsuranceDate, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.ServiceDate)
-                        @Html.EditorFor(x => x.Vehicle.ServiceDate)
-                        @Html.ValidationMessageFor(x => x.Vehicle.ServiceDate, "", new { @class = "text-danger" })
+                        @Html.LabelFor(x => x.ServiceDate)
+                        @Html.EditorFor(x => x.ServiceDate)
+                        @Html.ValidationMessageFor(x => x.ServiceDate, "", new { @class = "text-danger" })
                     </p>
 
                             @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Add</button>
                 }
             </div>
         </div>

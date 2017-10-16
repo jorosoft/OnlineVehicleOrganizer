@@ -32,5 +32,10 @@ namespace OVO.Web.ViewModels.Vehicle
         public IEnumerable<VehicleEventViewModel> VehicleEvents { get; set; }
 
         public IEnumerable<CronJobViewModel> CronJobs { get; set; }
+
+        public IEnumerable<ManufacturerViewModel> Manufacturers { get; set; }
+
+        public IEnumerable<ModelViewModel> Models { get; set; }
+
     }
 }

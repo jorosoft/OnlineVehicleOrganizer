@@ -70,6 +70,42 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Manufacturer.
+        /// </summary>
+        public static string AddManufacturer {
+            get {
+                return ResourceManager.GetString("AddManufacturer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Model.
+        /// </summary>
+        public static string AddModel {
+            get {
+                return ResourceManager.GetString("AddModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Vehicle.
+        /// </summary>
+        public static string AddVehicle {
+            get {
+                return ResourceManager.GetString("AddVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin Menu.
         /// </summary>
         public static string AdminMenu {
@@ -79,11 +115,74 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Manufacturers.
+        /// </summary>
+        public static string AllManufacturers {
+            get {
+                return ResourceManager.GetString("AllManufacturers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Models.
+        /// </summary>
+        public static string AllModels {
+            get {
+                return ResourceManager.GetString("AllModels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Users.
+        /// </summary>
+        public static string AllUsers {
+            get {
+                return ResourceManager.GetString("AllUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Vehicles.
+        /// </summary>
+        public static string AllVehicles {
+            get {
+                return ResourceManager.GetString("AllVehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App for organize your vehicles. You can add your detail vehicles data, add events and cronjobs for every vehicle..
+        /// </summary>
+        public static string AppDescription {
+            get {
+                return ResourceManager.GetString("AppDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Online Vehicle Organizer.
         /// </summary>
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to delete.
+        /// </summary>
+        public static string AreSure {
+            get {
+                return ResourceManager.GetString("AreSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to restore.
+        /// </summary>
+        public static string AreSureRes {
+            get {
+                return ResourceManager.GetString("AreSureRes", resourceCulture);
             }
         }
         
@@ -106,11 +205,83 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This app is produced by.
+        /// </summary>
+        public static string ContactDesc {
+            get {
+                return ResourceManager.GetString("ContactDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to False.
+        /// </summary>
+        public static string False {
+            get {
+                return ResourceManager.GetString("False", resourceCulture);
             }
         }
         
@@ -129,6 +300,15 @@ namespace OVO.Web.Resources {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IsDeleted.
+        /// </summary>
+        public static string IsDeleted {
+            get {
+                return ResourceManager.GetString("IsDeleted", resourceCulture);
             }
         }
         
@@ -160,11 +340,29 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manufacturer.
+        /// </summary>
+        public static string Manufacturer {
+            get {
+                return ResourceManager.GetString("Manufacturer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manufacturers.
         /// </summary>
         public static string Manufacturers {
             get {
                 return ResourceManager.GetString("Manufacturers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model.
+        /// </summary>
+        public static string Model {
+            get {
+                return ResourceManager.GetString("Model", resourceCulture);
             }
         }
         
@@ -187,6 +385,78 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No available Manufacturers!.
+        /// </summary>
+        public static string NoMan {
+            get {
+                return ResourceManager.GetString("NoMan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No available Models!.
+        /// </summary>
+        public static string NoMod {
+            get {
+                return ResourceManager.GetString("NoMod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No available Users!.
+        /// </summary>
+        public static string NoUsers {
+            get {
+                return ResourceManager.GetString("NoUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No available Vehicles!.
+        /// </summary>
+        public static string NoVeh {
+            get {
+                return ResourceManager.GetString("NoVeh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string PassConfirm {
+            get {
+                return ResourceManager.GetString("PassConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period (months).
+        /// </summary>
+        public static string PerMonths {
+            get {
+                return ResourceManager.GetString("PerMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -196,11 +466,83 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reg Number.
+        /// </summary>
+        public static string RegNumber {
+            get {
+                return ResourceManager.GetString("RegNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember Me?.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        public static string Restore {
+            get {
+                return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True.
+        /// </summary>
+        public static string True {
+            get {
+                return ResourceManager.GetString("True", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Users.
         /// </summary>
         public static string Users {
             get {
                 return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle.
+        /// </summary>
+        public static string Vehicle {
+            get {
+                return ResourceManager.GetString("Vehicle", resourceCulture);
             }
         }
     }

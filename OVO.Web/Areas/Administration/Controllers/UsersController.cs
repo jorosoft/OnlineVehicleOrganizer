@@ -79,11 +79,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UserViewModel user)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(user);
-            }
-
             var usr = this.usersService.GetAllAndDeleted()
                 .SingleOrDefault(x => x.Email == user.Email);
 
@@ -120,11 +115,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(UserViewModel user)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(user);
-            }
-
             var usr = this.usersService
                 .GetAllAndDeleted()
                 .SingleOrDefault(x => x.Email == user.Email);
@@ -153,11 +143,6 @@ namespace OVO.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Undelete(UserViewModel user)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(user);
-            }
-
             var usr = this.usersService
                 .GetAllAndDeleted()
                 .SingleOrDefault(x => x.Email == user.Email);

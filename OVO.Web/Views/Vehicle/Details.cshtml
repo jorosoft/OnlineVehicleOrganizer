@@ -3,7 +3,7 @@
 @model VehicleViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @OVO.Web.Resources.Lang.Details;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,7 +11,7 @@
     <div class="col-md-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <span class="panel-title">Details for: @Model.RegNumber --- @Model.ManufacturerName --- @Model.ModelName</span>
+                <span class="panel-title">@OVO.Web.Resources.Lang.Details: @Model.RegNumber --- @Model.ManufacturerName --- @Model.ModelName</span>
             </div>
             <div class="panel-body">
                 <div>
@@ -29,19 +29,19 @@
                                 <div>
                                     @Html.Grid(Model.VehicleEvents).Columns(columns =>
                                  {
-                                     columns.Add(x => x.Date).Titled("Date").SetWidth(50);
-                                     columns.Add(x => x.Name).Titled("Name").SetWidth(100);
-                                     columns.Add(x => x.Description).Titled("Description").SetWidth(200);
+                                     columns.Add(x => x.Date).Titled(@OVO.Web.Resources.Lang.Date).SetWidth(50);
+                                     columns.Add(x => x.Name).Titled(@OVO.Web.Resources.Lang.Name).SetWidth(100);
+                                     columns.Add(x => x.Description).Titled(@OVO.Web.Resources.Lang.Description).SetWidth(200);
                                      columns.Add()
                                 .Encoded(false)
                                 .Sanitized(false)
                                 .SetWidth(50)
-                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Edit", "EditVehicleEvent", new { vehicleEventId = x.Id, vehicleId = x.VehicleId }, new { @class = "gridbutton" })</div>);
+                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Edit, "EditVehicleEvent", new { vehicleEventId = x.Id, vehicleId = x.VehicleId }, new { @class = "gridbutton" })</div>);
                                      columns.Add()
                                 .Encoded(false)
                                 .Sanitized(false)
                                 .SetWidth(50)
-                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Delete", "DeleteVehicleEvent", new { vehicleEventId = x.Id }, new { @class = "gridbutton" })</div>);
+                                .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Delete, "DeleteVehicleEvent", new { vehicleEventId = x.Id }, new { @class = "gridbutton" })</div>);
                                  }).WithPaging(5).Sortable().EmptyText("No available Vehicle Events!")
                                 </div>
                             </div>
@@ -52,24 +52,24 @@
                                 <span class="panel-title">Vehicle CronJobs</span>
                             </div>
                             <div class="panel-body">
-                                @Html.ActionLink("Add New CronJob", "AddCronJob", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
+                                @Html.ActionLink(@OVO.Web.Resources.Lang.Add, "AddCronJob", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
                                 <div>
                                     @Html.Grid(Model.CronJobs).Columns(columns =>
                                {
-                               columns.Add(x => x.Name).Titled("Name").SetWidth(100);
-                               columns.Add(x => x.StartDate).Titled("Start Date").SetWidth(50);
-                               columns.Add(x => x.PeriodInMonths).Titled("Period (months)").SetWidth(50);
-                               columns.Add(x => x.Description).Titled("Description").SetWidth(200);
+                               columns.Add(x => x.Name).Titled(@OVO.Web.Resources.Lang.Name).SetWidth(100);
+                               columns.Add(x => x.StartDate).Titled(@OVO.Web.Resources.Lang.StartDate).SetWidth(50);
+                               columns.Add(x => x.PeriodInMonths).Titled(@OVO.Web.Resources.Lang.PerMonths).SetWidth(50);
+                               columns.Add(x => x.Description).Titled(@OVO.Web.Resources.Lang.Description).SetWidth(200);
                                columns.Add()
                           .Encoded(false)
                           .Sanitized(false)
                           .SetWidth(50)
-                          .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Edit", "EditCronJob", new { cronJobId = x.Id, vehicleId = x.VehicleId }, new { @class = "gridbutton" })</div>);
+                          .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Edit, "EditCronJob", new { cronJobId = x.Id, vehicleId = x.VehicleId }, new { @class = "gridbutton" })</div>);
                                columns.Add()
                           .Encoded(false)
                           .Sanitized(false)
                           .SetWidth(50)
-                          .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink("Delete", "DeleteCronJob", new { cronJobId = x.Id }, new { @class = "gridbutton" })</div>);
+                          .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Delete, "DeleteCronJob", new { cronJobId = x.Id }, new { @class = "gridbutton" })</div>);
                                }).WithPaging(5).Sortable().EmptyText("No available CronJobs!")
                                 </div>
                             </div>
