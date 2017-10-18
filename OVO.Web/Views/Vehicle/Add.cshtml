@@ -17,27 +17,27 @@
                 @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
                 {
                     <p>
-                        @Html.LabelFor(x => x.Model.Manufacturer.Name)
-                        <select id="manufacturer-select" name="manufacturerId">
-                            <option value="default" selected>Select model</option>
+                        @Html.LabelFor(x => x.ManufacturerName)
+                        <select id="manufacturer-select" name="ManufacturerId">
+                            <option value="default" selected>Select manufacturer</option>
                             @foreach (var man in Model.Manufacturers)
                             {
                                 <option value="@man.Id">@man.Name</option>
                             }
                         </select>
-                        @Html.ValidationMessageFor(x => x.Model.Manufacturer.Name, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(x => x.ManufacturerId, "", new { @class = "text-danger" })
                     </p>
 
                     <p>
-                        @Html.LabelFor(x => x.Model.Name)
-                        <select id="model-select" name="modelId">
+                        @Html.LabelFor(x => x.ModelName)
+                        <select id="model-select" name="ModelId">
                             <option value="default" disabled selected>Select model</option>
                             @foreach (var mod in Model.Models)
                             {
                                 <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
                             }
                         </select>
-                        @Html.ValidationMessageFor(x => x.Model.Name, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(x => x.ModelId, "", new { @class = "text-danger" })
                     </p>
 
                     <p>

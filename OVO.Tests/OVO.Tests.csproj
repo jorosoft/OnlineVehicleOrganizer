@@ -211,7 +211,6 @@
     <Compile Include="WebTests\ViewModelsTests\Vehicle\ManufacturerViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Vehicle\ModelViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleEventViewModelTests.cs" />
-    <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleExtendedViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Vehicle\VehiclesListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleViewModelTests.cs" />
   </ItemGroup>

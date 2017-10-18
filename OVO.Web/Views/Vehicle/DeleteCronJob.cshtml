@@ -23,6 +23,7 @@
                 @using (@Html.BeginForm("DeleteCronJob", "Vehicle", FormMethod.Post))
                 {
                     @Html.HiddenFor(x => x.Id)
+                    @Html.HiddenFor(x => x.VehicleId);
                     @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-danger">@OVO.Web.Resources.Lang.Delete</button>
                 }

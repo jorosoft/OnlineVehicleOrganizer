@@ -1,5 +1,5 @@
 ﻿@using OVO.Web.ViewModels.Vehicle
-@model VehicleExtendedViewModel
+@model VehicleViewModel
 
 @{
     ViewBag.Title = @OVO.Web.Resources.Lang.Edit;
@@ -17,13 +17,13 @@
                 @using (@Html.BeginForm("Edit", "Vehicle", FormMethod.Post))
                 {
                     <p>
-                        @Html.LabelFor(x => x.Vehicle.Model.Manufacturer.Name)
-                        <select id="manufacturer-select" name="Vehicle.Model.Manufacturer.Id">
-                            <option value="default" selected>Select model</option>
+                        @Html.LabelFor(x => x.ManufacturerName)
+                        <select id="manufacturer-select" name="ManufacturerId">
+                            <option value="default" selected>Select manufacturer</option>
                             @foreach (var man in Model.Manufacturers)
                             {
                                 <option value="@man.Id"
-                                        @if (man.Name == Model.Vehicle.ManufacturerName) { @: selected="selected"
+                                        @if (man.Name == Model.ManufacturerName) { @: selected="selected"
                                                                                 }>
                                     @man.Name
                                 </option>
@@ -32,13 +32,13 @@
                     </p>
 
                         <p>
-                            @Html.LabelFor(x => x.Vehicle.Model.Name)
-                            <select id="model-select" name="Vehicle.Model.Id">
+                            @Html.LabelFor(x => x.ModelName)
+                            <select id="model-select" name="ModelId">
                                 <option value="default" disabled selected>Select model</option>
                                 @foreach (var mod in Model.Models)
                                 {
                                     <option value="@mod.Id" man="@mod.Manufacturer.Id"
-                                            @if (mod.Name == Model.Vehicle.ModelName) { @: selected="selected"
+                                            @if (mod.Name == Model.ModelName) { @: selected="selected"
                                                                                                                                 }>
                                         @mod.Name
                                     </option>
@@ -47,24 +47,24 @@
                         </p>
 
                         <p>
-                            @Html.LabelFor(x => x.Vehicle.RegNumber)
-                            @Html.EditorFor(x => x.Vehicle.RegNumber)
-                            @Html.ValidationMessageFor(x => x.Vehicle.RegNumber, "", new { @class = "text-danger" })
+                            @Html.LabelFor(x => x.RegNumber)
+                            @Html.EditorFor(x => x.RegNumber)
+                            @Html.ValidationMessageFor(x => x.RegNumber, "", new { @class = "text-danger" })
                         </p>
 
                         <p>
-                            @Html.LabelFor(x => x.Vehicle.InsuranceDate)
-                            @Html.EditorFor(x => x.Vehicle.InsuranceDate)
-                            @Html.ValidationMessageFor(x => x.Vehicle.InsuranceDate, "", new { @class = "text-danger" })
+                            @Html.LabelFor(x => x.InsuranceDate)
+                            @Html.EditorFor(x => x.InsuranceDate)
+                            @Html.ValidationMessageFor(x => x.InsuranceDate, "", new { @class = "text-danger" })
                         </p>
 
                         <p>
-                            @Html.LabelFor(x => x.Vehicle.ServiceDate)
-                            @Html.EditorFor(x => x.Vehicle.ServiceDate)
-                            @Html.ValidationMessageFor(x => x.Vehicle.ServiceDate, "", new { @class = "text-danger" })
+                            @Html.LabelFor(x => x.ServiceDate)
+                            @Html.EditorFor(x => x.ServiceDate)
+                            @Html.ValidationMessageFor(x => x.ServiceDate, "", new { @class = "text-danger" })
                         </p>
 
-                        @Html.HiddenFor(x => x.Vehicle.Id);
+                        @Html.HiddenFor(x => x.Id);
                     @Html.AntiForgeryToken();
                     <button type="submit" class="btn btn-warning">@OVO.Web.Resources.Lang.Edit</button>
                 }

@@ -145,7 +145,7 @@ namespace OVO.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(VehicleViewModel vehicle, Guid manufacturerId, Guid modelId)
+        public ActionResult Add(VehicleViewModel vehicle)
         {
             if (!ModelState.IsValid)
             {
@@ -153,10 +153,10 @@ namespace OVO.Web.Controllers
             }
 
             var manufacturer = this.manufacturersService.GetAll()
-                .First(x => x.Id == manufacturerId);
+                .First(x => x.Id == vehicle.ManufacturerId);
 
             var model = this.modelsService.GetAll()
-                .First(x => x.Id == modelId);
+                .First(x => x.Id == vehicle.ModelId);
 
             model.Manufacturer = manufacturer;
 
@@ -174,7 +174,7 @@ namespace OVO.Web.Controllers
             this.vehiclesService.Add(entity);
 
             return this.RedirectToAction("All", "Vehicle");
-        }                        
+        }
 
         public ActionResult Edit(Guid vehicleId)
         {
@@ -211,14 +211,10 @@ namespace OVO.Web.Controllers
                 })
                 .First(x => x.Id == vehicleId);
 
-            var viewModel = new VehicleExtendedViewModel
-            {
-                Manufacturers = manufacturers,
-                Models = models,
-                Vehicle = vehicle
-            };
+            vehicle.Manufacturers = manufacturers;
+            vehicle.Models = models;
 
-            return this.View(viewModel);
+            return this.View(vehicle);
         }
 
         [HttpPost]
@@ -231,10 +227,10 @@ namespace OVO.Web.Controllers
             }
 
             var manufacturer = this.manufacturersService.GetAll()
-                .First(x => x.Id == vehicle.Model.Manufacturer.Id);
+                .First(x => x.Id == vehicle.ManufacturerId);
 
             var model = this.modelsService.GetAll()
-                .First(x => x.Id == vehicle.Model.Id);
+                .First(x => x.Id == vehicle.ModelId);
 
             model.Manufacturer = manufacturer;
 
@@ -270,11 +266,6 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(VehicleViewModel vehicle)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(vehicle);
-            }
-
             var vehicleToDelete = this.vehiclesService.GetAll()
                 .First(x => x.Id == vehicle.Id);
 
@@ -313,7 +304,7 @@ namespace OVO.Web.Controllers
 
             this.vehicleEventsService.Add(entity);
 
-            return this.RedirectToAction("All", "Vehicle");
+            return this.Redirect(string.Format("~/vehicle/details?vehicleId={0}", vehicleEvent.VehicleId));
         }
 
         public ActionResult AddCronJob(Guid vehicleId)
@@ -345,8 +336,8 @@ namespace OVO.Web.Controllers
             entity.Vehicle = vehicle;
 
             this.cronJobsService.Add(entity);
-                        
-            return this.RedirectToAction("All", "Vehicle");
+
+            return this.Redirect(string.Format("~/vehicle/details?vehicleId={0}", cronJob.VehicleId));
         }
 
         public ActionResult EditVehicleEvent(Guid vehicleEventId, Guid vehicleId)
@@ -423,7 +414,7 @@ namespace OVO.Web.Controllers
             return this.Redirect(string.Format("~/vehicle/details?vehicleId={0}", cronJob.VehicleId));
         }
 
-        public ActionResult DeleteVehicleEvent(Guid vehicleEventId)
+        public ActionResult DeleteVehicleEvent(Guid vehicleEventId, Guid vehicleId)
         {
             var viewModel = this.vehicleEventsService.GetAll()
                 .Select(x => new VehicleEventViewModel
@@ -441,20 +432,15 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteVehicleEvent(VehicleEventViewModel vehicleEvent)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(vehicleEvent);
-            }
-
             var entity = this.vehicleEventsService.GetAll()
                 .First(x => x.Id == vehicleEvent.Id);
 
             this.vehicleEventsService.Delete(entity);
 
-            return this.RedirectToAction("All", "Vehicle");
+            return this.Redirect(string.Format("~/vehicle/details?vehicleId={0}", vehicleEvent.VehicleId));
         }
 
-        public ActionResult DeleteCronJob(Guid cronJobId)
+        public ActionResult DeleteCronJob(Guid cronJobId, Guid vehicleId)
         {
             var viewModel = this.cronJobsService.GetAll()
                 .Select(x => new CronJobViewModel
@@ -472,17 +458,12 @@ namespace OVO.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteCronJob(CronJobViewModel cronJob)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(cronJob);
-            }
-
             var entity = this.cronJobsService.GetAll()
                 .First(x => x.Id == cronJob.Id);
 
             this.cronJobsService.Delete(entity);
 
-            return this.RedirectToAction("All", "Vehicle");
+            return this.Redirect(string.Format("~/vehicle/details?vehicleId={0}", cronJob.VehicleId));
         }
     }
 }
