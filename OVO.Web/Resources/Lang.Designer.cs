@@ -79,6 +79,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add CronJob.
+        /// </summary>
+        public static string AddCronJob {
+            get {
+                return ResourceManager.GetString("AddCronJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Manufacturer.
         /// </summary>
         public static string AddManufacturer {
@@ -102,6 +111,15 @@ namespace OVO.Web.Resources {
         public static string AddVehicle {
             get {
                 return ResourceManager.GetString("AddVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Vehicle Event.
+        /// </summary>
+        public static string AddVehicleEvent {
+            get {
+                return ResourceManager.GetString("AddVehicleEvent", resourceCulture);
             }
         }
         

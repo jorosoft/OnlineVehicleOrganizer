@@ -25,7 +25,7 @@
                                 <span class="panel-title">Vehicle Events</span>
                             </div>
                             <div class="panel-body">
-                                @Html.ActionLink("Add New Event", "AddVehicleEvent", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
+                                @Html.ActionLink(OVO.Web.Resources.Lang.AddVehicleEvent, "AddVehicleEvent", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
                                 <div>
                                     @Html.Grid(Model.VehicleEvents).Columns(columns =>
                                  {
@@ -52,7 +52,7 @@
                                 <span class="panel-title">Vehicle CronJobs</span>
                             </div>
                             <div class="panel-body">
-                                @Html.ActionLink(@OVO.Web.Resources.Lang.Add, "AddCronJob", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
+                                @Html.ActionLink(@OVO.Web.Resources.Lang.AddCronJob, "AddCronJob", new { vehicleId = Model.Id }, new { @class = "btn btn-large btn-info" })
                                 <div>
                                     @Html.Grid(Model.CronJobs).Columns(columns =>
                                {

@@ -137,7 +137,9 @@ namespace OVO.Web.Controllers
             var viewModel = new VehicleViewModel
             {
                 Manufacturers = manufacturers,
-                Models = models
+                Models = models,
+                InsuranceDate = DateTime.Now,
+                ServiceDate = DateTime.Now
             };
 
             return this.View(viewModel);
@@ -278,7 +280,8 @@ namespace OVO.Web.Controllers
         {
             var viewModel = new VehicleEventViewModel
             {
-                VehicleId = vehicleId
+                VehicleId = vehicleId,
+                Date = DateTime.Now
             };
 
             return this.View(viewModel);
@@ -311,9 +314,10 @@ namespace OVO.Web.Controllers
         {
             var viewModel = new CronJobViewModel
             {
-                VehicleId = vehicleId
+                VehicleId = vehicleId,
+                StartDate = DateTime.Now
             };
-            return this.View();
+            return this.View(viewModel);
         }
 
         [HttpPost]

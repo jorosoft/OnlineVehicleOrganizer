@@ -279,4 +279,10 @@
   <data name="Vehicle" xml:space="preserve">
     <value>Vehicle</value>
   </data>
+  <data name="AddCronJob" xml:space="preserve">
+    <value>Add CronJob</value>
+  </data>
+  <data name="AddVehicleEvent" xml:space="preserve">
+    <value>Add Vehicle Event</value>
+  </data>
 </root>
