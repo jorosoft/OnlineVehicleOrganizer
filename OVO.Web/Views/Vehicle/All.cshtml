@@ -7,18 +7,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-8 margin-left-1">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.AllVehicles</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-8 margin-left-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.AllVehicles</h3>
+        </div>
+        <div class="panel-body">
 
-                @Html.ActionLink(@OVO.Web.Resources.Lang.AddVehicle, "Add", null, new { @class = "btn btn-large btn-info" })
+            @Html.ActionLink(@OVO.Web.Resources.Lang.AddVehicle, "Add", null, new { @class = "btn btn-large btn-info" })
 
-                <div>
-                    @Html.Grid(Model.Vehicles).Columns(columns =>
+            <div>
+                @Html.Grid(Model.Vehicles).Columns(columns =>
         {
             columns.Add(x => x.ManufacturerName).Titled(@OVO.Web.Resources.Lang.Manufacturer).SetWidth(50);
             columns.Add(x => x.ModelName).Titled(@OVO.Web.Resources.Lang.Model).SetWidth(50);
@@ -39,7 +38,6 @@
        .SetWidth(50)
        .RenderValueAs(x => @<div id="details-btn">@Html.ActionLink(@OVO.Web.Resources.Lang.Delete, "Delete", new { vehicleId = x.Id }, new { @class = "gridbutton" })</div>);
         }).WithPaging(10).Sortable().EmptyText(@OVO.Web.Resources.Lang.NoVeh)
-                </div>
             </div>
         </div>
     </div>

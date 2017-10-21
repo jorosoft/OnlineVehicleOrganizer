@@ -169,7 +169,7 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to App for organize your vehicles. You can add your detail vehicles data, add events and cronjobs for every vehicle..
+        ///   Looks up a localized string similar to App for organize your vehicles. You can add your detail vehicles data, add events and cronjobs for every vehicle. You must just login to access all functionalities..
         /// </summary>
         public static string AppDescription {
             get {
@@ -210,6 +210,24 @@ namespace OVO.Web.Resources {
         public static string Bulgarian {
             get {
                 return ResourceManager.GetString("Bulgarian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chat.
+        /// </summary>
+        public static string Chat {
+            get {
+                return ResourceManager.GetString("Chat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use our chat room to connect with other users of the system. If you have any questions about usage, they may help you..
+        /// </summary>
+        public static string ChatDescription {
+            get {
+                return ResourceManager.GetString("ChatDescription", resourceCulture);
             }
         }
         
@@ -304,6 +322,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Github.
+        /// </summary>
+        public static string Github {
+            get {
+                return ResourceManager.GetString("Github", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello.
         /// </summary>
         public static string Hello {
@@ -376,6 +403,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zhivko Ivanov.
+        /// </summary>
+        public static string Me {
+            get {
+                return ResourceManager.GetString("Me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model.
         /// </summary>
         public static string Model {
@@ -426,6 +462,15 @@ namespace OVO.Web.Resources {
         public static string NoMod {
             get {
                 return ResourceManager.GetString("NoMod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We wil email you when your insurrance date and service date are comming, for every added vehicle..
+        /// </summary>
+        public static string NotificationsDescription {
+            get {
+                return ResourceManager.GetString("NotificationsDescription", resourceCulture);
             }
         }
         
@@ -520,6 +565,15 @@ namespace OVO.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start Date.
         /// </summary>
         public static string StartDate {
@@ -561,6 +615,78 @@ namespace OVO.Web.Resources {
         public static string Vehicle {
             get {
                 return ResourceManager.GetString("Vehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What about chat.
+        /// </summary>
+        public static string WhatAboutForChat {
+            get {
+                return ResourceManager.GetString("WhatAboutForChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What to expect.
+        /// </summary>
+        public static string WhatToExpect {
+            get {
+                return ResourceManager.GetString("WhatToExpect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What we offer.
+        /// </summary>
+        public static string WhatWeOffer {
+            get {
+                return ResourceManager.GetString("WhatWeOffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep detailed profiles for all your vehicles..
+        /// </summary>
+        public static string WhatWinDescriptionOne {
+            get {
+                return ResourceManager.GetString("WhatWinDescriptionOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not waste time on constant checks for important dates and prevent them from being avoided..
+        /// </summary>
+        public static string WhatWinDescriptionThree {
+            get {
+                return ResourceManager.GetString("WhatWinDescriptionThree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can keep a history of all the events associated with them..
+        /// </summary>
+        public static string WhatWinDescriptionTwo {
+            get {
+                return ResourceManager.GetString("WhatWinDescriptionTwo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What you win.
+        /// </summary>
+        public static string WhatYouWin {
+            get {
+                return ResourceManager.GetString("WhatYouWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Message.
+        /// </summary>
+        public static string YourMessage {
+            get {
+                return ResourceManager.GetString("YourMessage", resourceCulture);
             }
         }
     }

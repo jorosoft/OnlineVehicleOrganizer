@@ -23,6 +23,34 @@ namespace OVO.Tests.WebTests.ViewModelsTests.Vehicle
         }
 
         [Test]
+        public void ManufacturerIdProperty_ShouldSetCorrectValue_WithCorrectData()
+        {
+            // Arrange
+            var sut = new VehicleViewModel();
+            var expected = Guid.NewGuid();
+
+            // Act
+            sut.ManufacturerId = expected;
+
+            // Assert
+            Assert.AreEqual(expected, sut.ManufacturerId);
+        }
+
+        [Test]
+        public void ModelIdProperty_ShouldSetCorrectValue_WithCorrectData()
+        {
+            // Arrange
+            var sut = new VehicleViewModel();
+            var expected = Guid.NewGuid();
+
+            // Act
+            sut.ModelId = expected;
+
+            // Assert
+            Assert.AreEqual(expected, sut.ModelId);
+        }
+
+        [Test]
         public void ModelNameProperty_ShouldSetCorrectValue_WithCorrectData()
         {
             // Arrange

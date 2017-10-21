@@ -3,101 +3,78 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - @OVO.Web.Resources.Lang.AppName</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <header>
-        <nav>
-            <div class="navbar navbar-default navbar-static-top" role="navigation">
-                <div class="container">
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </nav>
-
-        <nav class="navbar navbar-default navbar-static-top" role="navigation">
-            <div class="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                            <span class="sr-only">Toggle navigation</span>
+        <section id="headerSection">
+            <div class="container">
+                <div class="navbar">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar active" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="/" class="navbar-brand"><img src="~/logo.png" width="100" /></a>
-                        <div id="app-name">@OVO.Web.Resources.Lang.AppName</div>
-                    </div>
-
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <div class="menu">
-                            <ul class="nav nav-tabs" role="tablist">
+                        <a class="brand" href="/">
+                            <img id="logo" src="~/logo.png" width="100" />
+                            <h1>@OVO.Web.Resources.Lang.AppName</h1>
+                        </a>
+                        <div class="nav-collapse collapse">  
+                            <div id="loginPanel">@Html.Partial("_LoginPartial")</div>                          
+                            <ul class="nav pull-right">
                                 @if (User.Identity.IsAuthenticated && User.IsInRole("User"))
                                 {
                                     <li>@Html.ActionLink(OVO.Web.Resources.Lang.MyVehicles, "All", "Vehicle")</li>
                                 }
                                 else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                 {
-                                    <li>
-                                        <div class="dropdown" id="special-menu">
-                                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                                @OVO.Web.Resources.Lang.AdminMenu
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Manufacturers, "All", "Manufacturers", new { area = "Administration" }, null)</li>
-                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Models, "All", "Models", new { area = "Administration" }, null)</li>
-                                                <li>@Html.ActionLink(OVO.Web.Resources.Lang.Users, "All", "Users", new { area = "Administration" }, null)</li>
-                                            </ul>
-                                        </div>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@OVO.Web.Resources.Lang.AdminMenu<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li>@Html.ActionLink(OVO.Web.Resources.Lang.Manufacturers, "All", "Manufacturers", new { area = "Administration" }, null)</li>
+                                            <li>@Html.ActionLink(OVO.Web.Resources.Lang.Models, "All", "Models", new { area = "Administration" }, null)</li>
+                                            <li>@Html.ActionLink(OVO.Web.Resources.Lang.Users, "All", "Users", new { area = "Administration" }, null)</li>
+                                        </ul>
                                     </li>
                                 }
 
-                                <li><a href="~/">@OVO.Web.Resources.Lang.Home</a></li>
-                                <li><a href="~/home/contact">@OVO.Web.Resources.Lang.Contact</a></li>
-                                <li>
-                                    <div class="btn-group" id="lang-selector">
-                                        <button type="button" class="btn btn-default btn-sm">@OVO.Web.Resources.Lang.Language</button>
-                                        <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="~/language/change?languageAbbreviation=en">@OVO.Web.Resources.Lang.English</a></li>
-                                            <li><a href="~/language/change?languageAbbreviation=bg">@OVO.Web.Resources.Lang.Bulgarian</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                <li class="active">@Html.ActionLink(@OVO.Web.Resources.Lang.Home, "Index", "Home", new { area = string.Empty }, null)</li>
+                                <li class="">@Html.ActionLink(@OVO.Web.Resources.Lang.Chat, "Chat", "Home", new { area = string.Empty }, null)</li>
+                                <li class="">@Html.ActionLink(@OVO.Web.Resources.Lang.Contact, "Contact", "Home", new { area = string.Empty }, null)</li>
+                                
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
+        </section>
     </header>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 f-contact copyright">
-                            <p>&copy; @DateTime.Now.Year - @OVO.Web.Resources.Lang.AppName</p>
-                        </div>
-                    </div>
+    <section id="bodySection">
+        <div class="container body-content">
+            <div class="row">
+                <div class="span12" style='text-align:center'>
+                    @RenderBody()
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <section id="footerSection">
+                <p>&copy; @DateTime.Now.Year - @OVO.Web.Resources.Lang.AppName </p>
+            </section>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/custom-theme")
 
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>

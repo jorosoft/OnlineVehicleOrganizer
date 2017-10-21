@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using OVO.Web.Attributes;
 
 namespace OVO.Web.ViewModels.Vehicle
 {
@@ -21,13 +20,11 @@ namespace OVO.Web.ViewModels.Vehicle
         public string RegNumber { get; set; }
 
         [Required(ErrorMessage = "Required")]
-        [NotDateInPast]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime InsuranceDate { get; set; }
 
         [Required(ErrorMessage = "Required")]
-        [NotDateInPast]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ServiceDate { get; set; }

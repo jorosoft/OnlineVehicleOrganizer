@@ -48,6 +48,14 @@
       <HintPath>..\packages\Grid.Mvc.3.1.0-ci1036\lib\net40\GridMvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -212,6 +220,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Resources\Lang.bg.Designer.cs">
       <DependentUpon>Lang.bg.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -249,11 +258,46 @@
     <Compile Include="ViewModels\Vehicle\VehicleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Images\1.jpg" />
+    <Content Include="Resources\Images\2.jpg" />
+    <Content Include="Resources\Images\3.jpg" />
+    <Content Include="Resources\Images\banner\aboutus.png" />
+    <Content Include="Resources\Images\banner\blog.png" />
+    <Content Include="Resources\Images\banner\contact.png" />
+    <Content Include="Resources\Images\banner\details.png" />
+    <Content Include="Resources\Images\banner\portfolio.png" />
+    <Content Include="Resources\Images\blockRepeat.png" />
+    <Content Include="Resources\Images\bodyBg.png" />
+    <Content Include="Resources\Images\carousel\business_website_templates_1.jpg" />
+    <Content Include="Resources\Images\carousel\business_website_templates_2.jpg" />
+    <Content Include="Resources\Images\carousel\business_website_templates_3.jpg" />
+    <Content Include="Resources\Images\carousel\business_website_templates_4.jpg" />
+    <Content Include="Resources\Images\carousel\business_website_templates_5.jpg" />
+    <Content Include="Resources\Images\carousel\services_dtl.jpg" />
+    <Content Include="Resources\Images\facebook.png" />
+    <Content Include="Resources\Images\flagBG.png" />
+    <Content Include="Resources\Images\flagUK.png" />
+    <Content Include="Resources\Images\footerbg.png" />
+    <Content Include="Resources\Images\headerbg.png" />
+    <Content Include="Resources\Images\img180x120.png" />
+    <Content Include="Resources\Images\img185x165.png" />
+    <Content Include="Resources\Images\img64x64.png" />
+    <Content Include="Resources\Images\rss.png" />
+    <Content Include="Resources\Images\shadow.png" />
+    <Content Include="Resources\Images\shadowsReverse.png" />
+    <Content Include="Resources\Images\smallShadows.png" />
+    <Content Include="Resources\Images\tabrepeat.png" />
+    <Content Include="Resources\Images\tabRepeatInactive.png" />
+    <Content Include="Resources\Images\twitter.png" />
+    <Content Include="Resources\Images\youtube.png" />
     <Content Include="car.png" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\base.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Gridmvc.css" />
@@ -262,6 +306,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="logo.png" />
+    <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-tooltip.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Administration\Views\web.config" />
@@ -284,7 +330,10 @@
     <None Include="Properties\PublishProfiles\ovoapp - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ovoapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\business_ltd_1.0.js" />
     <Content Include="Scripts\Custom\add-vehicle-link-dropdowns.js" />
+    <Content Include="Scripts\Custom\chat.js" />
+    <Content Include="Scripts\Custom\menu-init.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.fr.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
@@ -292,7 +341,10 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.ui.datepicker.min.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery.gmap.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -348,6 +400,8 @@
     <Content Include="Views\Vehicle\EditCronJob.cshtml" />
     <Content Include="Views\Vehicle\DeleteVehicleEvent.cshtml" />
     <Content Include="Views\Vehicle\DeleteCronJob.cshtml" />
+    <Content Include="Views\Shared\_LanguageSelectorPartial.cshtml" />
+    <Content Include="Views\Home\Chat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

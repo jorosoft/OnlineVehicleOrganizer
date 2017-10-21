@@ -7,7 +7,12 @@ namespace OVO.Web.Controllers
         public ActionResult Index()
         {
             return this.View();
-        }        
+        }
+
+        public ActionResult Chat()
+        {
+            return this.View();
+        }
 
         public ActionResult Contact()
         {

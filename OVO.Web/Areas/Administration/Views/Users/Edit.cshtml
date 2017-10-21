@@ -6,27 +6,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-4 margin-left-3">
-        <div class="panel panel-warning">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.Edit</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-4 margin-left-3">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.Edit</h3>
+        </div>
+        <div class="panel-body">
 
-                @using (@Html.BeginForm("Edit", "Users", FormMethod.Post))
-                {
-                    <p>
-                        @Html.LabelFor(x => x.Role)
-                        @Html.DropDownListFor(x => x.Role, new SelectList(Model.Roles, "Name", "Name", Model.Role), new { @class = "form-control" })
-                    </p>
+            @using (@Html.BeginForm("Edit", "Users", FormMethod.Post))
+            {
+                <p>
+                    @Html.LabelFor(x => x.Role)
+                    @Html.DropDownListFor(x => x.Role, new SelectList(Model.Roles, "Name", "Name", Model.Role), new { @class = "form-control" })
+                </p>
 
-                    @Html.HiddenFor(x => x.Email)
+                                @Html.HiddenFor(x => x.Email)
 
-                    @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-warning">@OVO.Web.Resources.Lang.Edit</button>
-                }
-            </div>
+                                @Html.AntiForgeryToken();
+                <button type="submit" class="btn btn-warning">@OVO.Web.Resources.Lang.Edit</button>
+            }
         </div>
     </div>
 </div>

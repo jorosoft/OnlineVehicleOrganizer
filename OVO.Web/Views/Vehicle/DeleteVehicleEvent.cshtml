@@ -6,29 +6,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-4 margin-left-3">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.Delete</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-4 margin-left-3">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.Delete</h3>
+        </div>
+        <div class="panel-body">
 
-                <p>@OVO.Web.Resources.Lang.AreSure:</p>
+            <p>@OVO.Web.Resources.Lang.AreSure:</p>
 
-                <h4>Vehicle Event: @Model.Name</h4>
-                <h4>Description: </h4>
-                <p>@Model.Description</p>
+            <h4>Vehicle Event: @Model.Name</h4>
+            <h4>Description: </h4>
+            <p>@Model.Description</p>
 
-                @using (@Html.BeginForm("DeleteVehicleEvent", "Vehicle", FormMethod.Post))
-                {
-                    @Html.HiddenFor(x => x.Id)
-                    @Html.HiddenFor(x => x.VehicleId);
-                    @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-danger">@OVO.Web.Resources.Lang.Delete</button>
-                }
-            </div>
+            @using (@Html.BeginForm("DeleteVehicleEvent", "Vehicle", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Id)
+                @Html.HiddenFor(x => x.VehicleId);
+                @Html.AntiForgeryToken();
+                <button type="submit" class="btn btn-danger">@OVO.Web.Resources.Lang.Delete</button>
+            }
         </div>
     </div>
 </div>
-

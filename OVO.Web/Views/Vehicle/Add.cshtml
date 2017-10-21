@@ -6,68 +6,67 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-4 margin-left-3">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.Add</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-4 margin-left-3">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.Add</h3>
+        </div>
+        <div class="panel-body">
 
-                @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
-                {
-                    <p>
-                        @Html.LabelFor(x => x.ManufacturerName)
-                        <select id="manufacturer-select" name="ManufacturerId">
-                            <option value="default" selected>Select manufacturer</option>
-                            @foreach (var man in Model.Manufacturers)
-                            {
-                                <option value="@man.Id">@man.Name</option>
-                            }
-                        </select>
-                        @Html.ValidationMessageFor(x => x.ManufacturerId, "", new { @class = "text-danger" })
-                    </p>
+            @using (@Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+            {
+                <p>
+                    @Html.LabelFor(x => x.ManufacturerName)
+                    <select id="manufacturer-select" name="ManufacturerId">
+                        <option value="default" selected>Select manufacturer</option>
+                        @foreach (var man in Model.Manufacturers)
+                        {
+                            <option value="@man.Id">@man.Name</option>
+                        }
+                    </select>
+                    @Html.ValidationMessageFor(x => x.ManufacturerId, "", new { @class = "text-danger" })
+                </p>
 
-                    <p>
-                        @Html.LabelFor(x => x.ModelName)
-                        <select id="model-select" name="ModelId">
-                            <option value="default" disabled selected>Select model</option>
-                            @foreach (var mod in Model.Models)
-                            {
-                                <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
-                            }
-                        </select>
-                        @Html.ValidationMessageFor(x => x.ModelId, "", new { @class = "text-danger" })
-                    </p>
+                                <p>
+                                    @Html.LabelFor(x => x.ModelName)
+                                    <select id="model-select" name="ModelId">
+                                        <option value="default" disabled selected>Select model</option>
+                                        @foreach (var mod in Model.Models)
+                                        {
+                                            <option value="@mod.Id" man="@mod.Manufacturer.Id">@mod.Name</option>
+                                        }
+                                    </select>
+                                    @Html.ValidationMessageFor(x => x.ModelId, "", new { @class = "text-danger" })
+                                </p>
 
-                    <p>
+                                <p>
 
-                        @Html.LabelFor(x => x.RegNumber)
-                        @Html.EditorFor(x => x.RegNumber)
-                        @Html.ValidationMessageFor(x => x.RegNumber, "", new { @class = "text-danger" })
+                                    @Html.LabelFor(x => x.RegNumber)
+                                    @Html.EditorFor(x => x.RegNumber)
+                                    @Html.ValidationMessageFor(x => x.RegNumber, "", new { @class = "text-danger" })
 
-                    </p>
+                                </p>
 
-                    <p>
-                        @Html.LabelFor(x => x.InsuranceDate)
-                        @Html.EditorFor(x => x.InsuranceDate)
-                        @Html.ValidationMessageFor(x => x.InsuranceDate, "", new { @class = "text-danger" })
-                    </p>
+                                <p>
+                                    @Html.LabelFor(x => x.InsuranceDate)
+                                    @Html.EditorFor(x => x.InsuranceDate)
+                                    @Html.ValidationMessageFor(x => x.InsuranceDate, "", new { @class = "text-danger" })
+                                </p>
 
-                    <p>
-                        @Html.LabelFor(x => x.ServiceDate)
-                        @Html.EditorFor(x => x.ServiceDate)
-                        @Html.ValidationMessageFor(x => x.ServiceDate, "", new { @class = "text-danger" })
-                    </p>
+                                <p>
+                                    @Html.LabelFor(x => x.ServiceDate)
+                                    @Html.EditorFor(x => x.ServiceDate)
+                                    @Html.ValidationMessageFor(x => x.ServiceDate, "", new { @class = "text-danger" })
+                                </p>
 
-                            @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Add</button>
-                }
-            </div>
+                                @Html.AntiForgeryToken();
+                <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Add</button>
+            }
         </div>
     </div>
 </div>
 
 @section Scripts {
+    @Scripts.Render("~/bundles/mod-man-link")
     @Scripts.Render("~/bundles/jqueryval")
 }

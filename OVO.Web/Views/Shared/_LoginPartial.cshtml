@@ -1,22 +1,23 @@
 ﻿@using Microsoft.AspNet.Identity
+
+@Html.Partial("_LanguageSelectorPartial")
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
+        <div id="loginGroup">
             @Html.ActionLink(@OVO.Web.Resources.Lang.Hello + " " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">@OVO.Web.Resources.Lang.Logout</a></li>
-    </ul>
+            <a href="javascript:document.getElementById('logoutForm').submit()">@OVO.Web.Resources.Lang.Logout</a>
+        </div>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(OVO.Web.Resources.Lang.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink(OVO.Web.Resources.Lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <div id="loginGroup" class="btn-group toolTipgroup">
+        @Html.ActionLink(OVO.Web.Resources.Lang.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn" })
+        @Html.ActionLink(OVO.Web.Resources.Lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn" })
+    </div>
 }

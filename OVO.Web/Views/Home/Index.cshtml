@@ -2,23 +2,57 @@
     ViewBag.Title = @OVO.Web.Resources.Lang.Home;
 }
 
-<div class="our-services">
-    <div class="container">
-        <div class="row">
-            <div id="wrapper" class="col-md-6">
-                <div class="services">
-                    <div class="icons">
-                        <img src="~/car.png" />
-                    </div>
-                    <div class="icons">
-                        <h4>@OVO.Web.Resources.Lang.AppName</h4>
+<section id="carouselSection" style="text-align:center">
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div style="text-align:center" class="item active">
+                <div class="wrapper">
+                    <img src="~/Resources/Images/carousel/business_website_templates_1.jpg" alt="business webebsite template">
+                    <div class="carousel-caption">
+                        <h2>@OVO.Web.Resources.Lang.WhatWeOffer?</h2>
                         <p>@OVO.Web.Resources.Lang.AppDescription</p>
+                        @Html.ActionLink(OVO.Web.Resources.Lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-large btn-success" })
                     </div>
                 </div>
-
-                <hr>
             </div>
-
+            <div style="text-align:center" class="item">
+                <div class="wrapper">
+                    <img src="~/Resources/Images/carousel/business_website_templates_2.jpg" alt="business themes">
+                    <div class="carousel-caption">
+                        <h2>@OVO.Web.Resources.Lang.WhatToExpect?</h2>
+                        <p>@OVO.Web.Resources.Lang.NotificationsDescription</p>
+                        @Html.ActionLink(OVO.Web.Resources.Lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-large btn-success" })
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center" class="item">
+                <div class="wrapper">
+                    <img src="~/Resources/Images/carousel/business_website_templates_3.jpg" alt="business themes">
+                    <div class="carousel-caption">
+                        <h2>@OVO.Web.Resources.Lang.WhatAboutForChat?</h2>
+                        <p>@OVO.Web.Resources.Lang.ChatDescription</p>
+                        @Html.ActionLink(OVO.Web.Resources.Lang.Chat, "Chat", "Home", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-large btn-success" })
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center" class="item">
+                <div class="wrapper">
+                    <img src="~/Resources/Images/carousel/business_website_templates_4.jpg" alt="business themes">
+                    <div class="carousel-caption">
+                        <h2>@OVO.Web.Resources.Lang.WhatYouWin?</h2>
+                        <p>
+                            <div> - @OVO.Web.Resources.Lang.WhatWinDescriptionOne</div>
+                            <div> - @OVO.Web.Resources.Lang.WhatWinDescriptionTwo</div>
+                            <div> - @OVO.Web.Resources.Lang.WhatWinDescriptionThree</div>
+                        </p>
+                        @Html.ActionLink(OVO.Web.Resources.Lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-large btn-success" })
+                    </div>
+                </div>
+            </div>            
         </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
-</div>
+</section>
+
+

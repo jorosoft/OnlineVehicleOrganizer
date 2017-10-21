@@ -148,7 +148,7 @@
     <value>Всички МПС</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
-    <value>Приложение за организиране на данни за превозни средства. Можете да поддържате детайлни профили на всичките си МПС и да въвеждате събития, свързани с тях.</value>
+    <value>Приложение за организиране на данни за превозни средства. Можете да поддържате детайлни профили на всичките си МПС и да въвеждате събития, свързани с тях. Трябва само да се логнете, за да ползвате всички функционалности.</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Онлайн МПС Организатор</value>
@@ -284,5 +284,47 @@
   </data>
   <data name="AddVehicleEvent" xml:space="preserve">
     <value>Добави събитие</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="ChatDescription" xml:space="preserve">
+    <value>Можете да използвате нашия чат за да се свържете с други потребители на системата. Ако имате някакви въпроси относно използването, те могат да ви помогнат.</value>
+  </data>
+  <data name="Github" xml:space="preserve">
+    <value>Гитхъб</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Живко Иванов</value>
+  </data>
+  <data name="NotificationsDescription" xml:space="preserve">
+    <value>Ще Ви изпратим имейл, когато датите за застраховка и преглед наближават, за всяко добавено превозно средство.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Изпрати</value>
+  </data>
+  <data name="WhatAboutForChat" xml:space="preserve">
+    <value>Какво ще кажете за чат</value>
+  </data>
+  <data name="WhatToExpect" xml:space="preserve">
+    <value>Какво да очаквате</value>
+  </data>
+  <data name="WhatWeOffer" xml:space="preserve">
+    <value>Какво предлагаме</value>
+  </data>
+  <data name="WhatWinDescriptionOne" xml:space="preserve">
+    <value>Поддържате детайлни профили за всичките си МПС.</value>
+  </data>
+  <data name="WhatWinDescriptionThree" xml:space="preserve">
+    <value>Не губите време за постоянни проверки за важните дати и предотвратявате възможност за проскането им.</value>
+  </data>
+  <data name="WhatWinDescriptionTwo" xml:space="preserve">
+    <value>Можете да поддържате история за всички събития, свързани с тях.</value>
+  </data>
+  <data name="WhatYouWin" xml:space="preserve">
+    <value>Какво печелите</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Вашето съобщение</value>
   </data>
 </root>

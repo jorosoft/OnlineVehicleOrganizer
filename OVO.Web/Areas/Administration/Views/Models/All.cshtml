@@ -7,17 +7,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-8 margin-left-1">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.AllModels</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-8 margin-left-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.AllModels</h3>
+        </div>
+        <div class="panel-body">
 
-                @Html.ActionLink(@OVO.Web.Resources.Lang.AddModel, "Add", null, new { @class = "btn btn-large btn-info" })
+            @Html.ActionLink(@OVO.Web.Resources.Lang.AddModel, "Add", null, new { @class = "btn btn-large btn-info" })
 
-                @Html.Grid(Model.Models).Columns(columns =>
+            @Html.Grid(Model.Models).Columns(columns =>
         {
             columns.Add(x => x.ManufacturerName).Titled(@OVO.Web.Resources.Lang.Manufacturer).SetWidth(200);
             columns.Add(x => x.ModelName).Titled(@OVO.Web.Resources.Lang.Model).SetWidth(200);
@@ -43,7 +42,6 @@
 
             </div>);
         }).WithPaging(10).Sortable().EmptyText(@OVO.Web.Resources.Lang.NoMod)
-            </div>
         </div>
     </div>
 </div>

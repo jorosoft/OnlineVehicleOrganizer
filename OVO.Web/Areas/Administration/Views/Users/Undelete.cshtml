@@ -6,25 +6,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-6 margin-left-2">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.Restore</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-6 margin-left-2">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.Restore</h3>
+        </div>
+        <div class="panel-body">
 
-                <p>@OVO.Web.Resources.Lang.AreSureRes:</p>
+            <p>@OVO.Web.Resources.Lang.AreSureRes:</p>
 
-                <p>@OVO.Web.Resources.Lang.User: @Model.Email</p>
+            <p>@OVO.Web.Resources.Lang.User: @Model.Email</p>
 
-                @using (@Html.BeginForm("Undelete", "Users", FormMethod.Post))
-                {
-                    @Html.HiddenFor(x => x.Email)
-                    @Html.AntiForgeryToken();
-                    <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Restore</button>
-                }
-            </div>
+            @using (@Html.BeginForm("Undelete", "Users", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.Email)
+                @Html.AntiForgeryToken();
+                <button type="submit" class="btn btn-success">@OVO.Web.Resources.Lang.Restore</button>
+            }
         </div>
     </div>
 </div>

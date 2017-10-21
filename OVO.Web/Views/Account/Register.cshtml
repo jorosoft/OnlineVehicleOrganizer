@@ -3,11 +3,21 @@
     ViewBag.Title = @OVO.Web.Resources.Lang.Register;
 }
 
-<div class="row">
-    <div class="col-md-6 margin-left-2">
+<section id="bannerSection" style="background:url(../../Resources/Images/banner/portfolio.png) no-repeat center center #000;">
+    <div class="container">
+        <h1 id="pageTitle">
+            @OVO.Web.Resources.Lang.Register
+        </h1>
+    </div>
+</section>
+
+<div class="span4 margin-top-1 margin-bottom-1 margin-left-3">
+    <div class="thumbnail">
+        <img src="../../Resources/Images/3.jpg" alt="bootstrap business templates">
+
+
         <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">@ViewBag.Title</h3>
+            <div class="panel-heading">                
             </div>
             <div class="panel-body">
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))

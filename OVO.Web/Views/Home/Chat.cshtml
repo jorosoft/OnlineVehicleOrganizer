@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = OVO.Web.Resources.Lang.Chat;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="bannerSection" style="background:url(../../Resources/Images/banner/contact.png) no-repeat center center #000;">
+    <div class="container">
+        <h1 id="pageTitle">
+            @OVO.Web.Resources.Lang.Chat
+        </h1>
+    </div>
+</section>
+
+<div class="span9">
+    <div id="chat" class="well well-small" style="text-align:left">
+        <div id="chatBoard"></div>
+        <div>
+            <input type="text" id="messageText" placeholder = "@OVO.Web.Resources.Lang.YourMessage" />
+            <input type="button" class="btn btn-success" id="chatBtn" value=@OVO.Web.Resources.Lang.Send />
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/signalr")
+    <script src="/signalr/hubs"></script>
+    @Scripts.Render("~/bundles/chat")
+}

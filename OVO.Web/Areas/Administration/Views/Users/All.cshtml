@@ -8,15 +8,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">@OVO.Web.Resources.Lang.AllUsers</h3>
-            </div>
-            <div class="panel-body">
+<div class="col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">@OVO.Web.Resources.Lang.AllUsers</h3>
+        </div>
+        <div class="panel-body">
 
-                @Html.Grid(Model.Users).Columns(columns =>
+            @Html.Grid(Model.Users).Columns(columns =>
         {
             columns.Add(x => x.Email).Titled(@OVO.Web.Resources.Lang.Email).SetWidth(100);
             columns.Add(x => x.Role).Titled(@OVO.Web.Resources.Lang.Role).SetWidth(50);
@@ -47,7 +46,6 @@
 
             </div>);
         }).WithPaging(10).Sortable().EmptyText(@OVO.Web.Resources.Lang.NoUsers)
-            </div>
         </div>
     </div>
 </div>

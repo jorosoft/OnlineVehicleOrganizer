@@ -21,7 +21,7 @@ namespace OVO.Data.Migrations
         protected override void Seed(OVOMsSqlDbContext context)
         {
             this.SeedAdmin(context);
-            //this.SeedSampleData(context);
+            this.SeedSampleData(context);
         }
 
         private void SeedAdmin(OVOMsSqlDbContext context)
@@ -55,268 +55,254 @@ namespace OVO.Data.Migrations
 
         private void SeedSampleData(OVOMsSqlDbContext context)
         {
+            var availableManufacturers = context.Manufacturers.ToList();
+
             var manufacturers = new Manufacturer[]
                 {
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Volkswagen", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Audi", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Opel", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Mercedes", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "BMW", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Toyota", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Honda", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Mazda", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Citroen", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Peugeot", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Renaut", IsDeleted = false },
-                    new Manufacturer { Id = Guid.NewGuid(), Name = "Other", IsDeleted = false }
+                    new Manufacturer { Name = "Volkswagen", IsDeleted = false },
+                    new Manufacturer { Name = "Audi", IsDeleted = false },
+                    new Manufacturer { Name = "Opel", IsDeleted = false },
+                    new Manufacturer { Name = "Mercedes", IsDeleted = false },
+                    new Manufacturer { Name = "BMW", IsDeleted = false },
+                    new Manufacturer { Name = "Toyota", IsDeleted = false },
+                    new Manufacturer { Name = "Honda", IsDeleted = false },
+                    new Manufacturer { Name = "Mazda", IsDeleted = false },
+                    new Manufacturer { Name = "Citroen", IsDeleted = false },
+                    new Manufacturer { Name = "Peugeot", IsDeleted = false },
+                    new Manufacturer { Name = "Renaut", IsDeleted = false },
+                    new Manufacturer { Name = "Other", IsDeleted = false }
                 };
 
-            context.Manufacturers.AddOrUpdate(manufacturers);
-            
+            foreach (var man in manufacturers)
+            {
+                if (availableManufacturers.First(x => x.Name == man.Name) != null)
+                {
+                    continue;
+                }
+
+                context.Manufacturers.AddOrUpdate(man);
+            }
+
+            var availableModels = context.Models.ToList();
+
             var models = 
                 new Model[]
                 {
                     new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Golf",
                         IsDeleted = false,
                         Manufacturer = manufacturers[0]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Passat",
                         IsDeleted = false,
                         Manufacturer = manufacturers[0]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[0]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "80",
                         IsDeleted = false,
                         Manufacturer = manufacturers[1]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "100",
                         IsDeleted = false,
                         Manufacturer = manufacturers[1]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[1]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Zafira",
                         IsDeleted = false,
                         Manufacturer = manufacturers[2]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Omega",
                         IsDeleted = false,
                         Manufacturer = manufacturers[2]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[2]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "A140",
                         IsDeleted = false,
                         Manufacturer = manufacturers[3]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "C200",
                         IsDeleted = false,
                         Manufacturer = manufacturers[3]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[3]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "M3",
                         IsDeleted = false,
                         Manufacturer = manufacturers[4]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "M5",
                         IsDeleted = false,
                         Manufacturer = manufacturers[4]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[4]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Avensis",
                         IsDeleted = false,
                         Manufacturer = manufacturers[5]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Corolla",
                         IsDeleted = false,
                         Manufacturer = manufacturers[5]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[5]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Accord",
                         IsDeleted = false,
                         Manufacturer = manufacturers[6]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "CR-V",
                         IsDeleted = false,
                         Manufacturer = manufacturers[6]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[6]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "121",
                         IsDeleted = false,
                         Manufacturer = manufacturers[7]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "MX-3",
                         IsDeleted = false,
                         Manufacturer = manufacturers[7]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[7]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Picasso",
                         IsDeleted = false,
                         Manufacturer = manufacturers[8]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Xsara",
                         IsDeleted = false,
                         Manufacturer = manufacturers[8]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[8]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "306",
                         IsDeleted = false,
                         Manufacturer = manufacturers[9]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "407",
                         IsDeleted = false,
                         Manufacturer = manufacturers[9]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[9]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Laguna",
                         IsDeleted = false,
                         Manufacturer = manufacturers[10]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Megane",
                         IsDeleted = false,
                         Manufacturer = manufacturers[10]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[10]
                     },
                      new Model
                     {
-                        Id = Guid.NewGuid(),
                         Name = "Other",
                         IsDeleted = false,
                         Manufacturer = manufacturers[11]
                     }
                 };
+            
+            foreach (var mod in models)
+            {
+                if (availableModels.First(x => (x.Name == mod.Name && x.Manufacturer.Name == mod.Manufacturer.Name)) != null)
+                {
+                    continue;
+                }
 
-            context.Models.AddOrUpdate(models);
+                context.Models.AddOrUpdate(mod);
+            }
         }
     }
 }
