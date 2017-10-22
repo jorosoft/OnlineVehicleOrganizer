@@ -8,7 +8,7 @@ using OVO.Services.Contracts;
 namespace OVO.Tests.WebTests.ControllersTests.Vehicle
 {
     [TestFixture]
-    public class Index_Should
+    public class Add_Should
     {
         [Test]
         public void ReturnNotNull_WhenCalled()

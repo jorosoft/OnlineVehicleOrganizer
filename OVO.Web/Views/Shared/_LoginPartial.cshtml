@@ -9,7 +9,7 @@
         @Html.AntiForgeryToken()
 
         <div id="loginGroup">
-            @Html.ActionLink(@OVO.Web.Resources.Lang.Hello + " " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink(@OVO.Web.Resources.Lang.Hello + " " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
             <a href="javascript:document.getElementById('logoutForm').submit()">@OVO.Web.Resources.Lang.Logout</a>
         </div>
     }

@@ -35,7 +35,7 @@ namespace OVO.Web
 
             bundles.Add(new ScriptBundle("~/bundles/mod-man-link").Include(                        
                         "~/Scripts/Custom/add-vehicle-link-dropdowns.js"
-                        ));
+                        ));            
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",

@@ -176,6 +176,7 @@
     <Compile Include="WebTests\ControllersTests\Administration\Models\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Users\All_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Administration\Users\Constructor_Should.cs" />
+    <Compile Include="WebTests\ControllersTests\Home\Chat_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Home\Contact_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Home\Index_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Language\Index_Should.cs" />
