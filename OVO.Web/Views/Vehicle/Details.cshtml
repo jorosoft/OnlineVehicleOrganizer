@@ -7,10 +7,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<section id="bannerSection" style="background:url(../../Resources/Images/banner/details.png) no-repeat center center #000;">
+    <div class="container">
+        <h1 id="pageTitle">
+            @OVO.Web.Resources.Lang.Details: @Model.RegNumber - @Model.ManufacturerName - @Model.ModelName 
+        </h1>
+    </div>
+</section>
+
 <div>
     <div class="panel panel-info">
         <div class="panel-heading">
-            <span class="panel-title">@OVO.Web.Resources.Lang.Details: @Model.RegNumber --- @Model.ManufacturerName --- @Model.ModelName</span>
+            <p></p>
         </div>
         <div class="panel-body">
             <div>
