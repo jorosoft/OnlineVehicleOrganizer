@@ -331,6 +331,7 @@
     <None Include="Properties\PublishProfiles\ovoapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\business_ltd_1.0.js" />
+    <Content Include="Scripts\countUp.min.js" />
     <Content Include="Scripts\Custom\add-vehicle-link-dropdowns.js" />
     <Content Include="Scripts\Custom\chat.js" />
     <Content Include="Scripts\Custom\menu-init.js" />

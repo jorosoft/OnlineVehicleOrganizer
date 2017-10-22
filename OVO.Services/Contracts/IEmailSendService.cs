@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using OVO.Services.Models;
 
 namespace OVO.Services.Contracts
 {
     public interface IEmailSendService
     {
-        Task SendEmailAsync(string destinationEmail, string message);
+        Task SendEmailAsync(Mail mail);
     }
 }
