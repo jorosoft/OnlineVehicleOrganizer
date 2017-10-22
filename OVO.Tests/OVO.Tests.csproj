@@ -114,6 +114,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesTests\DailyMaintenanceServiceTests\Constructor_Should.cs" />
+    <Compile Include="ServicesTests\DailyMaintenanceServiceTests\Execute_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Add_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Constructor_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\CronJobsServiceTests\Delete_Should.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetAll_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\GetDbModel_Should.cs" />
     <Compile Include="ServicesTests\DataServicesTests\VehiclesServiceTests\Update_Should.cs" />
+    <Compile Include="ServicesTests\MailModelTests.cs" />
     <Compile Include="WebTests\ControllersTests\Account\ExternalLoginFailure_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Account\ForgotPasswordConfirmation_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Account\ForgotPassword_Should.cs" />
@@ -214,7 +217,9 @@
     <Compile Include="WebTests\ViewModelsTests\Vehicle\VehiclesListViewModelTests.cs" />
     <Compile Include="WebTests\ViewModelsTests\Vehicle\VehicleViewModelTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ServicesTests\EmailSendServiceTests\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
