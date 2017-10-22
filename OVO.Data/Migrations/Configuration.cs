@@ -21,7 +21,7 @@ namespace OVO.Data.Migrations
         protected override void Seed(OVOMsSqlDbContext context)
         {
             this.SeedAdmin(context);
-            this.SeedSampleData(context);
+            //this.SeedSampleData(context);
         }
 
         private void SeedAdmin(OVOMsSqlDbContext context)

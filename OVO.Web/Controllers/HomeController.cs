@@ -15,7 +15,7 @@ namespace OVO.Web.Controllers
         }
 
         public ActionResult Contact()
-        {
+        {            
             return this.View();
         }
     }
