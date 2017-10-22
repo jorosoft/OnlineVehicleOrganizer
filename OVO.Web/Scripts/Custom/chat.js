@@ -5,10 +5,19 @@ chat.client.addMessage = (msg, user) => {
     updateChat(msg, user);
 }
 
+chat.client.joinUser = (user, users) => {
+    attachUser(user, users);
+}
+
+chat.client.disconnectUser = (user, users) => {
+    detachUser(user, users);
+}
+
 $chatBoard = $("#chatBoard");
 $msgText = $("#messageText");
 msgText = document.getElementById("messageText");
 sendBtn = document.getElementById("chatBtn");
+$usersList = $("#usersList");
 
 sendBtn.addEventListener("click", () => {
     if ($msgText.val().trim()) {
@@ -41,4 +50,39 @@ function updateChat(message, user) {
     let $newMsg = $(elem).html(formattedMsg);
     $newMsg.appendTo($chatBoard);
     $msgText.val("");
+
+    $("#chatBoard").scrollTop($("#chatBoard")[0].scrollHeight);
+}
+
+function attachUser(user, users) {
+    let username = "Anonimous";
+    if (user) {
+        username = user;
+    }
+
+    let dateTime = new Date().toLocaleString();
+    let elem = document.createElement("p");
+    let formattedMsg = "<span style='color: green;'><i>" + dateTime + " <strong>" + username + "</strong> joined</i></span>";
+
+    let $newMsg = $(elem).html(formattedMsg);
+    $newMsg.appendTo($chatBoard);
+
+    let nick = document.createElement("div");
+    $(nick).html(username).addClass(username).appendTo($usersList);    
+}
+
+function detachUser(user, users) {
+    let username = "Anonimous";
+    if (user) {
+        username = user;
+    }
+
+    let dateTime = new Date().toLocaleString();
+    let elem = document.createElement("p");
+    let formattedMsg = "<span style='color: red;'><i>" + dateTime + " <strong>" + username + "</strong> quit</i></span>";
+
+    let $newMsg = $(elem).html(formattedMsg);
+    $newMsg.appendTo($chatBoard);
+
+    $usersList.find("." + username).first().remove();
 }
