@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using OVO.Services.Contracts;
@@ -113,7 +114,9 @@ namespace OVO.Web.Controllers
 
         public ActionResult Add()
         {
-            var models = this.modelsService.GetAll()
+            if (this.HttpContext.Cache["models"] == null)
+            {
+                var models = this.modelsService.GetAll()
                 .Select(x => new ModelViewModel
                 {
                     Id = x.Id,
@@ -124,20 +127,40 @@ namespace OVO.Web.Controllers
                         Name = x.Manufacturer.Name
                     }
                 })
+                .OrderBy(x => x.Name)
                 .ToList();
 
-            var manufacturers = this.manufacturersService.GetAll()
-                .Select(x => new ManufacturerViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                })
-                .ToList();
+                this.HttpContext.Cache.Insert(
+                    "models",
+                    models,
+                    null,
+                    DateTime.Now.AddMinutes(2),
+                    TimeSpan.Zero);
+            }
+
+            if (this.HttpContext.Cache["manufacturers"] == null)
+            {
+                var manufacturers = this.manufacturersService.GetAll()
+               .Select(x => new ManufacturerViewModel
+               {
+                   Id = x.Id,
+                   Name = x.Name
+               })
+               .OrderBy(x => x.Name)
+               .ToList();
+
+                this.HttpContext.Cache.Insert(
+                    "manufacturers",
+                    manufacturers,
+                    null,
+                    DateTime.Now.AddMinutes(2),
+                    TimeSpan.Zero);
+            }             
 
             var viewModel = new VehicleViewModel
             {
-                Manufacturers = manufacturers,
-                Models = models,
+                Manufacturers = (List<ManufacturerViewModel>)this.HttpContext.Cache["manufacturers"],
+                Models = (List<ModelViewModel>)this.HttpContext.Cache["models"],
                 InsuranceDate = DateTime.Now,
                 ServiceDate = DateTime.Now
             };
@@ -180,7 +203,9 @@ namespace OVO.Web.Controllers
 
         public ActionResult Edit(Guid vehicleId)
         {
-            var models = this.modelsService.GetAll()
+            if (this.HttpContext.Cache["models"] == null)
+            {
+                var models = this.modelsService.GetAll()
                 .Select(x => new ModelViewModel
                 {
                     Id = x.Id,
@@ -191,15 +216,35 @@ namespace OVO.Web.Controllers
                         Name = x.Manufacturer.Name
                     }
                 })
+                .OrderBy(x => x.Name)
                 .ToList();
 
-            var manufacturers = this.manufacturersService.GetAll()
-                .Select(x => new ManufacturerViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                })
-                .ToList();
+                this.HttpContext.Cache.Insert(
+                    "models",
+                    models,
+                    null,
+                    DateTime.Now.AddMinutes(2),
+                    TimeSpan.Zero);
+            }
+
+            if (this.HttpContext.Cache["manufacturers"] == null)
+            {
+                var manufacturers = this.manufacturersService.GetAll()
+               .Select(x => new ManufacturerViewModel
+               {
+                   Id = x.Id,
+                   Name = x.Name
+               })
+               .OrderBy(x => x.Name)
+               .ToList();
+
+                this.HttpContext.Cache.Insert(
+                    "manufacturers",
+                    manufacturers,
+                    null,
+                    DateTime.Now.AddMinutes(2),
+                    TimeSpan.Zero);
+            }
 
             var vehicle = this.vehiclesService.GetAll()
                 .Select(x => new VehicleViewModel
@@ -213,8 +258,8 @@ namespace OVO.Web.Controllers
                 })
                 .First(x => x.Id == vehicleId);
 
-            vehicle.Manufacturers = manufacturers;
-            vehicle.Models = models;
+            vehicle.Manufacturers = (List<ManufacturerViewModel>)this.HttpContext.Cache["manufacturers"];
+            vehicle.Models = (List<ModelViewModel>)this.HttpContext.Cache["models"];
 
             return this.View(vehicle);
         }

@@ -184,7 +184,6 @@
     <Compile Include="WebTests\ControllersTests\Manage\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Manage\SetPassword_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\AddCronJob_Should.cs" />
-    <Compile Include="WebTests\ControllersTests\Vehicle\Add_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\Constructor_Should.cs" />
     <Compile Include="WebTests\ControllersTests\Vehicle\AddVehicleEvent_Should.cs" />
     <Compile Include="WebTests\ViewModelsTests\Account\ExternalLoginConfirmationViewModelTests.cs" />
