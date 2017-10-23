@@ -8,7 +8,6 @@ Project for ASP.NET MVC course @ Telerik Academy
 | Name              | Academy Username  |
 |-------------------|-------------------|
 |Zhivko Ivanov      |__jorosoft__       |
-|---------------------------------------|
 
 ## Description
  - Online web system for managing users vehicles data with multilangual(english and bulgarian) support. 
@@ -29,11 +28,11 @@ Project for ASP.NET MVC course @ Telerik Academy
 
 -----------------------------------------------------------------------------------------------------------------------
 
-![Initial](./ScreenShots/1.jpg)
-![Initial](./ScreenShots/2.jpg)
-![Initial](./ScreenShots/3jpg)
-![Initial](./ScreenShots/4.jpg)
-![Initial](./ScreenShots/5jpg)
+![Initial](./Screenshots/1.jpg)
+![Initial](./Screenshots/2.jpg)
+![Initial](./Screenshots/3jpg)
+![Initial](./Screenshots/4.jpg)
+![Initial](./Screenshots/5jpg)
 
 -----------------------------------------------------------------------------------------------------------------------
 
