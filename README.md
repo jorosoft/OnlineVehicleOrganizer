@@ -30,9 +30,9 @@ Project for ASP.NET MVC course @ Telerik Academy
 
 ![Initial](./Screenshots/1.jpg)
 ![Initial](./Screenshots/2.jpg)
-![Initial](./Screenshots/3jpg)
+![Initial](./Screenshots/3.jpg)
 ![Initial](./Screenshots/4.jpg)
-![Initial](./Screenshots/5jpg)
+![Initial](./Screenshots/5.jpg)
 
 -----------------------------------------------------------------------------------------------------------------------
 

@@ -9,8 +9,8 @@ chat.client.joinUser = (user, users) => {
     attachUser(user, users);
 }
 
-chat.client.disconnectUser = (user, users) => {
-    detachUser(user, users);
+chat.client.disconnectUser = (user) => {
+    detachUser(user);
 }
 
 $chatBoard = $("#chatBoard");
@@ -67,11 +67,14 @@ function attachUser(user, users) {
     let $newMsg = $(elem).html(formattedMsg);
     $newMsg.appendTo($chatBoard);
 
-    let nick = document.createElement("div");
-    $(nick).html(username).addClass(username).appendTo($usersList);    
+    $usersList.html("");
+    for (usr of users) {
+        let nick = document.createElement("div");
+        $(nick).html(usr).addClass(usr.replace("@", "at").replace(".", "dot")).appendTo($usersList);
+    }   
 }
 
-function detachUser(user, users) {
+function detachUser(user) {
     let username = "Anonimous";
     if (user) {
         username = user;
@@ -84,5 +87,5 @@ function detachUser(user, users) {
     let $newMsg = $(elem).html(formattedMsg);
     $newMsg.appendTo($chatBoard);
 
-    $usersList.find("." + username).first().remove();
+    $usersList.find("." + username.replace("@", "at").replace(".", "dot")).first().remove();
 }

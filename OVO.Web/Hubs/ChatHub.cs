@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 
@@ -6,22 +6,20 @@ namespace OVO.Web.Hubs
 {
     public class ChatHub : Hub
     {
-        private List<string> users = new List<string>();
-
         public override Task OnConnected()
         {
             var user = Context.Request.User.Identity.Name;
 
-            if (user != null)
+            if (user != string.Empty)
             {
-                this.users.Add(user);
+                ChatUsersHandler.Users.Add(user);
             } 
             else
             {
-                this.users.Add("Anonimous");
+                ChatUsersHandler.Users.Add("Anonimous");
             }
 
-            this.Clients.All.joinUser(user, this.users.ToArray());
+            this.Clients.All.joinUser(user, ChatUsersHandler.Users.OrderBy(x => x).ToArray());
 
             return base.OnConnected();
         }
@@ -29,16 +27,16 @@ namespace OVO.Web.Hubs
         {
             var user = Context.Request.User.Identity.Name;
 
-            if (user != "Anonimous")
+            if (user != string.Empty)
             {
-                this.users.Remove(user);
+                ChatUsersHandler.Users.Remove(user);
             }
             else
             {
-                this.users.Remove("Anonimous");
+                ChatUsersHandler.Users.Remove("Anonimous");
             }
 
-            this.Clients.All.disconnectUser(user, this.users.ToArray());
+            this.Clients.All.disconnectUser(user);
 
             return base.OnDisconnected(stopCalled);
         }

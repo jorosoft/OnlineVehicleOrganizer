@@ -221,6 +221,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Hubs\ChatUsersHandler.cs" />
     <Compile Include="Resources\Lang.bg.Designer.cs">
       <DependentUpon>Lang.bg.resx</DependentUpon>
       <AutoGen>True</AutoGen>
