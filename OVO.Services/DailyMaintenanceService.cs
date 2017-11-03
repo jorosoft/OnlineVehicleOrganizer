@@ -20,7 +20,7 @@ namespace OVO.Services
 
         public async Task Execute()
         {
-            var targetDate = DateTime.Now.AddDays(7);
+            var targetDate = DateTime.Now.AddDays(5);
 
             var toNotifyForInsurance = this.vehiclesService.GetAll()
                 .Select(x => new Mail
