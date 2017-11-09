@@ -11,6 +11,8 @@ namespace OVO.Services
     {
         private readonly IEmailSendService emailService;
         private readonly IVehiclesService vehiclesService;
+        private const int NotifyBeforeDays = 5;
+        private const string SystemEmail = "jorosoft@abv.bg";
 
         public DailyMaintenanceService(IEmailSendService emailService, IVehiclesService vehiclesService)
         {
@@ -20,7 +22,7 @@ namespace OVO.Services
 
         public async Task Execute()
         {
-            var targetDate = DateTime.Now.AddDays(5);
+            var targetDate = DateTime.Now.AddDays(NotifyBeforeDays);
 
             var toNotifyForInsurance = this.vehiclesService.GetAll()
                 .Select(x => new Mail
@@ -59,6 +61,15 @@ namespace OVO.Services
             {
                 await this.emailService.SendEmailAsync(mail);
             }
+
+            await this.emailService.SendEmailAsync(new Mail
+            {
+                Day = DateTime.Now.Day,
+                Month = DateTime.Now.Month,
+                DestinationEmail = SystemEmail,
+                NotifiedVehiclesCount = toNotifyForInsurance.Count + toNotifyForService.Count,
+                MailType = MailType.SystemMail
+            });
         }
     }
 }

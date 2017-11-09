@@ -17,5 +17,7 @@ namespace OVO.Services.Models
         public string DestinationEmail { get; set; }
 
         public MailType MailType { get; set; }
+
+        public int NotifiedVehiclesCount { get; set; }
     }
 }

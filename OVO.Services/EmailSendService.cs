@@ -10,28 +10,34 @@ namespace OVO.Services
 {
     public class EmailSendService : IEmailSendService
     {
-        private const string senderName = "OVO Admin";
-        private const string senderEmail = "ovoappnotify@gmail.com";
-        private const string insuranceSubject = "Vehicle Insurance Expires";
-        private const string serviceSubject = "Vehicle Service Check Expires";
-        private const string insuranceMailTemplate = "Hello user of OVO App! We notify you than your insurance for vehicle: {0} {1} - {2} expires after 5 days at: {3}.{4}.{5}!";
-        private const string serviceMailTemplate = "Hello user of OVO App! We notify you than your service check for vehicle: {0} {1} - {2} expires after 5 days at: {3}.{4}.{5}!";
+        private const string SenderName = "OVO Admin";
+        private const string SenderEmail = "ovoappnotify@gmail.com";
+        private const string InsuranceSubject = "Vehicle Insurance Expires";
+        private const string ServiceSubject = "Vehicle Service Check Expires";
+        private const string InsuranceMailTemplate = "Hello user of OVO App! We notify you than your insurance for vehicle: {0} {1} - {2} expires after 5 days at: {3}.{4}.{5}!";
+        private const string ServiceMailTemplate = "Hello user of OVO App! We notify you than your service check for vehicle: {0} {1} - {2} expires after 5 days at: {3}.{4}.{5}!";
+        private const string MaintanceSubject = "Daily Maintenance Completed";
+        private const string MaintanceMailTemplate = "{0}.{1} - Daily Maintenence Completed! {2} vehicles notified!";
 
         public async Task SendEmailAsync(Mail mail)
         {
             var newMessage = new MailMessage();
             newMessage.To.Add(new MailAddress(mail.DestinationEmail));
-            newMessage.From = new MailAddress(senderEmail);
+            newMessage.From = new MailAddress(SenderEmail);
 
             switch (mail.MailType)
             {
                 case MailType.InsuranceMail:
-                    newMessage.Subject = insuranceSubject;
-                    newMessage.Body = string.Format(insuranceMailTemplate, mail.Manufacturer, mail.Model, mail.RegNumber, mail.Day, mail.Month, DateTime.Now.Year);
+                    newMessage.Subject = InsuranceSubject;
+                    newMessage.Body = string.Format(InsuranceMailTemplate, mail.Manufacturer, mail.Model, mail.RegNumber, mail.Day, mail.Month, DateTime.Now.Year);
                     break;
                 case MailType.ServiceMail:
-                    newMessage.Subject = serviceSubject;
-                    newMessage.Body = string.Format(insuranceMailTemplate, mail.Manufacturer, mail.Model, mail.RegNumber, mail.Day, mail.Month, DateTime.Now.Year);
+                    newMessage.Subject = ServiceSubject;
+                    newMessage.Body = string.Format(InsuranceMailTemplate, mail.Manufacturer, mail.Model, mail.RegNumber, mail.Day, mail.Month, DateTime.Now.Year);
+                    break;
+                case MailType.SystemMail:
+                    newMessage.Subject = MaintanceSubject;
+                    newMessage.Body = string.Format(MaintanceMailTemplate, mail.Day, mail.Month, mail.NotifiedVehiclesCount);
                     break;
                 default:
                     break;
@@ -43,7 +49,7 @@ namespace OVO.Services
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = senderEmail,
+                    UserName = SenderEmail,
                     Password = "alabala.com"
                 };
                 smtp.Credentials = credential;

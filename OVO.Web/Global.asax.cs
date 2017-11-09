@@ -56,20 +56,14 @@ namespace OVO.Web
         }
 
         static async void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {            
-            var CurrentSystemTime = DateTime.Now;
-            DateTime LatestRunTime = CurrentSystemTime.AddMilliseconds(TimerIntervalInMilliseconds);
+        {
+            var ctx = new OVOMsSqlDbContext();
+            var maintenance = new DailyMaintenanceService(
+                new EmailSendService(),
+                new VehiclesService(new EfRepository<Vehicle>(ctx),
+                new SaveContext(ctx)));
 
-            if (CurrentSystemTime.CompareTo(LatestRunTime) <= 0)
-            {
-                var ctx = new OVOMsSqlDbContext();
-                var maintenance = new DailyMaintenanceService(
-                    new EmailSendService(), 
-                    new VehiclesService(new EfRepository<Vehicle>(ctx), 
-                    new SaveContext(ctx)));
-
-                await maintenance.Execute();
-            }
+            await maintenance.Execute();
         }
     }
 }
